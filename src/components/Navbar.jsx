@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { Menu, X, ShoppingCart } from "lucide-react"
 import { useCart } from "../context/CartContext"
