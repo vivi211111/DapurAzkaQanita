@@ -901,210 +901,166 @@ const Product = () => {
           </div>
         </section>
 
-      {/* Product Detail Modal */}
-      {isModalOpen && selectedProduct && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            {/* Modal Header */}
-            <div className="sticky top-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 p-6 flex items-center justify-between rounded-t-2xl">
-              <h2 className="font-serif text-2xl font-bold text-batik-brown dark:text-batik-gold">
-                {selectedProduct.title}
-              </h2>
-              <button
-                onClick={closeModal}
-                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
-              >
-                <X size={24} className="text-gray-500" />
-              </button>
-            </div>
-
-            {/* Modal Content */}
-            <div className="p-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Product Image */}
-                <div className="space-y-4">
-                  <img
-                    src={selectedProduct.image || "/placeholder.svg"}
-                    alt={selectedProduct.title}
-                    className="w-full h-96 object-cover rounded-xl shadow-lg"
-                  />
-
-                  {/* Action Buttons */}
-                  <div className="flex space-x-3">
-                    <button className="flex-1 bg-batik-gold text-white py-3 px-4 rounded-lg font-semibold hover:bg-batik-brown transition-colors flex items-center justify-center space-x-2">
-                      <ShoppingCart size={20} />
-                      <span>Tambah ke Keranjang</span>
-                    </button>
-                    <button className="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                      <Heart size={20} className="text-gray-600" />
-                    </button>
-                    <button className="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                      <Share2 size={20} className="text-gray-600" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Product Details */}
-                <div className="space-y-6">
-                  {/* Price and Rating */}
-                  <div className="space-y-3">
-                    <div className="text-3xl font-bold text-batik-brown dark:text-batik-gold">
-                      {selectedProduct.price}
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="flex space-x-1">
-                        {renderStars(selectedProduct.rating)}
-                      </div>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        ({selectedProduct.reviews} ulasan)
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <div>
-                    <h3 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                      Deskripsi
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      {selectedProduct.detailDescription}
-                    </p>
-                  </div>
-
-                  {/* Specifications */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <h4 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                        Spesifikasi
-                      </h4>
-                      <div className="space-y-2 text-sm dark:text-gray-300">
-                        <div className="flex justify-between">
-                          <span className="text-gray-600 dark:text-gray-400">
-                            Material:
-                          </span>
-                          <span className="font-medium">
-                            {selectedProduct.material}
-                          </span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600 dark:text-gray-400">
-                            Ukuran:
-                          </span>
-                          <span className="font-medium">
-                            {selectedProduct.size}
-                          </span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600 dark:text-gray-400">
-                            Stok:
-                          </span>
-                          <span className="font-medium">
-                            {selectedProduct.stock} pcs
-                          </span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600 dark:text-gray-400">
-                            Asal:
-                          </span>
-                          <span className="font-medium flex items-center">
-                            <MapPin size={12} className="mr-1" />
-                            {selectedProduct.origin}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                        Warna Tersedia
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedProduct.colors.map((color, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 bg-batik-cream dark:bg-batik-gold/20 text-batik-brown dark:text-batik-gold text-xs rounded-full"
-                          >
-                            {color}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Care Instructions */}
-                  <div>
-                    <h4 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                      Petunjuk Perawatan
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      {selectedProduct.care}
-                    </p>
-                  </div>
-
-                  {/* Tags */}
-                  <div>
-                    <h4 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                      Tags
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProduct.tags.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+        {/* Product Detail Modal with New Compact Design */}
+        {isModalOpen && selectedProduct && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-xl">
+              {/* Modal Header with Close Button */}
+              <div className="sticky top-0 bg-white p-4 flex justify-end rounded-t-2xl">
+                <button
+                  onClick={closeModal}
+                  className="p-2 hover:bg-yellow-100 rounded-full transition-colors"
+                >
+                  <X size={24} className="text-yellow-700" />
+                </button>
               </div>
 
-              {/* Contact Information */}
-              <div className="mt-8 p-6 bg-batik-cream/30 dark:bg-gray-800 rounded-xl">
-                <h3 className="font-serif text-lg font-semibold text-batik-brown dark:text-batik-gold mb-4">
-                  Butuh Informasi Lebih Lanjut?
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="flex items-center space-x-3">
-                    <Phone size={20} className="text-batik-gold" />
-                    <div>
-                      <div className="font-medium text-batik-brown dark:text-batik-gold">
-                        Telepon
-                      </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        +62 895-2489-3101
-                      </div>
-                    </div>
+              {/* Product Image */}
+              <div className="px-6">
+                <img
+                  src={selectedProduct.image || "/placeholder.svg"}
+                  alt={selectedProduct.title}
+                  className="w-full h-auto object-cover rounded-xl shadow-lg border"
+                />
+              </div>
+
+              {/* Product Information */}
+              <div className="p-6 space-y-4">
+                {/* Title */}
+                <h2 className="font-serif text-2xl font-bold text-batik-brown mb-1">
+                  {selectedProduct.title} {selectedProduct.category}
+                </h2>
+
+                {/* Rating */}
+                <div className="flex items-center space-x-2 mb-1">
+                  <div className="flex space-x-1">
+                    {renderStars(selectedProduct.rating, '#D4AF37')}
                   </div>
+                  <span className="text-sm text-gray-500 font-medium">
+                    {selectedProduct.rating} ({selectedProduct.reviews} reviews)
+                  </span>
+                </div>
+
+                {/* Price */}
+                <div className="text-2xl font-bold text-batik-orange mb-1">
+                  Rp {selectedProduct.price.toLocaleString("id-ID")}
+                </div>
+
+                {/* Short Description */}
+                <p className="text-gray-700 text-sm mb-2">{selectedProduct.description}</p>
+
+                {/* Quantity Selector */}
+                <div className="mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Jumlah:</label>
                   <div className="flex items-center space-x-3">
-                    <Mail size={20} className="text-batik-gold" />
-                    <div>
-                      <div className="font-medium text-batik-brown dark:text-batik-gold">
-                        Email
-                      </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        info@domesa.co
-                      </div>
-                    </div>
+                    <button
+                      onClick={decreaseQuantity}
+                      className="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-lg hover:bg-gray-50"
+                    >
+                      <Minus size={16} />
+                    </button>
+                    <span className="text-lg font-semibold w-10 text-center">{quantity}</span>
+                    <button
+                      onClick={increaseQuantity}
+                      className="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-lg hover:bg-gray-50"
+                    >
+                      <Plus size={16} />
+                    </button>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <MapPin size={20} className="text-batik-gold" />
-                    <div>
-                      <div className="font-medium text-batik-brown dark:text-batik-gold">
-                        Lokasi
+                </div>
+
+                {/* Add to Cart Button */}
+                <button
+                  onClick={() => handleAddToCart(selectedProduct)}
+                  className="w-full bg-batik-gold hover:bg-batik-brown text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2 text-base mb-2 mt-4"
+                >
+                  <ShoppingCart size={20} />
+                  <span>Tambah ke Keranjang</span>
+                </button>
+
+                {/* Expandable Sections */}
+                <div className="space-y-3 border-t pt-4">
+                  {/* Detail Produk */}
+                  <details className="group" open={openAccordion === 'detail'}>
+                    <summary
+                      className="flex items-center justify-between cursor-pointer py-2 text-sm font-semibold text-batik-brown hover:text-batik-gold"
+                      onClick={e => {
+                        e.preventDefault();
+                        setOpenAccordion(openAccordion === 'detail' ? null : 'detail');
+                      }}
+                    >
+                      <span>Detail Produk</span>
+                      <svg className={`w-4 h-4 transition-transform ${openAccordion === 'detail' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    {openAccordion === 'detail' && (
+                      <div className="pt-2 pb-3 text-sm text-gray-700 leading-relaxed">
+                        {selectedProduct.detailDescription}
+                        <div className="mt-3 space-y-1">
+                          <div>
+                            <strong>Asal:</strong> {selectedProduct.origin}
+                          </div>
+                          <div>
+                            <strong>Stok:</strong> {selectedProduct.stock} pcs
+                          </div>
+                          <div>
+                            <strong>Perawatan:</strong> {selectedProduct.care}
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Palembang, Indonesia
+                    )}
+                  </details>
+
+                  {/* Bahan Utama */}
+                  <details className="group" open={openAccordion === 'bahan'}>
+                    <summary
+                      className="flex items-center justify-between cursor-pointer py-2 text-sm font-semibold text-batik-brown hover:text-batik-gold"
+                      onClick={e => {
+                        e.preventDefault();
+                        setOpenAccordion(openAccordion === 'bahan' ? null : 'bahan');
+                      }}
+                    >
+                      <span>Bahan Utama</span>
+                      <svg className={`w-4 h-4 transition-transform ${openAccordion === 'bahan' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    {openAccordion === 'bahan' && (
+                      <div className="pt-2 pb-3 text-sm text-gray-700">{selectedProduct.material}</div>
+                    )}
+                  </details>
+
+                  {/* Catatan Pemesanan */}
+                  <details className="group" open={openAccordion === 'catatan'}>
+                    <summary
+                      className="flex items-center justify-between cursor-pointer py-2 text-sm font-semibold text-batik-brown hover:text-batik-gold"
+                      onClick={e => {
+                        e.preventDefault();
+                        setOpenAccordion(openAccordion === 'catatan' ? null : 'catatan');
+                      }}
+                    >
+                      <span>Catatan Pemesanan</span>
+                      <svg className={`w-4 h-4 transition-transform ${openAccordion === 'catatan' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    {openAccordion === 'catatan' && (
+                      <div className="pt-2 pb-3 text-sm text-gray-700">
+                        <ul className="space-y-1 list-disc list-inside">
+                          <li>Pemesanan minimal H-1 sebelum pengambilan</li>
+                          <li>Untuk pesanan dalam jumlah besar (&gt;10 pcs), harap konfirmasi ketersediaan stok</li>
+                          <li>Produk tahan 5-7 hari dalam suhu ruang</li>
+                          <li>Disarankan simpan di tempat sejuk untuk menjaga kualitas</li>
+                        </ul>
                       </div>
-                    </div>
-                  </div>
+                    )}
+                  </details>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
         {/* Stats Section */}
         <section className="py-20 bg-batik-cream/30 dark:bg-gray-800">
