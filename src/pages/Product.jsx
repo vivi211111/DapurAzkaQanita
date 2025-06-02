@@ -966,7 +966,7 @@ const Product = () => {
                       <h4 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
                         Spesifikasi
                       </h4>
-                      <div className="space-y-2 text-sm dark:text-gray-300">
+                      <div className="space-y-2 text-sm dark:text-gray-300 justify-center">
                         <div className="flex justify-between">
                           <span className="text-gray-600 dark:text-gray-400">
                             Material:
