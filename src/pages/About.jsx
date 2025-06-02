@@ -1,10 +1,11 @@
-import { Target, Eye, Award, Heart, ChefHat, Coffee } from "lucide-react";
+import { Target, Eye, Award, Heart, ChefHat, Coffee, Flame } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const team = [
     {
-      name: "M. Hatta Siddiq",
+      name: "Fika Luhrida",
       role: "Founder & CEO",
       description: "Pengalaman 20 tahun di industri batik dan fashion",
       image: "/about/hatta.jpg",
@@ -22,7 +23,7 @@ const About = () => {
       image: "/about/Andhini.jpg",
     },
     {
-      name: "Eka Rahayu",
+      name: "Dhea Mutmainah",
       role: "Marketing Director",
       description: "Strategi pemasaran dan pengembangan bisnis",
       image: "/about/Eka.jpg",
@@ -39,12 +40,12 @@ const About = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-batik-cream/100 to-batik-gold/20 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#4A2C1A] dark:text-batik-gold mb-6">
-            Tentang Domesa.co
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-batik-brown dark:text-batik-gold mb-6">
+            Tentang Dapur Azka Qanita
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Perjalanan kami dalam melestarikan warisan budaya Indonesia melalui
-            inovasi dan dedikasi yang tak pernah surut.
+            Perjalanan kami menghadirkan cita rasa otentik Palembang 
+            sebagai wujud pelestarian budaya dalam setiap sajian.
           </p>
         </div>
       </section>
@@ -59,7 +60,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <h2 className="font-serif text-3xl font-bold text-[#4A2C1A] dark:text-batik-gold mb-6">
+              <h2 className="font-serif text-3xl font-bold text-batik-brown dark:text-batik-gold mb-6">
                 Cerita Kami
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
@@ -88,11 +89,6 @@ const About = () => {
               transition={{ duration: 0.7 }}
               className="space-y-4"
             >
-              <img
-                alt="Suasana dapur yang sibuk"
-                className="rounded-lg shadow-xl w-full h-auto object-cover"
-                src="https://images.unsplash.com/photo-1556742053-A5471990e0d5"
-              />
               <div className="grid grid-cols-2 gap-4">
                 <img
                   alt="Bahan masakan segar"
@@ -113,7 +109,7 @@ const About = () => {
       {/* Values Section */}
       <section className="py-16 bg-batik-gold/5">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-[#4A2C1A] mb-12 text-center">
+          <h2 className="text-3xl font-bold text-batik-brown mb-12 text-center">
             Nilai-Nilai Kami
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
@@ -122,19 +118,19 @@ const About = () => {
                 icon: <Heart className="w-10 h-10 text-orange-500" />,
                 title: "Kualitas Terjamin",
                 description:
-                  "Kami menggunakan bahan segar pilihan terbaik untuk setiap hidangan yang kami sajikan.",
+                  "Kami menggunakan bahan pilihan terbaik untuk setiap hidangan yang kami sajikan.",
               },
               {
                 icon: <ChefHat className="w-10 h-10 text-orange-500" />,
                 title: "Pelayanan Ramah",
                 description:
-                  "Tim kami siap melayani dengan senyuman dan memberikan pengalaman makan yang menyenangkan.",
+                  "Tim kami siap melayani dengan senyuman dan memberikan pengalaman yang menyenangkan.",
               },
               {
-                icon: <Coffee className="w-10 h-10 text-orange-500" />,
-                title: "Harga Terjangkau",
+                icon: <Flame className="w-10 h-10 text-orange-500" />,
+                title: "Proses Tradisional",
                 description:
-                  "Makanan berkualitas tinggi dengan harga yang ramah di kantong, khususnya untuk mahasiswa.",
+                  "Kami mengolah kue dengan cara tradisional yang menghasilkan tekstur dan aroma khas yang tidak tergantikan.",
               },
               {
                 icon: <Award className="w-10 h-10 text-orange-500" />,
@@ -166,7 +162,7 @@ const About = () => {
       <section className="py-20 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#4A2C1A] dark:text-batik-gold mb-4">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-batik-brown dark:text-batik-gold mb-4">
               Tim Kami
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -203,19 +199,23 @@ const About = () => {
       <section className="py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
-            Siap Merasakan Kelezatan Kami?
+            Siap Merasakan Kelezatan Kue Kami?
           </h2>
           <p className="text-xl text-batik-cream mb-8 max-w-3xl mx-auto">
-            Segera dapatkan produk bundling & special offer favorit Anda dengan
-            harga terbaik. Stok terbatas, buruan beli sekarang juga!
+            Manjakan diri dan orang tersayang dengan kue tradisional Palembang
+            favorit Anda. Segera dapatkan sebelum stok habis.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-batik-gold hover:bg-batik-gold/90 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300">
-              Lihat Semua Penawaran
-            </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown font-semibold py-4 px-8 rounded-lg transition-all duration-300">
-              Hubungi Admin
-            </button>
+            <Link to="/product">
+              <button className="bg-batik-gold hover:bg-batik-gold/90 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300">
+                Lihat Semua Product
+              </button>
+            </Link>
+            <Link to="/contact">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown font-semibold py-4 px-8 rounded-lg transition-all duration-300">
+                Hubungi Admin
+              </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -8,6 +8,7 @@ import {
   Package,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Galeri = () => {
   const offers = [
@@ -166,8 +167,8 @@ const Galeri = () => {
               Galeri Kami
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Dapatkan paket bundling dan penawaran spesial produk batik terbaik
-              kami. Promo terbatas, harga lebih hemat untuk Anda!
+              Temukan ragam kue khas Palembang dengan 
+              cita rasa autentik dan tampilan yang menggoda.
             </p>
           </div>
         </section>
@@ -268,16 +269,20 @@ const Galeri = () => {
               Sudah Tertarik Untuk Membeli?
             </h2>
             <p className="text-xl text-batik-cream mb-8 max-w-3xl mx-auto">
-              Segera dapatkan produk bundling & special offer favorit Anda dengan
-              harga terbaik. Stok terbatas, buruan beli sekarang juga!
+              Jangan lewatkan penawaran bundling hemat untuk
+              kue khas Palembang. Stok terbatas, buruan checkout sekarang!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-batik-gold hover:bg-batik-gold/90 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300">
-                Lihat Semua Penawaran
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown font-semibold py-4 px-8 rounded-lg transition-all duration-300">
-                Hubungi Admin
-              </button>
+              <Link to="/product">
+                <button className="bg-batik-gold hover:bg-batik-gold/90 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300">
+                  Lihat Semua Product
+                </button>
+              </Link>
+              <Link to="/contact">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown font-semibold py-4 px-8 rounded-lg transition-all duration-300">
+                  Hubungi Admin
+                </button>
+              </Link>
             </div>
           </div>
         </section>

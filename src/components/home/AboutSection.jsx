@@ -40,9 +40,9 @@ const AboutSection = () => {
           >
             <div className="rounded-2xl overflow-hidden shadow-lg border border-batik-gold/30 dark:border-batik-gold/10">
               <img
-                src="/about/Andhini.jpg"
+                src="/about/DapurAzka.jpg"
                 alt="Dapur Azka Qanita"
-                className="w-full h-[380px] md:h-[420px] lg:h-[460px] object-cover object-center"
+                className="w-full h-[380px] md:h-[420px] lg:h-[460px] object-center scale-110 hover:scale-105 transition-transform duration-500 rounded-t-2xl"
               />
             </div>
           </motion.div>
@@ -70,21 +70,22 @@ const AboutSection = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-lg text-gray-700 dark:text-gray-300 mb-4 max-w-2xl"
             >
-              Sejak 2015, Dapur Azka Qanita telah menjadi rumah kedua bagi para
-              mahasiswa dan pekerja di sekitar kampus. Kami bangga menyajikan
-              makanan rumahan yang lezat dengan cita rasa autentik dan harga yang
-              terjangkau.
+              Sejak berdiri pada tahun 1890, Dapur Azka Qanita telah 
+              menjadi warisan keluarga yang terus dijaga dan dilestarikan 
+              selama tiga generasi. Resep otentik yang kami gunakan diwariskan dari ibu ke anak, 
+              menjadikan setiap hidangan penuh dengan cita rasa asli dan kehangatan rumah.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl"
+              className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl"
             >
-              Dengan komitmen pada kualitas bahan baku segar dan resep turun
-              temurun, setiap hidangan kami dibuat dengan penuh cinta untuk
-              memberikan pengalaman kuliner yang tak terlupakan.
+              Kami bukan sekadar usaha biasa, melainkan penjaga tradisi kuliner 
+              Palembang yang fokus melayani pesanan khusus terutama pada hari besar dan 
+              hari raya. Dengan bahan-bahan pilihan dan teknik pembuatan yang terjaga kualitasnya, 
+              Dapur Azka Qanita terus menghadirkan kue tradisional yang lezat dan penuh makna.
             </motion.p>
 
             {/* Highlight Cards */}
@@ -113,7 +114,7 @@ const AboutSection = () => {
               >
                 <Award className="text-batik-brown dark:text-batik-gold mb-2" size={32} />
                 <div className="text-2xl font-bold text-batik-brown dark:text-batik-gold">
-                  9
+                  100+
                 </div>
                 <div className="text-batik-brown dark:text-batik-gold text-sm font-medium">
                   Tahun Berpengalaman
@@ -131,15 +132,15 @@ const AboutSection = () => {
             >
               <li className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-batik-gold"></span>
-                Bahan segar pilihan terbaik
+                Pelayanan Ramah
               </li>
               <li className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-batik-gold"></span>
-                Pelayanan cepat dan ramah
+                Proses Memasak Masih Tradisional
               </li>
               <li className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-batik-gold"></span>
-                Harga terjangkau untuk mahasiswa
+                Rasa Kue Autentik
               </li>
             </motion.ul>
           </motion.div>

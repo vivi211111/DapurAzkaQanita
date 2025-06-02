@@ -31,17 +31,21 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Alamat",
-      details: ["Pasar Kito Ilir Barat Permai", "Palembang 30131", "Indonesia"],
+      details: [
+        "Komplek TOP 100, Blok. A7 No. 27",
+        "Jakabaring-Palembang",
+        "Indonesia",
+      ],
     },
     {
       icon: Phone,
       title: "Telepon",
-      details: ["+62 895 2489 3101 ", "+62 882 7672 9787"],
+      details: ["+62 811 7874 458 ", "+62 812 7116 550"],
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@domesa.co", "sales@domesa.co"],
+      details: ["dapurazkaqanita@gmail.com"],
     },
     {
       icon: Clock,
@@ -68,8 +72,9 @@ const Contact = () => {
               Hubungi Kami
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Kami siap membantu mewujudkan proyek handycraft impian Anda. Jangan
-              ragu untuk menghubungi tim profesional kami.
+              Nikmati kelezatan kue tradisional khas Palembang buatan kami.
+              Hubungi tim kami untuk pemesanan dan ciptakan momen manis bersama
+              orang tercinta.
             </p>
           </div>
         </section>
@@ -207,7 +212,13 @@ const Contact = () => {
                     <MapPin size={48} className="mx-auto mb-2" />
                     <p className="font-medium">Peta Lokasi</p>
                     <p className="text-sm">
-                      Pasar Kito Ilir Barat Permai, Palembang
+                      Komplek TOP 100, Blok. A7 No. 27,
+                    </p>
+                    <p className="text-sm">
+                      Jakabaring-Palembang
+                    </p>
+                    <p className="text-sm">
+                      Indonesia
                     </p>
                   </div>
                 </div>
@@ -227,68 +238,14 @@ const Contact = () => {
                 </div>
 
                 {/* Quick Contact */}
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="mt-6 grid grid-cols-1 gap-4">
                   <a
-                    href="tel:+6221123456789"
+                    href="tel:+6288276729787"
                     className="bg-batik-gold text-white text-center py-3 px-4 rounded-lg hover:bg-batik-brown transition-colors duration-300"
                   >
                     Telepon Sekarang
                   </a>
-                  <a
-                    href="mailto:info@domesa.co"
-                    className="bg-batik-brown text-white text-center py-3 px-4 rounded-lg hover:bg-batik-navy transition-colors duration-300"
-                  >
-                    Kirim Email
-                  </a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-20 bg-batik-cream/30 dark:bg-gray-900">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl font-bold text-batik-brown dark:text-batik-gold mb-4">
-                Pertanyaan yang Sering Diajukan
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300">
-                Temukan jawaban untuk pertanyaan umum seputar layanan kami
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-                <h3 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                  Berapa lama waktu pengerjaan produk custom?
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Waktu pengerjaan bervariasi tergantung kompleksitas desain,
-                  biasanya 2-4 minggu untuk produk fashion dan 1-3 minggu untuk
-                  aksesoris.
-                </p>
-              </div>
-
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-                <h3 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                  Apakah ada minimum order untuk pemesanan?
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Tidak ada minimum order untuk produk ready stock. Untuk custom
-                  design, minimum order adalah 10 pieces.
-                </p>
-              </div>
-
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-                <h3 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                  Bagaimana cara perawatan produk batik?
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Kami akan memberikan panduan perawatan lengkap untuk setiap
-                  produk. Umumnya disarankan dry clean atau hand wash dengan
-                  detergen khusus.
-                </p>
               </div>
             </div>
           </div>

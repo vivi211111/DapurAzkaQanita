@@ -19,11 +19,11 @@ const Footer = () => {
               <div className="w-10 h-10 bg-batik-gold rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">B</span>
               </div>
-              <span className="font-serif text-xl font-bold">Domesa.co</span>
+              <span className="font-serif text-xl font-bold">Dapur Azka Qanita</span>
             </div>
             <p className="text-batik-cream mb-4 max-w-md">
-              Melestarikan warisan budaya Indonesia melalui produk handycraft berkualitas tinggi dengan sentuhan modern
-              yang memukau.
+              Mengangkat cita rasa kue tradisional Palembang 
+              dengan kualitas tinggi dan sentuhan modern yang menggoda.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-batik-cream hover:text-batik-gold transition-colors">
@@ -80,11 +80,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <Phone size={16} className="text-batik-gold" />
-                <span className="text-batik-cream text-sm">+62 895-2489-3101</span>
+                <span className="text-batik-cream text-sm">+62 811 7874 458</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail size={16} className="text-batik-gold" />
-                <span className="text-batik-cream text-sm">info@domesa.co</span>
+                <span className="text-batik-cream text-sm">dapurazkaqanita@gmail.com</span>
               </li>
             </ul>
           </div>

@@ -8,6 +8,7 @@ import {
   MessageCircle,
   Phone,
   Mail,
+  InstagramIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -306,15 +307,15 @@ const FAQ = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-batik-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="text-white" size={24} />
+                  <InstagramIcon className="text-white" size={24} />
                 </div>
                 <h3 className="font-serif text-xl font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                  Live Chat
+                  DM Kami
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Chat langsung dengan tim support kami
                 </p>
-                <button className="btn-primary">Mulai Chat</button>
+                <button className="btn-primary">@dapur_azka_qanita</button>
               </div>
 
               <div className="text-center">
@@ -327,7 +328,7 @@ const FAQ = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Hubungi hotline customer service kami
                 </p>
-                <button className="btn-primary">+62 21 1234 5678</button>
+                <button className="btn-primary">+62 811-7874-456</button>
               </div>
 
               <div className="text-center">
