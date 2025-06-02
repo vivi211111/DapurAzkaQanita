@@ -881,8 +881,14 @@ const Product = () => {
           <div className="bg-white dark:bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
             {/* Notifikasi berhasil tambah ke keranjang */}
             {showNotif && (
-              <div className="absolute top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 font-semibold animate-fade-in">
+              <div className="absolute top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 font-semibold animate-fade-in flex items-center gap-4">
                 Produk berhasil ditambahkan ke keranjang!
+                <a
+                  href="/cart"
+                  className="ml-4 underline font-bold hover:text-yellow-200"
+                >
+                  Lihat Keranjang
+                </a>
               </div>
             )}
             {/* Modal Header */}
