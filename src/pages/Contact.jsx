@@ -12,6 +12,9 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -20,11 +23,28 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    alert("Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.");
+    setLoading(true);
+    setSuccess("");
+    setError("");
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setSuccess("Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.");
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+      } else {
+        setError("Gagal mengirim pesan. Silakan coba lagi.");
+      }
+    } catch (err) {
+      setError("Terjadi kesalahan. Silakan coba lagi.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -192,11 +212,17 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="w-full btn-primary inline-flex items-center justify-center"
+                    className="w-full btn-primary inline-flex items-center justify-center disabled:opacity-60"
+                    disabled={loading}
                   >
-                    <Send className="mr-2" size={20} />
-                    Kirim Pesan
+                    {loading ? (
+                      <span className="flex items-center"><svg className="animate-spin mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg> Mengirim...</span>
+                    ) : (
+                      <><Send className="mr-2" size={20} />Kirim Pesan</>
+                    )}
                   </button>
+                  {success && <div className="text-green-600 text-center font-semibold mt-2">{success}</div>}
+                  {error && <div className="text-red-600 text-center font-semibold mt-2">{error}</div>}
                 </form>
               </div>
 
@@ -206,21 +232,18 @@ const Contact = () => {
                   Lokasi Kami
                 </h2>
 
-                {/* Map Placeholder */}
-                <div className="w-full h-64 bg-gradient-to-br from-batik-gold/20 to-batik-brown/20 dark:from-batik-gold/10 dark:to-batik-brown/10 rounded-lg mb-6 flex items-center justify-center">
-                  <div className="text-center text-batik-brown dark:text-batik-gold">
-                    <MapPin size={48} className="mx-auto mb-2" />
-                    <p className="font-medium">Peta Lokasi</p>
-                    <p className="text-sm">
-                      Komplek TOP 100, Blok. A7 No. 27,
-                    </p>
-                    <p className="text-sm">
-                      Jakabaring-Palembang
-                    </p>
-                    <p className="text-sm">
-                      Indonesia
-                    </p>
-                  </div>
+                {/* Google Maps Embed */}
+                <div className="w-full h-64 rounded-lg mb-6 overflow-hidden border border-batik-gold/30">
+                  <iframe
+                    src="https://www.google.com/maps?q=-3.022857,104.782857&hl=id&z=17&output=embed"
+                    title="Lokasi Dapur Azka Qanita"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
 
                 {/* Additional Info */}
@@ -243,7 +266,7 @@ const Contact = () => {
                     href="tel:+6288276729787"
                     className="bg-batik-gold text-white text-center py-3 px-4 rounded-lg hover:bg-batik-brown transition-colors duration-300"
                   >
-                    Telepon Sekarang
+                    Chat Sekarang
                   </a>
                 </div>
               </div>

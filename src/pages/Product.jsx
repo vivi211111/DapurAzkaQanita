@@ -61,7 +61,7 @@ const Product = () => {
       category: "middle",
       description:
         "Maksubah dengan topping prunes premium, rasa manis legit dan segar.",
-      image: "/portfolio/kue-maksubah-prunes.jpg",
+      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
       price: 375000,
       material: "Telur, gula, mentega, prunes",
@@ -80,7 +80,7 @@ const Product = () => {
       title: "Maksubah Keju",
       category: "middle",
       description: "Maksubah dengan taburan keju melimpah, gurih dan lembut.",
-      image: "/portfolio/kue-maksubah-keju.jpg",
+      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
       price: 355000,
       material: "Telur, gula, mentega, keju",
@@ -99,7 +99,7 @@ const Product = () => {
       title: "Maksubah Coklat",
       category: "middle",
       description: "Maksubah dengan rasa coklat premium, manis dan legit.",
-      image: "/portfolio/kue-maksubah-coklat.jpg",
+      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
       price: 355000,
       material: "Telur, gula, mentega, coklat",
@@ -590,7 +590,7 @@ const Product = () => {
       title: "Lapis Legit Original",
       category: "premium",
       description: "Lapis Legit premium, tekstur lembut dan aroma butter.",
-      image: "/portfolio/kue-lapis-legit.jpg",
+      image: "/portfolio/LapisLegitNanas.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, mentega premium",
@@ -610,7 +610,7 @@ const Product = () => {
       category: "premium",
       description:
         "Lapis Legit premium dengan tambahan nanas, rasa segar dan legit.",
-      image: "/portfolio/kue-lapis-legit.jpg",
+      image: "/portfolio/LapisLegitNanas.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, nanas",
@@ -629,7 +629,7 @@ const Product = () => {
       title: "Lapis Legit Keju",
       category: "premium",
       description: "Lapis Legit premium dengan taburan keju, gurih dan lembut.",
-      image: "/portfolio/kue-lapis-legit.jpg",
+      image: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, keju",
@@ -648,7 +648,7 @@ const Product = () => {
       title: "Lapis Legit Coklat",
       category: "premium",
       description: "Lapis Legit premium dengan rasa coklat, manis dan legit.",
-      image: "/portfolio/kue-lapis-legit.jpg",
+      image: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, coklat",
@@ -668,7 +668,7 @@ const Product = () => {
       category: "premium",
       description:
         "Lapis Legit premium dengan topping prunes, rasa segar dan legit.",
-      image: "/portfolio/kue-lapis-legit.jpg",
+      image: "/portfolio/LapisLegitPrunes.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
       price: 485000,
       material: "Telur, gula, mentega premium, prunes",

@@ -31,7 +31,7 @@ const AdvantagesSection = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
-      className="py-20 bg-gray-100 dark:bg-gray-900"
+      className="py-20 bg-batik-cream/30 dark:bg-gray-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

@@ -59,7 +59,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-serif text-3xl md:text-4xl font-bold text-batik-brown dark:text-batik-gold mb-4"
+              className="font- text-3xl md:text-4xl font-bold text-batik-brown dark:text-batik-gold mb-4"
             >
               Tentang Dapur Azka Qanita
             </motion.h2>

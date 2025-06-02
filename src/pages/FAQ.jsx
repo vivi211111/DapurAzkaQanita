@@ -344,42 +344,6 @@ const FAQ = () => {
                 <button className="btn-primary">info@batiknusantara.com</button>
               </div>
             </div>
-
-            {/* Quick Contact Form */}
-            <div className="mt-16 max-w-2xl mx-auto">
-              <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8">
-                <h3 className="font-serif text-2xl font-bold text-batik-brown dark:text-batik-gold mb-6 text-center">
-                  Kirim Pertanyaan Cepat
-                </h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      placeholder="Nama Anda"
-                      className="px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-batik-gold focus:border-transparent"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Email Anda"
-                      className="px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-batik-gold focus:border-transparent"
-                    />
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Subjek Pertanyaan"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-batik-gold focus:border-transparent"
-                  />
-                  <textarea
-                    rows={4}
-                    placeholder="Pertanyaan Anda..."
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-batik-gold focus:border-transparent"
-                  ></textarea>
-                  <button type="submit" className="w-full btn-primary">
-                    Kirim Pertanyaan
-                  </button>
-                </form>
-              </div>
-            </div>
           </div>
         </section>
       </div>
