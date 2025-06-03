@@ -883,12 +883,17 @@ const Product = () => {
             {showNotif && (
               <div className="absolute top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 font-semibold animate-fade-in flex items-center gap-4">
                 Produk berhasil ditambahkan ke keranjang!
-                <a
-                  href="/cart"
+                <button
+                  type="button"
                   className="ml-4 underline font-bold hover:text-yellow-200"
+                  onClick={() => {
+                    setIsModalOpen(false);
+                    // Trigger open cart modal in Navbar via custom event
+                    window.dispatchEvent(new CustomEvent("open-cart-modal"));
+                  }}
                 >
                   Lihat Keranjang
-                </a>
+                </button>
               </div>
             )}
             {/* Modal Header */}
