@@ -83,7 +83,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-batik-gold rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">B</span>
+                <span className="text-white font-bold text-xl">D</span>
               </div>
               <span className="font-serif text-xl font-bold text-batik-brown">Dapur Azka Qanita</span>
             </Link>

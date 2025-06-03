@@ -64,22 +64,13 @@ const About = () => {
                 Cerita Kami
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Usaha ini lahir dari semangat untuk mengenalkan keindahan dan
-                nilai budaya Indonesia melalui kerajinan batik khas dari
-                berbagai daerah. Kami percaya bahwa setiap karya tangan memiliki
-                cerita, filosofi, dan identitas yang layak dikenal dunia.
+                Dapur Azka Qanita berdiri sejak 2010 sebagai usaha keluarga yang berfokus pada pembuatan kue tradisional Palembang dan nusantara. Kami berkomitmen menghadirkan cita rasa otentik, kualitas premium, dan pelayanan ramah untuk setiap pelanggan.
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Berawal dari inisiatif kecil untuk memberdayakan pengrajin
-                lokal, kini kami membangun platform digital yang menjembatani
-                antara pelaku UMKM kerajinan dan konsumen, baik di dalam negeri
-                maupun mancanegara.
+                Berawal dari dapur rumah sederhana, Dapur Azka kini dipercaya melayani berbagai acara keluarga, kantor, hingga pesanan skala besar. Kami selalu menggunakan bahan segar, resep turun-temurun, dan proses tradisional untuk menjaga kelezatan dan keaslian setiap produk.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                Setiap produk yang kami pasarkan adalah hasil karya autentik,
-                penuh makna, dan dibuat dengan sentuhan tradisional. Melalui
-                usaha ini, kami ingin merayakan warisan budaya sambil
-                menciptakan peluang baru di era modern.
+                Setiap kue yang kami sajikan adalah hasil kerja keras, cinta, dan dedikasi tim kami. Kami ingin menjadi bagian dari momen spesial Anda, serta terus melestarikan warisan kuliner Indonesia melalui inovasi dan pelayanan terbaik.
               </p>
             </motion.div>
             <motion.div
@@ -91,9 +82,9 @@ const About = () => {
             >
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  alt="Bahan masakan segar"
+                  alt="Dapur Azka Qanita"
                   className="rounded-lg shadow-xl w-full h-auto object-cover"
-                  src="https://images.unsplash.com/photo-1556909006-3490b8946a40"
+                  src="/about/dapur_azka.jpg"
                 />
                 <img
                   alt="Hidangan lezat disajikan"
