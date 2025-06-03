@@ -77,11 +77,22 @@ const Galeri = () => {
   // Data galeri penjualan (foto & video produk kue)
   const galeriPenjualan = [
     {
-      type: "video",
-      src: "https://www.w3schools.com/html/mov_bbb.mp4",
-      poster: "/portfolio/proses-maksubah.jpg",
-      title: "Proses Pembuatan Maksubah",
-      desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
+      type: "image",
+      src: "/portfolio/kue-maksubah-original.jpg",
+      title: "Maksubah Original",
+      desc: "Maksubah klasik dengan lapisan legit dan aroma rempah khas Palembang.",
+    },
+    {
+      type: "image",
+      src: "/portfolio/kue-maksubah-prunes.jpg",
+      title: "Maksubah Prunes",
+      desc: "Maksubah dengan topping prunes premium, rasa manis legit dan segar.",
+    },
+    {
+      type: "image",
+      src: "/portfolio/kue-maksubah-keju.jpg",
+      title: "Maksubah Keju",
+      desc: "Maksubah dengan taburan keju melimpah, gurih dan lembut.",
     },
     {
       type: "video",
@@ -91,20 +102,17 @@ const Galeri = () => {
       desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     {
-      type: "video",
-      src: "https://www.w3schools.com/html/mov_bbb.mp4",
-      poster: "/portfolio/proses-maksubah.jpg",
-      title: "Proses Pembuatan Maksubah",
-      desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
+      type: "image",
+      src: "/portfolio/kue-lapis-legit.jpg",
+      title: "Lapis Legit Spesial",
+      desc: "Lapis legit dengan 18 lapisan, tekstur lembut dan aroma butter.",
     },
     {
-      type: "video",
-      src: "https://www.w3schools.com/html/mov_bbb.mp4",
-      poster: "/portfolio/proses-maksubah.jpg",
-      title: "Proses Pembuatan Maksubah",
-      desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
+      type: "image",
+      src: "/portfolio/kue-bolu-kukus.jpg",
+      title: "Bolu Kukus Pelangi",
+      desc: "Bolu kukus warna-warni, lembut dan cocok untuk acara keluarga.",
     },
-
     // Tambahkan lebih banyak foto/video produk kue jika diperlukan
   ];
 
@@ -115,6 +123,13 @@ const Galeri = () => {
       src: "/testimonials/Sarah Wijaya.jpeg?height=400&width=600",
       title: "Sarah Wijaya",
       desc: "Kue Maksubah enak banget, anak-anak suka!",
+    },
+    {
+      type: "video",
+      src: "https://www.w3schools.com/html/movie.mp4",
+      poster: "/testimonials/Budi Santoso.jpeg?height=400&width=600",
+      title: "Budi Santoso",
+      desc: "Review video Maksubah Prunes dari pelanggan.",
     },
     {
       type: "image",
@@ -152,15 +167,15 @@ const Galeri = () => {
               Galeri Kami
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Temukan ragam kue khas Palembang dengan cita rasa autentik dan
-              tampilan yang menggoda.
+              Temukan ragam kue khas Palembang dengan 
+              cita rasa autentik dan tampilan yang menggoda.
             </p>
           </div>
         </section>
 
         {/* Offers Grid */}
-        <section className="w-full px-4 py-20 bg-white">
-          <div className="max-w-7xl 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-white">
+          <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-batik-brown mb-4">
                 Galeri Penjualan
@@ -171,36 +186,36 @@ const Galeri = () => {
               </p>
             </div>
             <div className="max-w-screen-xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-8 justify-items-center">
-                {galeriPenjualan.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="relative group rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
-                  >
-                    {item.type === "image" ? (
-                      <img
-                        src={item.src}
-                        alt={item.title}
-                        className="w-full h-64 object-cover"
-                      />
-                    ) : (
-                      <video
-                        controls
-                        poster={item.poster}
-                        className="w-full h-64 object-cover"
-                      >
-                        <source src={item.src} type="video/mp4" />
-                      </video>
-                    )}
-                    <div className="p-4">
-                      <h3 className="font-semibold text-batik-brown mb-1">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-gray-600">{item.desc}</p>
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {galeriPenjualan.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="relative group rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
+                >
+                  {item.type === "image" ? (
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="w-full h-64 object-cover"
+                    />
+                  ) : (
+                    <video
+                      controls
+                      poster={item.poster}
+                      className="w-full h-64 object-cover"
+                    >
+                      <source src={item.src} type="video/mp4" />
+                    </video>
+                  )}
+                  <div className="p-4">
+                    <h3 className="font-semibold text-batik-brown mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{item.desc}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
             </div>
           </div>
         </section>
@@ -213,8 +228,7 @@ const Galeri = () => {
                 Galeri Testimoni Klien
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Foto & video review dari pelanggan kami yang telah mencoba
-                produk.
+                Foto & video review dari pelanggan kami yang telah mencoba produk.
               </p>
             </div>
             <div className="max-w-screen-xl mx-auto">
@@ -259,8 +273,8 @@ const Galeri = () => {
               Sudah Tertarik Untuk Membeli?
             </h2>
             <p className="text-xl text-batik-cream mb-8 max-w-3xl mx-auto">
-              Jangan lewatkan penawaran bundling hemat untuk kue khas Palembang.
-              Stok terbatas, buruan checkout sekarang!
+              Jangan lewatkan penawaran bundling hemat untuk
+              kue khas Palembang. Stok terbatas, buruan checkout sekarang!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/product">

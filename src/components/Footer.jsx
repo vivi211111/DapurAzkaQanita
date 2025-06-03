@@ -92,7 +92,7 @@ const Footer = () => {
 
         <div className="border-t border-batik-gold/20 mt-8 pt-8 text-center">
           <p className="text-batik-cream text-sm">
-            © 2024 Domesa. Semua hak dilindungi. |
+            © 2024 Dapur Azka. Semua hak dilindungi. |
             <Link to="/legal" className="hover:text-batik-gold transition-colors ml-1">
               Kebijakan Privasi
             </Link>
