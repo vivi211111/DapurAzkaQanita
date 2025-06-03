@@ -17,6 +17,15 @@ const Navbar = () => {
     setSelectedItems(cartItems.map(item => item.variantId))
   }, [cartItems])
 
+  useEffect(() => {
+    // Listen for open-cart-modal event from anywhere (e.g. Product page)
+    const handleOpenCartModal = () => setIsCartOpen(true);
+    window.addEventListener("open-cart-modal", handleOpenCartModal);
+    return () => {
+      window.removeEventListener("open-cart-modal", handleOpenCartModal);
+    };
+  }, [cartItems])
+
   const navigation = [
     { name: "Beranda", href: "/" },
     { name: "Tentang Kami", href: "/about" },
