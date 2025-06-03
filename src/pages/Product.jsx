@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ExternalLink,
   Calendar,
@@ -741,6 +741,11 @@ const Product = () => {
     setTimeout(() => setShowNotif(false), 2000);
   };
 
+  // Fungsi untuk trigger buka keranjang di Navbar
+  const openCartFromNotif = () => {
+    window.dispatchEvent(new CustomEvent("open-cart"));
+  };
+
   // Helper untuk format harga dengan prefix Rp
   const formatRupiah = (value) => {
     if (typeof value !== "number") return value;
@@ -752,27 +757,34 @@ const Product = () => {
     activeFilter === "all"
       ? portfolioItems
       : portfolioItems.filter((item) => item.category === activeFilter)
-  ).filter(
-    (item) =>
-      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  )
+    .filter(
+      (item) =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
   // Jika kategori all, batasi 7 middle + 7 premium
   let limitedItems = filteredItems;
   if (activeFilter === "all") {
-    const middle = filteredItems
-      .filter((item) => item.category === "middle")
-      .slice(0, 7);
-    const premium = filteredItems
-      .filter((item) => item.category === "premium")
-      .slice(0, 7);
+    const middle = filteredItems.filter((item) => item.category === "middle").slice(0, 7);
+    const premium = filteredItems.filter((item) => item.category === "premium").slice(0, 7);
     limitedItems = [...middle, ...premium];
   } else if (activeFilter === "middle") {
     limitedItems = filteredItems.slice(0, 7);
   } else if (activeFilter === "premium") {
     limitedItems = filteredItems.slice(0, 7);
   }
+
+  // Tutup modal produk jika event open-cart dipanggil (misal dari notifikasi)
+  useEffect(() => {
+    const handleOpenCart = () => {
+      setIsModalOpen(false);
+      setSelectedProduct(null);
+    };
+    window.addEventListener("open-cart", handleOpenCart);
+    return () => window.removeEventListener("open-cart", handleOpenCart);
+  }, []);
 
   return (
     <div className="pt-16">
@@ -820,83 +832,84 @@ const Product = () => {
 
           {/* Portfolio Grid */}
           <div className="max-w-screen-xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-8">
-              {limitedItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="group bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={item.image || "/BATIK.jpg"}
-                      alt={item.title}
-                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <button
-                          onClick={() => handleViewDetail(item.id)}
-                          className="w-full bg-white/20 backdrop-blur-sm text-white py-2 px-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-white/30 transition-colors"
-                        >
-                          <ExternalLink size={16} />
-                          <span>Lihat Detail</span>
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Price Badge */}
-                    <div className="absolute top-4 right-4 bg-batik-gold text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {formatRupiah(item.price)}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-8">
+            {limitedItems.map((item) => (
+              <div
+                key={item.id}
+                className="group bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={item.image || "/BATIK.jpg"}
+                    alt={item.title}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <button
+                        onClick={() => handleViewDetail(item.id)}
+                        className="w-full bg-white/20 backdrop-blur-sm text-white py-2 px-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-white/30 transition-colors"
+                      >
+                        <ExternalLink size={16} />
+                        <span>Lihat Detail</span>
+                      </button>
                     </div>
                   </div>
 
-                  <div className="p-6">
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {item.tags.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="text-xs bg-batik-cream dark:bg-batik-gold/20 text-batik-brown dark:text-batik-gold px-2 py-1 rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <h3 className="font-serif text-xl font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
-                      {item.description}
-                    </p>
-
-                    <div className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                      <div className="flex items-center space-x-2">
-                        <User size={14} />
-                        <span>{item.client}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Calendar size={14} />
-                        <span>{item.year}</span>
-                      </div>
-                    </div>
-
-                    {/* Rating */}
-                    {item.rating && (
-                      <div className="flex items-center space-x-2 mt-3">
-                        <div className="flex space-x-1">
-                          {renderStars(item.rating)}
-                        </div>
-                        <span className="text-sm text-gray-500">
-                          ({item.reviews})
-                        </span>
-                      </div>
-                    )}
+                  {/* Price Badge */}
+                  <div className="absolute top-4 right-4 bg-batik-gold text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    {formatRupiah(item.price)}
                   </div>
                 </div>
-              ))}
-            </div>
+
+                <div className="p-6">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {item.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="text-xs bg-batik-cream dark:bg-batik-gold/20 text-batik-brown dark:text-batik-gold px-2 py-1 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h3 className="font-serif text-xl font-semibold text-batik-brown dark:text-batik-gold mb-2">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                    {item.description}
+                  </p>
+
+                  <div className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                    <div className="flex items-center space-x-2">
+                      <User size={14} />
+                      <span>{item.client}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Calendar size={14} />
+                      <span>{item.year}</span>
+                    </div>
+                  </div>
+
+                  {/* Rating */}
+                  {item.rating && (
+                    <div className="flex items-center space-x-2 mt-3">
+                      <div className="flex space-x-1">
+                        {renderStars(item.rating)}
+                      </div>
+                      <span className="text-sm text-gray-500">
+                        ({item.reviews})
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
+          </div>
+
         </div>
       </section>
 
@@ -909,12 +922,9 @@ const Product = () => {
               <div className="absolute top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 font-semibold animate-fade-in flex items-center gap-4">
                 Produk berhasil ditambahkan ke keranjang!
                 <button
+                  type="button"
                   className="ml-4 underline font-bold hover:text-yellow-200"
-                  onClick={() => {
-                    setIsModalOpen(false);
-                    // Trigger open cart modal in Navbar via custom event
-                    window.dispatchEvent(new CustomEvent("open-cart-modal"));
-                  }}
+                  onClick={openCartFromNotif}
                 >
                   Lihat Keranjang
                 </button>

@@ -12,9 +12,14 @@ const Navbar = () => {
   const location = useLocation()
   const { cartItems, updateQuantity, removeFromCart, getTotalItems, getTotalPrice } = useCart()
   const [selectedItems, setSelectedItems] = useState(cartItems.map(item => item.variantId))
+  
 
   useEffect(() => {
     setSelectedItems(cartItems.map(item => item.variantId))
+    // Listen event untuk buka keranjang dari notifikasi produk
+    const handleOpenCart = () => setIsCartOpen(true);
+    window.addEventListener("open-cart", handleOpenCart);
+    return () => window.removeEventListener("open-cart", handleOpenCart);
   }, [cartItems])
 
   useEffect(() => {
