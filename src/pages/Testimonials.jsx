@@ -264,6 +264,8 @@ const Testimonials = () => {
     { number: "500+", label: "Review Positif" },
   ];
 
+  const testimonialsToShow = allTestimonials.slice(0, 5);
+
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
       {/* Hero Section */}
@@ -481,49 +483,49 @@ const Testimonials = () => {
       {/* Testimonials Grid */}
       <section className="py-10 bg-batik-cream/30">
         <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-2 md:px-4 xl:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8">
-            {filteredTestimonials.map((t, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonialsToShow.map((testimonial) => (
               <div
-                key={t.id}
+                key={testimonial.id}
                 className="bg-white rounded-xl shadow p-10  flex flex-col gap-3 border border-gray-100 text-base"
                 style={{ minHeight: 220 }}
               >
                 <div className="flex items-center gap-3 mb-1">
-                  {t.image ? (
+                  {testimonial.image ? (
                     <img
-                      src={t.image}
-                      alt={t.name}
+                      src={testimonial.image}
+                      alt={testimonial.name}
                       className="w-10 h-10 rounded-full object-cover"
                     />
                   ) : (
                     <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-batik-brown text-lg">
-                      {t.name?.split(" ").map((w) => w[0]).join("")}
+                      {testimonial.name?.split(" ").map((w) => w[0]).join("")}
                     </div>
                   )}
                   <div>
                     <div className="font-semibold text-batik-brown text-sm">
-                      {t.name}
+                      {testimonial.name}
                     </div>
                     <div className="text-xs text-gray-400">
-                      {t.role} • {t.date}
+                      {testimonial.role} • {testimonial.date}
                     </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-1 mb-1">
-                  {[...Array(t.rating)].map((_, i) => (
+                  {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-batik-gold fill-current" />
                   ))}
-                  {[...Array(5 - t.rating)].map((_, i) => (
+                  {[...Array(5 - testimonial.rating)].map((_, i) => (
                     <Star
                       key={i + 10}
                       className="w-4 h-4 text-gray-200 fill-current"
                     />
                   ))}
                   <span className="ml-2 text-xs font-semibold text-batik-brown">
-                    {t.project}
+                    {testimonial.project}
                   </span>
                 </div>
-                <div className="text-gray-700 text-sm mb-2">{t.content}</div>
+                <div className="text-gray-700 text-sm mb-2">{testimonial.content}</div>
                 <button className="flex items-center text-xs text-batik-orange hover:underline w-fit">
                   <span>Membantu (0)</span>
                 </button>
@@ -535,7 +537,7 @@ const Testimonials = () => {
 
       {/* Video Testimonials */}
       <section className="py-20 bg-white">
-        <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-batik-brown mb-4">
               Video Testimoni
@@ -545,7 +547,7 @@ const Testimonials = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-3 gap-8">
             {/* Video 1 */}
             <div className="relative group cursor-pointer">
               <div className="aspect-video w-full rounded-xl bg-gradient-to-br from-batik-gold/10 to-batik-brown/10 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:brightness-95">

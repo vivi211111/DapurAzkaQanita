@@ -40,38 +40,6 @@ const CTASection = () => {
             Lihat Product
           </Link>
         </div>
-
-        {/* Contact Info */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-          <div className="flex items-center justify-center space-x-3 text-batik-cream">
-            <Phone size={20} className="text-batik-gold" />
-            <span>+62 895-2489-3101</span>
-          </div>
-
-          <div className="flex items-center justify-center space-x-3 text-batik-cream">
-            <Mail size={20} className="text-batik-gold" />
-            <span>info@domesa.co</span>
-          </div>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mt-16 pt-8 border-t border-white/20">
-          <p className="text-batik-cream mb-6">Dipercaya oleh 1000+ klien di seluruh Indonesia</p>
-          <div className="flex justify-center items-center space-x-8 opacity-60">
-            <div className="w-20 h-12 bg-white/20 rounded flex items-center justify-center">
-              <span className="text-white font-bold">LOGO</span>
-            </div>
-            <div className="w-20 h-12 bg-white/20 rounded flex items-center justify-center">
-              <span className="text-white font-bold">LOGO</span>
-            </div>
-            <div className="w-20 h-12 bg-white/20 rounded flex items-center justify-center">
-              <span className="text-white font-bold">LOGO</span>
-            </div>
-            <div className="w-20 h-12 bg-white/20 rounded flex items-center justify-center">
-              <span className="text-white font-bold">LOGO</span>
-            </div>
-          </div>
-        </div>
       </div>
     </motion.section>
   )

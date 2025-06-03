@@ -459,7 +459,7 @@ const HeroSection = () => {
     {
       title: "Lapis Legit Original",
       desc: "Nikmati Lapis Legit Original kami, dibuat dengan resep tradisional dan bahan-bahan pilihan terbaik.",
-      img: "/portfolio/kue-lapis-legit.jpg",
+      img: "/portfolio/LapisLegitNanas.jpg", // Ada
       badge: "Best Seller",
       badgeColor: "bg-orange-500",
       cta: "Coba Sekarang",
@@ -469,7 +469,7 @@ const HeroSection = () => {
     {
       title: "Maksubah Prunes",
       desc: "Maksubah Prunes dengan topping buah prunes premium, legit dan segar untuk keluarga.",
-      img: "/portfolio/kue-maksubah-prunes.jpg",
+      img: "/portfolio/Maksubah.jpg", // Ada
       badge: "Favorit Keluarga",
       badgeColor: "bg-batik-gold",
       cta: "Pesan Sekarang",
@@ -479,7 +479,7 @@ const HeroSection = () => {
     {
       title: "Bolu Kukus Pelangi",
       desc: "Bolu kukus warna-warni, lembut dan cocok untuk acara spesial Anda.",
-      img: "/portfolio/kue-bolu-kukus.jpg",
+      img: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
       badge: "Varian Baru",
       badgeColor: "bg-green-500",
       cta: "Lihat Varian",
@@ -584,7 +584,7 @@ const HeroSection = () => {
             <img
               src={ads[currentAd].img}
               alt={ads[currentAd].title}
-              className="rounded-xl shadow-2xl w-full max-w-md object-cover"
+              className="rounded-xl shadow-2xl w-full max-w-[600px] max-h-[400px] aspect-square object-cover"
             />
           </div>
         </div>

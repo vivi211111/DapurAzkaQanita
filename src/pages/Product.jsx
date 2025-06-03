@@ -1,42 +1,55 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ExternalLink, Calendar, User, X, ShoppingCart, Star, Plus, Minus } from "lucide-react"
-import { useCart } from "../context/CartContext"
-import { motion } from "framer-motion"
+import { useState } from "react";
+import {
+  ExternalLink,
+  Calendar,
+  User,
+  X,
+  ShoppingCart,
+  Heart,
+  Share2,
+  Star,
+  MapPin,
+  Phone,
+  Mail,
+} from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 const Product = () => {
-  const [activeFilter, setActiveFilter] = useState("all")
-  const [selectedProduct, setSelectedProduct] = useState(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [quantity, setQuantity] = useState(1)
-  const [searchTerm, setSearchTerm] = useState("")
-  const { addToCart } = useCart()
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { addToCart } = useCart();
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [showNotif, setShowNotif] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const categories = [
     { id: "all", name: "Semua" },
-    { id: "Medium", name: "Medium" },
+    { id: "middle", name: "Middle" },
     { id: "premium", name: "Premium" },
-  ]
+  ];
 
   const portfolioItems = [
     // Middle
     {
       id: 1,
       title: "Maksubah",
-      category: "Medium",
-      price: 325000,
-      image: "/portfolio/BATIK.jpg",
-      description: "Kue lapis legit khas Palembang dengan tekstur lembut dan rasa manis legit.",
+      category: "middle",
+      description:
+        "Maksubah lapis legit khas Palembang, rasa klasik legit dan lembut.",
+      image: "/portfolio/Maksubah.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.8,
-      reviews: 24,
-      material: "Telur, Gula, Mentega",
-      sizes: ["Besar"],
+      price: 325000,
+      material: "Telur, gula, mentega",
+      size: "Medium",
       colors: ["Coklat"],
       stock: 10,
+      rating: 4.8,
+      reviews: 24,
       detailDescription:
         "Maksubah adalah kue lapis legit khas Palembang yang dibuat dari telur, gula, dan mentega berkualitas.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
@@ -45,260 +58,252 @@ const Product = () => {
     {
       id: 2,
       title: "Maksubah Prunes",
-      category: "Medium",
-      price: 375000,
-      image: "/portfolio/BATIK1.jpg",
-      description: "Maksubah dengan tambahan prunes untuk rasa lebih kaya.",
+      category: "middle",
+      description:
+        "Maksubah dengan topping prunes premium, rasa manis legit dan segar.",
+      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 18,
-      material: "Telur, Gula, Mentega, Prunes",
-      sizes: ["Besar"],
+      price: 375000,
+      material: "Telur, gula, mentega, prunes",
+      size: "Medium",
       colors: ["Coklat"],
-      stock: 8,
-      detailDescription: "Maksubah dengan topping prunes, rasa manis legit dan asam segar.",
+      stock: 10,
+      rating: 4.9,
+      reviews: 18,
+      detailDescription:
+        "Maksubah dengan topping prunes premium, rasa manis legit dan segar.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 3,
       title: "Maksubah Keju",
-      category: "Medium",
-      price: 355000,
-      image: "/portfolio/BATIK10.jpg",
-      description: "Maksubah dengan topping keju, perpaduan gurih dan manis.",
+      category: "middle",
+      description: "Maksubah dengan taburan keju melimpah, gurih dan lembut.",
+      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.6,
-      reviews: 30,
-      material: "Telur, Gula, Mentega, Keju",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 5,
-      detailDescription: "Maksubah dengan tambahan keju di atasnya, memberikan rasa gurih yang sempurna.",
+      price: 355000,
+      material: "Telur, gula, mentega, keju",
+      size: "Medium",
+      colors: ["Kuning"],
+      stock: 10,
+      rating: 4.7,
+      reviews: 15,
+      detailDescription:
+        "Maksubah dengan taburan keju melimpah, gurih dan lembut.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 4,
       title: "Maksubah Coklat",
-      category: "Medium",
-      price: 355000,
-      image: "/portfolio/BATIK11.jpg",
-      description: "Maksubah dengan rasa coklat yang lezat.",
+      category: "middle",
+      description: "Maksubah dengan rasa coklat premium, manis dan legit.",
+      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.5,
-      reviews: 22,
-      material: "Telur, Gula, Mentega, Coklat",
-      sizes: ["Besar"],
+      price: 355000,
+      material: "Telur, gula, mentega, coklat",
+      size: "Medium",
       colors: ["Coklat"],
-      stock: 7,
-      detailDescription: "Nikmati lezatnya coklat dalam setiap lapisan maksubah ini.",
+      stock: 10,
+      rating: 4.7,
+      reviews: 12,
+      detailDescription:
+        "Maksubah dengan rasa coklat premium, manis dan legit.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 5,
       title: "Lapan Jam",
-      category: "Medium",
-      price: 325000,
-      image: "/portfolio/BATIK12.jpg",
-      description: "Kue tradisional Palembang yang dimasak selama 8 jam.",
+      category: "middle",
+      description:
+        "Kue legit khas Palembang, dimasak selama 8 jam, tekstur lembut.",
+      image: "/portfolio/LapanJam.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.9,
-      reviews: 15,
-      material: "Beras Ketan, Santan, Gula Merah",
-      sizes: ["Porsi"],
+      price: 325000,
+      material: "Telur, gula, mentega",
+      size: "Medium",
       colors: ["Coklat"],
-      stock: 20,
-      detailDescription: "Kue yang dimasak perlahan dengan santan dan gula merah, memberikan rasa yang kaya.",
-      care: "Simpan di tempat sejuk, tahan 3-5 hari.",
+      stock: 10,
+      rating: 4.6,
+      reviews: 10,
+      detailDescription:
+        "Kue legit khas Palembang, dimasak selama 8 jam, tekstur lembut.",
+      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 6,
       title: "Lapan Jam Duren",
-      category: "Medium",
-      price: 365000,
-      image: "/portfolio/BATIK13.jpg",
-      description: "Lapan Jam dengan tambahan durian.",
+      category: "middle",
+      description:
+        "Lapan Jam dengan tambahan durian, aroma harum dan rasa khas.",
+      image: "/portfolio/LapanJam.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 20,
-      material: "Beras Ketan, Santan, Gula Merah, Durian",
-      sizes: ["Porsi"],
-      colors: ["Coklat"],
-      stock: 15,
-      detailDescription: "Perpaduan sempurna antara kue ketan dan durian yang harum.",
-      care: "Simpan di tempat sejuk, tahan 3-5 hari.",
+      price: 365000,
+      material: "Telur, gula, mentega, durian",
+      size: "Medium",
+      colors: ["Kuning"],
+      stock: 10,
+      rating: 4.8,
+      reviews: 11,
+      detailDescription:
+        "Lapan Jam dengan tambahan durian, aroma harum dan rasa khas.",
+      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 7,
       title: "Lapan Jam Keju",
-      category: "Medium",
-      price: 355000,
-      image: "/portfolio/BATIK14.jpg",
-      description: "Lapan Jam dengan topping keju.",
+      category: "middle",
+      description: "Lapan Jam dengan taburan keju, gurih dan lembut.",
+      image: "/portfolio/LapanJam.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.6,
-      reviews: 12,
-      material: "Beras Ketan, Santan, Gula Merah, Keju",
-      sizes: ["Porsi"],
-      colors: ["Coklat"],
+      price: 355000,
+      material: "Telur, gula, mentega, keju",
+      size: "Medium",
+      colors: ["Kuning"],
       stock: 10,
-      detailDescription: "Kombinasi rasa manis dan gurih dalam setiap gigitan.",
-      care: "Simpan di tempat sejuk, tahan 3-5 hari.",
+      rating: 4.7,
+      reviews: 9,
+      detailDescription: "Lapan Jam dengan taburan keju, gurih dan lembut.",
+      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 8,
       title: "Lapis Kojo",
-      category: "Medium",
-      price: 325000,
-      image: "/portfolio/Batik2.jpg",
-      description: "Kue lapis pandan khas Palembang.",
+      category: "middle",
+      description:
+        "Kue lapis hijau khas Palembang, rasa manis legit dan aroma pandan.",
+      image: "/portfolio/BATIK6.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.8,
-      reviews: 25,
-      material: "Tepung Beras, Santan, Gula",
-      sizes: ["Besar"],
+      price: 325000,
+      material: "Telur, gula, santan, daun pandan",
+      size: "Medium",
       colors: ["Hijau"],
-      stock: 18,
-      detailDescription: "Lapis kojo dengan cita rasa pandan yang khas dan warna hijau alami.",
+      stock: 10,
+      rating: 4.7,
+      reviews: 10,
+      detailDescription:
+        "Kue lapis hijau khas Palembang, rasa manis legit dan aroma pandan.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 9,
       title: "Lapis Kojo Duren",
-      category: "Medium",
-      price: 365000,
-      image: "/portfolio/Batik3.jpg",
-      description: "Lapis Kojo dengan tambahan durian.",
+      category: "middle",
+      description:
+        "Lapis Kojo dengan tambahan durian, rasa legit dan aroma khas.",
+      image: "/portfolio/BATIK6.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 19,
-      material: "Tepung Beras, Santan, Gula, Durian",
-      sizes: ["Besar"],
+      price: 365000,
+      material: "Telur, gula, santan, daun pandan, durian",
+      size: "Medium",
       colors: ["Hijau"],
-      stock: 14,
-      detailDescription: "Nikmati lapisan kue yang lembut dengan aroma durian yang menggoda.",
+      stock: 10,
+      rating: 4.8,
+      reviews: 8,
+      detailDescription:
+        "Lapis Kojo dengan tambahan durian, rasa legit dan aroma khas.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 10,
       title: "Engkak",
-      category: "Medium",
-      price: 325000,
-      image: "/portfolio/Batik4.jpg",
-      description: "Kue lapis tradisional dengan tekstur legit.",
+      category: "middle",
+      description:
+        "Kue lapis legit tradisional, tekstur lembut dan rasa manis.",
+      image: "/portfolio/BATIK10.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.9,
-      reviews: 17,
-      material: "Telur, Gula, Santan",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 9,
-      detailDescription: "Kue tradisional dengan tekstur yang sangat lembut dan legit.",
+      price: 325000,
+      material: "Telur, gula, mentega",
+      size: "Medium",
+      colors: ["Kuning"],
+      stock: 10,
+      rating: 4.6,
+      reviews: 7,
+      detailDescription:
+        "Kue lapis legit tradisional, tekstur lembut dan rasa manis.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 11,
       title: "Engkak Duren",
-      category: "Medium",
-      price: 365000,
-      image: "/portfolio/Batik5.jpg",
-      description: "Engkak dengan tambahan durian.",
+      category: "middle",
+      description: "Engkak dengan tambahan durian, rasa legit dan aroma khas.",
+      image: "/portfolio/BATIK11.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.8,
-      reviews: 20,
-      material: "Telur, Gula, Santan, Durian",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 8,
-      detailDescription: "Rasakan sensasi durian yang kaya rasa dalam setiap lapisan engkak.",
+      price: 365000,
+      material: "Telur, gula, mentega, durian",
+      size: "Medium",
+      colors: ["Kuning"],
+      stock: 10,
+      rating: 4.7,
+      reviews: 6,
+      detailDescription:
+        "Engkak dengan tambahan durian, rasa legit dan aroma khas.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 12,
       title: "Maksubah Kojo (Makjo)",
-      category: "Medium",
-      price: 325000,
-      image: "/portfolio/Batik6.jpg",
-      description: "Perpaduan maksubah dan lapis kojo.",
+      category: "middle",
+      description: "Maksubah dengan campuran Kojo, rasa unik dan legit.",
+      image: "/portfolio/BATIK12.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 15,
-      material: "Telur, Gula, Mentega, Tepung Beras",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
+      price: 325000,
+      material: "Telur, gula, mentega, daun pandan",
+      size: "Medium",
+      colors: ["Hijau"],
       stock: 10,
-      detailDescription: "Kombinasi antara maksubah dan lapis kojo dalam satu kue.",
+      rating: 4.7,
+      reviews: 7,
+      detailDescription: "Maksubah dengan campuran Kojo, rasa unik dan legit.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 13,
       title: "Maksubah Kojo (Makjo) Prunes",
-      category: "Medium",
-      price: 375000,
-      image: "/portfolio/Batik9.jpg",
-      description: "Maksubah Kojo dengan tambahan prunes.",
+      category: "middle",
+      description: "Maksubah Kojo dengan topping prunes, rasa unik dan segar.",
+      image: "/portfolio/BATIK13.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.6,
-      reviews: 18,
-      material: "Telur, Gula, Mentega, Tepung Beras, Prunes",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 9,
-      detailDescription: "Maksubah Kojo dengan rasa manis legit dan tambahan prunes yang lezat.",
+      price: 375000,
+      material: "Telur, gula, mentega, daun pandan, prunes",
+      size: "Medium",
+      colors: ["Hijau"],
+      stock: 10,
+      rating: 4.8,
+      reviews: 6,
+      detailDescription:
+        "Maksubah Kojo dengan topping prunes, rasa unik dan segar.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 14,
       title: "Maksubah Engkak Kojo (MakEngKo)",
-      category: "Medium",
-      price: 325000,
-      image: "/portfolio/BatikBalian.jpg",
-      description: "Kombinasi maksubah, engkak, dan kojo.",
+      category: "middle",
+      description:
+        "Maksubah, Engkak, dan Kojo dalam satu kue, kombinasi rasa unik.",
+      image: "/portfolio/BATIK14.jpg",
       tags: ["Kue", "Middle"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 20,
-      material: "Telur, Gula, Mentega, Tepung Beras, Santan",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 8,
-      detailDescription: "Kombinasi tiga jenis kue dalam satu sajian yang istimewa.",
+      price: 325000,
+      material: "Telur, gula, mentega, daun pandan",
+      size: "Medium",
+      colors: ["Hijau", "Kuning"],
+      stock: 10,
+      rating: 4.8,
+      reviews: 8,
+      detailDescription:
+        "Maksubah, Engkak, dan Kojo dalam satu kue, kombinasi rasa unik.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
@@ -306,530 +311,517 @@ const Product = () => {
     {
       id: 15,
       title: "Maksubah",
-      category: "Premium",
-      price: 435000,
-      image: "/portfolio/BATIK.jpg",
-      description: "Kue lapis legit khas Palembang dengan tekstur lembut dan rasa manis legit (Premium).",
+      category: "premium",
+      description:
+        "Maksubah premium, tekstur lebih lembut dan rasa lebih kaya.",
+      image: "/portfolio/kue-maksubah-original.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.8,
-      reviews: 24,
-      material: "Telur, Gula, Mentega",
-      sizes: ["Besar"],
+      price: 435000,
+      material: "Telur, gula, mentega premium",
+      size: "Premium",
       colors: ["Coklat"],
       stock: 10,
+      rating: 4.9,
+      reviews: 30,
       detailDescription:
-        "Maksubah adalah kue lapis legit khas Palembang yang dibuat dari telur, gula, dan mentega berkualitas.",
+        "Maksubah premium, tekstur lebih lembut dan rasa lebih kaya.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 16,
       title: "Maksubah Prunes",
-      category: "Premium",
-      price: 485000,
-      image: "/portfolio/BATIK1.jpg",
-      description: "Maksubah premium dengan tambahan prunes.",
+      category: "premium",
+      description:
+        "Maksubah premium dengan topping prunes, rasa manis legit dan segar.",
+      image: "/portfolio/kue-maksubah-prunes.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 18,
-      material: "Telur, Gula, Mentega, Prunes",
-      sizes: ["Besar"],
+      price: 485000,
+      material: "Telur, gula, mentega premium, prunes",
+      size: "Premium",
       colors: ["Coklat"],
-      stock: 8,
-      detailDescription: "Maksubah premium dengan topping prunes, rasa manis legit dan asam segar.",
+      stock: 10,
+      rating: 5.0,
+      reviews: 22,
+      detailDescription:
+        "Maksubah premium dengan topping prunes, rasa manis legit dan segar.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 17,
       title: "Maksubah Keju",
-      category: "Premium",
-      price: 465000,
-      image: "/portfolio/BATIK10.jpg",
-      description: "Maksubah premium dengan topping keju.",
+      category: "premium",
+      description:
+        "Maksubah premium dengan taburan keju melimpah, gurih dan lembut.",
+      image: "/portfolio/kue-maksubah-keju.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.6,
-      reviews: 30,
-      material: "Telur, Gula, Mentega, Keju",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 5,
-      detailDescription: "Maksubah premium dengan tambahan keju di atasnya, memberikan rasa gurih yang sempurna.",
+      price: 465000,
+      material: "Telur, gula, mentega premium, keju",
+      size: "Premium",
+      colors: ["Kuning"],
+      stock: 10,
+      rating: 4.9,
+      reviews: 18,
+      detailDescription:
+        "Maksubah premium dengan taburan keju melimpah, gurih dan lembut.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 18,
       title: "Maksubah Coklat",
-      category: "Premium",
-      price: 475000,
-      image: "/portfolio/BATIK11.jpg",
-      description: "Maksubah premium dengan rasa coklat.",
+      category: "premium",
+      description:
+        "Maksubah premium dengan rasa coklat premium, manis dan legit.",
+      image: "/portfolio/kue-maksubah-coklat.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.5,
-      reviews: 22,
-      material: "Telur, Gula, Mentega, Coklat",
-      sizes: ["Besar"],
+      price: 475000,
+      material: "Telur, gula, mentega premium, coklat",
+      size: "Premium",
       colors: ["Coklat"],
-      stock: 7,
-      detailDescription: "Nikmati lezatnya coklat dalam setiap lapisan maksubah premium ini.",
+      stock: 10,
+      rating: 4.8,
+      reviews: 15,
+      detailDescription:
+        "Maksubah premium dengan rasa coklat premium, manis dan legit.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 19,
       title: "Lapan Jam",
-      category: "Premium",
-      price: 435000,
-      image: "/portfolio/BATIK12.jpg",
-      description: "Kue tradisional Palembang premium yang dimasak selama 8 jam.",
+      category: "premium",
+      description:
+        "Lapan Jam premium, tekstur lebih lembut dan rasa lebih kaya.",
+      image: "/portfolio/LapanJam.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.9,
-      reviews: 15,
-      material: "Beras Ketan, Santan, Gula Merah",
-      sizes: ["Porsi"],
+      price: 435000,
+      material: "Telur, gula, mentega premium",
+      size: "Premium",
       colors: ["Coklat"],
-      stock: 20,
-      detailDescription: "Kue yang dimasak perlahan dengan santan dan gula merah, memberikan rasa yang kaya.",
-      care: "Simpan di tempat sejuk, tahan 3-5 hari.",
+      stock: 10,
+      rating: 4.8,
+      reviews: 12,
+      detailDescription:
+        "Lapan Jam premium, tekstur lebih lembut dan rasa lebih kaya.",
+      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 20,
       title: "Lapan Jam Duren",
-      category: "Premium",
-      price: 475000,
-      image: "/portfolio/BATIK13.jpg",
-      description: "Lapan Jam premium dengan tambahan durian.",
+      category: "premium",
+      description:
+        "Lapan Jam premium dengan tambahan durian, aroma harum dan rasa khas.",
+      image: "/portfolio/LapanJam.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 20,
-      material: "Beras Ketan, Santan, Gula Merah, Durian",
-      sizes: ["Porsi"],
-      colors: ["Coklat"],
-      stock: 15,
-      detailDescription: "Perpaduan sempurna antara kue ketan dan durian yang harum.",
-      care: "Simpan di tempat sejuk, tahan 3-5 hari.",
+      price: 475000,
+      material: "Telur, gula, mentega premium, durian",
+      size: "Premium",
+      colors: ["Kuning"],
+      stock: 10,
+      rating: 4.9,
+      reviews: 10,
+      detailDescription:
+        "Lapan Jam premium dengan tambahan durian, aroma harum dan rasa khas.",
+      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 21,
       title: "Lapan Jam Keju",
-      category: "Premium",
-      price: 465000,
-      image: "/portfolio/BATIK14.jpg",
-      description: "Lapan Jam premium dengan topping keju.",
+      category: "premium",
+      description: "Lapan Jam premium dengan taburan keju, gurih dan lembut.",
+      image: "/portfolio/LapanJam.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.6,
-      reviews: 12,
-      material: "Beras Ketan, Santan, Gula Merah, Keju",
-      sizes: ["Porsi"],
-      colors: ["Coklat"],
+      price: 465000,
+      material: "Telur, gula, mentega premium, keju",
+      size: "Premium",
+      colors: ["Kuning"],
       stock: 10,
-      detailDescription: "Kombinasi rasa manis dan gurih dalam setiap gigitan.",
-      care: "Simpan di tempat sejuk, tahan 3-5 hari.",
+      rating: 4.8,
+      reviews: 9,
+      detailDescription:
+        "Lapan Jam premium dengan taburan keju, gurih dan lembut.",
+      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 22,
       title: "Lapis Kojo",
-      category: "Premium",
-      price: 435000,
-      image: "/portfolio/Batik2.jpg",
-      description: "Kue lapis pandan khas Palembang premium.",
+      category: "premium",
+      description:
+        "Lapis Kojo premium, rasa manis legit dan aroma pandan lebih kuat.",
+      image: "/portfolio/BATIK6.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.8,
-      reviews: 25,
-      material: "Tepung Beras, Santan, Gula",
-      sizes: ["Besar"],
+      price: 435000,
+      material: "Telur, gula, santan, daun pandan premium",
+      size: "Premium",
       colors: ["Hijau"],
-      stock: 18,
-      detailDescription: "Lapis kojo dengan cita rasa pandan yang khas dan warna hijau alami.",
+      stock: 10,
+      rating: 4.8,
+      reviews: 10,
+      detailDescription:
+        "Lapis Kojo premium, rasa manis legit dan aroma pandan lebih kuat.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 23,
       title: "Lapis Kojo Duren",
-      category: "Premium",
-      price: 475000,
-      image: "/portfolio/Batik3.jpg",
-      description: "Lapis Kojo premium dengan tambahan durian.",
+      category: "premium",
+      description:
+        "Lapis Kojo premium dengan tambahan durian, rasa legit dan aroma khas.",
+      image: "/portfolio/BATIK9.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 19,
-      material: "Tepung Beras, Santan, Gula, Durian",
-      sizes: ["Besar"],
+      price: 475000,
+      material: "Telur, gula, santan, daun pandan premium, durian",
+      size: "Premium",
       colors: ["Hijau"],
-      stock: 14,
-      detailDescription: "Nikmati lapisan kue yang lembut dengan aroma durian yang menggoda.",
+      stock: 10,
+      rating: 4.9,
+      reviews: 8,
+      detailDescription:
+        "Lapis Kojo premium dengan tambahan durian, rasa legit dan aroma khas.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 24,
       title: "Engkak",
-      category: "Premium",
-      price: 435000,
-      image: "/portfolio/Batik4.jpg",
-      description: "Kue lapis tradisional premium dengan tekstur legit.",
+      category: "premium",
+      description: "Engkak premium, tekstur lebih lembut dan rasa lebih kaya.",
+      image: "/portfolio/BATIK10.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.9,
-      reviews: 17,
-      material: "Telur, Gula, Santan",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 9,
-      detailDescription: "Kue tradisional dengan tekstur yang sangat lembut dan legit.",
+      price: 435000,
+      material: "Telur, gula, mentega premium",
+      size: "Premium",
+      colors: ["Kuning"],
+      stock: 10,
+      rating: 4.8,
+      reviews: 7,
+      detailDescription:
+        "Engkak premium, tekstur lebih lembut dan rasa lebih kaya.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 25,
       title: "Engkak Duren",
-      category: "Premium",
-      price: 475000,
-      image: "/portfolio/Batik5.jpg",
-      description: "Engkak premium dengan tambahan durian.",
+      category: "premium",
+      description:
+        "Engkak premium dengan tambahan durian, rasa legit dan aroma khas.",
+      image: "/portfolio/BATIK11.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.8,
-      reviews: 20,
-      material: "Telur, Gula, Santan, Durian",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 8,
-      detailDescription: "Rasakan sensasi durian yang kaya rasa dalam setiap lapisan engkak premium.",
+      price: 475000,
+      material: "Telur, gula, mentega premium, durian",
+      size: "Premium",
+      colors: ["Kuning"],
+      stock: 10,
+      rating: 4.9,
+      reviews: 6,
+      detailDescription:
+        "Engkak premium dengan tambahan durian, rasa legit dan aroma khas.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 26,
       title: "Maksubah Kojo (Makjo)",
-      category: "Premium",
-      price: 435000,
-      image: "/portfolio/Batik6.jpg",
-      description: "Perpaduan maksubah dan lapis kojo premium.",
+      category: "premium",
+      description: "Maksubah Kojo premium, rasa unik dan legit.",
+      image: "/portfolio/BATIK12.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 15,
-      material: "Telur, Gula, Mentega, Tepung Beras",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
+      price: 435000,
+      material: "Telur, gula, mentega premium, daun pandan premium",
+      size: "Premium",
+      colors: ["Hijau"],
       stock: 10,
-      detailDescription: "Kombinasi antara maksubah dan lapis kojo premium dalam satu kue.",
+      rating: 4.9,
+      reviews: 7,
+      detailDescription: "Maksubah Kojo premium, rasa unik dan legit.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 27,
       title: "Maksubah Kojo (Makjo) Prunes",
-      category: "Premium",
-      price: 485000,
-      image: "/portfolio/Batik9.jpg",
-      description: "Maksubah Kojo premium dengan tambahan prunes.",
+      category: "premium",
+      description:
+        "Maksubah Kojo premium dengan topping prunes, rasa unik dan segar.",
+      image: "/portfolio/BATIK13.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.6,
-      reviews: 18,
-      material: "Telur, Gula, Mentega, Tepung Beras, Prunes",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 9,
-      detailDescription: "Maksubah Kojo premium dengan rasa manis legit dan tambahan prunes yang lezat.",
+      price: 485000,
+      material: "Telur, gula, mentega premium, daun pandan premium, prunes",
+      size: "Premium",
+      colors: ["Hijau"],
+      stock: 10,
+      rating: 5.0,
+      reviews: 6,
+      detailDescription:
+        "Maksubah Kojo premium dengan topping prunes, rasa unik dan segar.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 28,
       title: "Maksubah Engkak Kojo (MakEngKo)",
-      category: "Premium",
-      price: 435000,
-      image: "/portfolio/BatikBalian.jpg",
-      description: "Kombinasi maksubah, engkak, dan kojo premium.",
+      category: "premium",
+      description:
+        "Maksubah, Engkak, dan Kojo premium dalam satu kue, kombinasi rasa unik.",
+      image: "/portfolio/BATIK14.jpg",
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 20,
-      material: "Telur, Gula, Mentega, Tepung Beras, Santan",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 8,
-      detailDescription: "Kombinasi tiga jenis kue dalam satu sajian yang istimewa.",
+      price: 435000,
+      material: "Telur, gula, mentega premium, daun pandan premium",
+      size: "Premium",
+      colors: ["Hijau", "Kuning"],
+      stock: 10,
+      rating: 5.0,
+      reviews: 8,
+      detailDescription:
+        "Maksubah, Engkak, dan Kojo premium dalam satu kue, kombinasi rasa unik.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
+    // Lapis Legit Premium
     {
       id: 29,
       title: "Lapis Legit Original",
-      category: "Premium",
-      price: 435000,
-      image: "/portfolio/BatikKawung.webp",
-      description: "Lapis legit original premium.",
+      category: "premium",
+      description: "Lapis Legit premium, tekstur lembut dan aroma butter.",
+      image: "/portfolio/LapisLegitNanas.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.8,
-      reviews: 25,
-      material: "Tepung Beras, Santan, Gula",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
-      stock: 18,
-      detailDescription: "Lapis legit dengan cita rasa original yang khas.",
+      price: 435000,
+      material: "Telur, gula, mentega premium",
+      size: "Premium",
+      colors: ["Kuning"],
+      stock: 10,
+      rating: 4.9,
+      reviews: 10,
+      detailDescription:
+        "Lapis Legit premium, tekstur lembut dan aroma butter.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 30,
       title: "Lapis Legit Nanas",
-      category: "Premium",
-      price: 475000,
-      image: "/portfolio/BatikMegaMendung.webp",
-      description: "Lapis legit nanas premium.",
+      category: "premium",
+      description:
+        "Lapis Legit premium dengan tambahan nanas, rasa segar dan legit.",
+      image: "/portfolio/LapisLegitNanas.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 20,
-      material: "Tepung Beras, Santan, Gula, Nanas",
-      sizes: ["Besar"],
+      price: 475000,
+      material: "Telur, gula, mentega premium, nanas",
+      size: "Premium",
       colors: ["Kuning"],
-      stock: 15,
-      detailDescription: "Lapis legit dengan tambahan nanas yang segar dan manis.",
+      stock: 10,
+      rating: 4.9,
+      reviews: 8,
+      detailDescription:
+        "Lapis Legit premium dengan tambahan nanas, rasa segar dan legit.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 31,
       title: "Lapis Legit Keju",
-      category: "Premium",
-      price: 475000,
-      image: "/portfolio/BatikParang.jpeg",
-      description: "Lapis legit keju premium.",
+      category: "premium",
+      description: "Lapis Legit premium dengan taburan keju, gurih dan lembut.",
+      image: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.6,
-      reviews: 18,
-      material: "Tepung Beras, Santan, Gula, Keju",
-      sizes: ["Besar"],
-      colors: ["Coklat"],
+      price: 475000,
+      material: "Telur, gula, mentega premium, keju",
+      size: "Premium",
+      colors: ["Kuning"],
       stock: 10,
-      detailDescription: "Nikmati lapisan keju yang melimpah dan rasa manis legit.",
+      rating: 4.9,
+      reviews: 8,
+      detailDescription:
+        "Lapis Legit premium dengan taburan keju, gurih dan lembut.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 32,
       title: "Lapis Legit Coklat",
-      category: "Premium",
-      price: 475000,
-      image: "/portfolio/BatikParangg.jpg",
-      description: "Lapis legit coklat premium.",
+      category: "premium",
+      description: "Lapis Legit premium dengan rasa coklat, manis dan legit.",
+      image: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.7,
-      reviews: 19,
-      material: "Tepung Beras, Santan, Gula, Coklat",
-      sizes: ["Besar"],
+      price: 475000,
+      material: "Telur, gula, mentega premium, coklat",
+      size: "Premium",
       colors: ["Coklat"],
       stock: 10,
-      detailDescription: "Lapis legit dengan rasa coklat yang kaya dan tekstur lembut.",
+      rating: 4.9,
+      reviews: 8,
+      detailDescription:
+        "Lapis Legit premium dengan rasa coklat, manis dan legit.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
     {
       id: 33,
       title: "Lapis Legit Prunes",
-      category: "Premium",
-      price: 485000,
-      image: "/portfolio/BatikSoloTruntum1.jpg",
-      description: "Lapis legit prunes premium.",
+      category: "premium",
+      description:
+        "Lapis Legit premium dengan topping prunes, rasa segar dan legit.",
+      image: "/portfolio/LapisLegitPrunes.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
-      client: "Dapur Azka Qanita",
-      year: "2025",
-      rating: 4.8,
-      reviews: 25,
-      material: "Tepung Beras, Santan, Gula, Prunes",
-      sizes: ["Besar"],
+      price: 485000,
+      material: "Telur, gula, mentega premium, prunes",
+      size: "Premium",
       colors: ["Coklat"],
-      stock: 8,
-      detailDescription: "Lapis legit dengan tambahan prunes yang memberikan rasa asam segar.",
+      stock: 10,
+      rating: 5.0,
+      reviews: 8,
+      detailDescription:
+        "Lapis Legit premium dengan topping prunes, rasa segar dan legit.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
-  ].map((item, idx) => ({
-    // Untuk item yang belum diupdate, tambahkan default agar tidak error
-    tags: ["Kue", item.category || "Kue"],
-    client: "Dapur Azka Qanita",
-    year: "2025",
-    rating: item.rating || 4.7,
-    reviews: item.reviews || 10,
-    material: item.material || "Telur, Gula, Mentega",
-    sizes: item.sizes || ["Besar"],
-    colors: item.colors || ["Coklat"],
-    stock: item.stock || 10,
-    detailDescription: item.detailDescription || item.description,
-    care: item.care || "Simpan di tempat sejuk, tahan 5-7 hari.",
-    origin: item.origin || "Palembang",
-    ...item,
-    id: idx + 1,
-  }))
-
-  const filteredItems =
-    (activeFilter === "all"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category.toLowerCase() === activeFilter.toLowerCase())
-    ).filter(
-      (item) =>
-        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchTerm.toLowerCase())
-    )
+  ];
 
   // Global function to handle product detail view
   const handleViewDetail = (productId) => {
-    const product = portfolioItems.find((item) => item.id === productId)
+    const product = portfolioItems.find((item) => item.id === productId);
     if (product) {
-      setSelectedProduct(product)
-      setQuantity(1)
-      setIsModalOpen(true)
+      setSelectedProduct(product);
+      setIsModalOpen(true);
     }
-  }
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedProduct(null)
-    setQuantity(1)
-  }
-
-  const handleAddToCart = (product) => {
-    const productWithQuantity = {
-      ...product,
-      quantity,
-      variantId: `${product.id}`,
-    }
-    addToCart(productWithQuantity)
-    alert(`${product.title} (${quantity} pcs) berhasil ditambahkan ke keranjang!`)
-    closeModal()
-  }
-
-  const increaseQuantity = () => {
-    if (quantity < selectedProduct?.stock) {
-      setQuantity(quantity + 1)
-    }
-  }
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1)
-    }
-  }
-
-  // State for accordion open section
-  const [openAccordion, setOpenAccordion] = useState('detail')
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
 
   // Function to render star rating
-  const renderStars = (rating, color = '#FFD700') => {
-    const stars = []
-    const fullStars = Math.floor(rating)
-    const hasHalfStar = rating % 1 !== 0
+  const renderStars = (rating) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
 
     for (let i = 0; i < fullStars; i++) {
-      stars.push(<Star key={i} size={16} className="fill-current" style={{ color }} />)
+      stars.push(
+        <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+      );
     }
 
     if (hasHalfStar) {
-      stars.push(<Star key="half" size={16} className="fill-current" style={{ color }} />)
+      stars.push(
+        <Star
+          key="half"
+          size={16}
+          className="fill-yellow-400/50 text-yellow-400"
+        />
+      );
     }
 
-    const emptyStars = 5 - Math.ceil(rating)
+    const emptyStars = 5 - Math.ceil(rating);
     for (let i = 0; i < emptyStars; i++) {
-      stars.push(<Star key={`empty-${i}`} size={16} className="text-gray-300" />)
+      stars.push(
+        <Star key={`empty-${i}`} size={16} className="text-gray-300" />
+      );
     }
 
-    return stars
+    return stars;
+  };
+
+  const handleAddToCart = (product) => {
+    addToCart({
+      ...product,
+      selectedColor: selectedColor || product.colors?.[0],
+      selectedSize: selectedSize || product.size || "All Size",
+      quantity,
+    });
+    setShowNotif(true);
+    setTimeout(() => setShowNotif(false), 2000);
+  };
+
+  // Helper untuk format harga dengan prefix Rp
+  const formatRupiah = (value) => {
+    if (typeof value !== "number") return value;
+    return `Rp ${value.toLocaleString("id-ID")}`;
+  };
+
+  // Batasi 7 produk untuk kategori middle dan 7 untuk premium
+  const filteredItems = (
+    activeFilter === "all"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === activeFilter)
+  ).filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Jika kategori all, batasi 7 middle + 7 premium
+  let limitedItems = filteredItems;
+  if (activeFilter === "all") {
+    const middle = filteredItems
+      .filter((item) => item.category === "middle")
+      .slice(0, 7);
+    const premium = filteredItems
+      .filter((item) => item.category === "premium")
+      .slice(0, 7);
+    limitedItems = [...middle, ...premium];
+  } else if (activeFilter === "middle") {
+    limitedItems = filteredItems.slice(0, 7);
+  } else if (activeFilter === "premium") {
+    limitedItems = filteredItems.slice(0, 7);
   }
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
-      <div className="pt-16 min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-batik-cream to-batik-gold/20 dark:from-gray-900 dark:to-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-batik-brown dark:text-batik-gold mb-6">
-              Menu Kue Kami
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
-              Jelajahi menu kami dengan pilihan medium dan premium yang menggunakan bahan berkualitan
-            </p>
-            {/* Search Bar ala FAQ */}
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-md">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                </span>
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={e => setSearchTerm(e.target.value)}
-                  placeholder="Cari kue..."
-                  className="pl-11 pr-4 py-3 w-full border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-batik-gold focus:border-batik-gold transition-colors text-base bg-white"
-                />
-              </div>
-            </div>
+    <div className="pt-16">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-batik-cream to-batik-gold/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-batik-brown mb-6">
+            Menu Kue Kami
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Jelajahi menu kami dengan pilihan medium dan premium yang
+            menggunakan bahan berkualitas
+          </p>
+          <div className="flex justify-center mb-8">
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Cari kue..."
+              className="w-full max-w-md px-5 py-3 rounded-xl border border-gray-300 shadow-sm focus:ring-2 focus:ring-batik-gold focus:border-batik-gold text-base bg-white"
+            />
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Search and Filter Section */}
-        <section className="py-12 bg-white dark:bg-gray-900">
-          <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6">
+      {/* Search and Filter Section */}
+      <section className="py-12 bg-white dark:bg-gray-900">
+        <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6">
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveFilter(category.id)}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  activeFilter === category.id
+                    ? "bg-batik-gold text-white shadow-lg"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-batik-cream dark:hover:bg-gray-700"
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
 
-            {/* Filter Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveFilter(category.id)}
-                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                    activeFilter === category.id
-                      ? "bg-batik-gold text-white shadow-lg"
-                      : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-batik-cream dark:hover:bg-gray-700"
-                  }`}
-                >
-                  {category.name}
-                </button>
-              ))}
-            </div>
-
-            {/* Portfolio Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8">
-              {filteredItems.map((item) => (
+          {/* Portfolio Grid */}
+          <div className="max-w-screen-xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-8">
+              {limitedItems.map((item) => (
                 <div
                   key={item.id}
                   className="group bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
@@ -854,7 +846,7 @@ const Product = () => {
 
                     {/* Price Badge */}
                     <div className="absolute top-4 right-4 bg-batik-gold text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {item.price}
+                      {formatRupiah(item.price)}
                     </div>
                   </div>
 
@@ -874,7 +866,9 @@ const Product = () => {
                       {item.title}
                     </h3>
 
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">{item.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                      {item.description}
+                    </p>
 
                     <div className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
                       <div className="flex items-center space-x-2">
@@ -890,8 +884,12 @@ const Product = () => {
                     {/* Rating */}
                     {item.rating && (
                       <div className="flex items-center space-x-2 mt-3">
-                        <div className="flex space-x-1">{renderStars(item.rating)}</div>
-                        <span className="text-sm text-gray-500">({item.reviews})</span>
+                        <div className="flex space-x-1">
+                          {renderStars(item.rating)}
+                        </div>
+                        <span className="text-sm text-gray-500">
+                          ({item.reviews})
+                        </span>
                       </div>
                     )}
                   </div>
@@ -899,204 +897,278 @@ const Product = () => {
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Product Detail Modal with New Compact Design */}
-        {isModalOpen && selectedProduct && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-xl">
-              {/* Modal Header with Close Button */}
-              <div className="sticky top-0 bg-white p-4 flex justify-end rounded-t-2xl">
+      {/* Product Detail Modal */}
+      {isModalOpen && selectedProduct && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            {/* Notifikasi berhasil tambah ke keranjang */}
+            {showNotif && (
+              <div className="absolute top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 font-semibold animate-fade-in flex items-center gap-4">
+                Produk berhasil ditambahkan ke keranjang!
                 <button
-                  onClick={closeModal}
-                  className="p-2 hover:bg-yellow-100 rounded-full transition-colors"
+                  onClick={() => {
+                    openCart();
+                    setTimeout(() => {
+                      setShowNotif(false); // hilangin notif hijau 1 detik setelah buka cart
+                    }, 1000);
+                  }}
+                  className="ml-4 underline font-bold hover:text-yellow-200"
                 >
-                  <X size={24} className="text-yellow-700" />
+                  Lihat Keranjang
                 </button>
               </div>
+            )}
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 p-6 flex items-center justify-between rounded-t-2xl">
+              <h2 className="font-serif text-2xl font-bold text-batik-brown dark:text-batik-gold">
+                {selectedProduct.title}
+              </h2>
+              <button
+                onClick={closeModal}
+                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+              >
+                <X size={24} className="text-gray-500" />
+              </button>
+            </div>
 
-              {/* Product Image */}
-              <div className="px-6">
-                <img
-                  src={selectedProduct.image || "/placeholder.svg"}
-                  alt={selectedProduct.title}
-                  className="w-full h-64 object-cover rounded-xl shadow-lg border"
-                />
-              </div>
+            {/* Modal Content */}
+            <div className="p-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Product Image */}
+                <div className="space-y-4">
+                  <img
+                    src={selectedProduct.image || "/placeholder.svg"}
+                    alt={selectedProduct.title}
+                    className="w-full h-96 object-cover rounded-xl shadow-lg"
+                  />
 
-              {/* Product Information */}
-              <div className="p-6 space-y-4">
-                {/* Title */}
-                <h2 className="font-serif text-2xl font-bold text-batik-brown mb-1">
-                  {selectedProduct.title} {selectedProduct.category}
-                </h2>
-
-                {/* Rating */}
-                <div className="flex items-center space-x-2 mb-1">
-                  <div className="flex space-x-1">
-                    {renderStars(selectedProduct.rating, '#D4AF37')}
-                  </div>
-                  <span className="text-sm text-gray-500 font-medium">
-                    {selectedProduct.rating} ({selectedProduct.reviews} reviews)
-                  </span>
-                </div>
-
-                {/* Price */}
-                <div className="text-2xl font-bold text-batik-orange mb-1">
-                  Rp {selectedProduct.price.toLocaleString("id-ID")}
-                </div>
-
-                {/* Short Description */}
-                <p className="text-gray-700 text-sm mb-2">{selectedProduct.description}</p>
-
-                {/* Quantity Selector */}
-                <div className="mb-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Jumlah:</label>
-                  <div className="flex items-center space-x-3">
+                  {/* Action Buttons */}
+                  <div className="flex space-x-3">
                     <button
-                      onClick={decreaseQuantity}
-                      className="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-lg hover:bg-gray-50"
+                      className="flex-1 bg-batik-gold text-white py-3 px-4 rounded-lg font-semibold hover:bg-batik-brown transition-colors flex items-center justify-center space-x-2"
+                      onClick={() => handleAddToCart(selectedProduct)}
                     >
-                      <Minus size={16} />
+                      <ShoppingCart size={20} />
+                      <span>Tambah ke Keranjang</span>
                     </button>
-                    <span className="text-lg font-semibold w-10 text-center">{quantity}</span>
-                    <button
-                      onClick={increaseQuantity}
-                      className="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-lg hover:bg-gray-50"
-                    >
-                      <Plus size={16} />
+                    <button className="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                      <Heart size={20} className="text-gray-600" />
+                    </button>
+                    <button className="p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                      <Share2 size={20} className="text-gray-600" />
                     </button>
                   </div>
                 </div>
 
-                {/* Add to Cart Button */}
-                <button
-                  onClick={() => handleAddToCart(selectedProduct)}
-                  className="w-full bg-batik-gold hover:bg-batik-brown text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2 text-base mb-2 mt-4"
-                >
-                  <ShoppingCart size={20} />
-                  <span>Tambah ke Keranjang</span>
-                </button>
+                {/* Product Details */}
+                <div className="space-y-6">
+                  {/* Price and Rating */}
+                  <div className="space-y-3">
+                    <div className="text-3xl font-bold text-batik-brown dark:text-batik-gold">
+                      {formatRupiah(selectedProduct.price)}
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="flex space-x-1">
+                        {renderStars(selectedProduct.rating)}
+                      </div>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        ({selectedProduct.reviews} ulasan)
+                      </span>
+                    </div>
+                  </div>
 
-                {/* Expandable Sections */}
-                <div className="space-y-3 border-t pt-4">
-                  {/* Detail Produk */}
-                  <details className="group" open={openAccordion === 'detail'}>
-                    <summary
-                      className="flex items-center justify-between cursor-pointer py-2 text-sm font-semibold text-batik-brown hover:text-batik-gold"
-                      onClick={e => {
-                        e.preventDefault();
-                        setOpenAccordion(openAccordion === 'detail' ? null : 'detail');
-                      }}
-                    >
-                      <span>Detail Produk</span>
-                      <svg className={`w-4 h-4 transition-transform ${openAccordion === 'detail' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </summary>
-                    {openAccordion === 'detail' && (
-                      <div className="pt-2 pb-3 text-sm text-gray-700 leading-relaxed">
-                        {selectedProduct.detailDescription}
-                        <div className="mt-3 space-y-1">
-                          <div>
-                            <strong>Asal:</strong> {selectedProduct.origin}
-                          </div>
-                          <div>
-                            <strong>Stok:</strong> {selectedProduct.stock} pcs
-                          </div>
-                          <div>
-                            <strong>Perawatan:</strong> {selectedProduct.care}
-                          </div>
+                  {/* Description */}
+                  <div>
+                    <h3 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
+                      Deskripsi
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      {selectedProduct.detailDescription}
+                    </p>
+                  </div>
+
+                  {/* Specifications */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
+                        Spesifikasi
+                      </h4>
+                      <div className="space-y-2 text-sm dark:text-gray-300 justify-center">
+                        <div className="flex justify-between">
+                          <span className="text-gray-600 dark:text-gray-400">
+                            Material:
+                          </span>
+                          <span className="font-medium">
+                            {selectedProduct.material}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600 dark:text-gray-400">
+                            Ukuran:
+                          </span>
+                          <span className="font-medium">
+                            {selectedProduct.size}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600 dark:text-gray-400">
+                            Stok:
+                          </span>
+                          <span className="font-medium">
+                            {selectedProduct.stock} pcs
+                          </span>
                         </div>
                       </div>
-                    )}
-                  </details>
+                    </div>
+                  </div>
 
-                  {/* Bahan Utama */}
-                  <details className="group" open={openAccordion === 'bahan'}>
-                    <summary
-                      className="flex items-center justify-between cursor-pointer py-2 text-sm font-semibold text-batik-brown hover:text-batik-gold"
-                      onClick={e => {
-                        e.preventDefault();
-                        setOpenAccordion(openAccordion === 'bahan' ? null : 'bahan');
-                      }}
-                    >
-                      <span>Bahan Utama</span>
-                      <svg className={`w-4 h-4 transition-transform ${openAccordion === 'bahan' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </summary>
-                    {openAccordion === 'bahan' && (
-                      <div className="pt-2 pb-3 text-sm text-gray-700">{selectedProduct.material}</div>
-                    )}
-                  </details>
+                  {/* Care Instructions */}
+                  <div>
+                    <h4 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
+                      Petunjuk Perawatan
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">
+                      {selectedProduct.care}
+                    </p>
+                  </div>
 
-                  {/* Catatan Pemesanan */}
-                  <details className="group" open={openAccordion === 'catatan'}>
-                    <summary
-                      className="flex items-center justify-between cursor-pointer py-2 text-sm font-semibold text-batik-brown hover:text-batik-gold"
-                      onClick={e => {
-                        e.preventDefault();
-                        setOpenAccordion(openAccordion === 'catatan' ? null : 'catatan');
-                      }}
-                    >
-                      <span>Catatan Pemesanan</span>
-                      <svg className={`w-4 h-4 transition-transform ${openAccordion === 'catatan' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </summary>
-                    {openAccordion === 'catatan' && (
-                      <div className="pt-2 pb-3 text-sm text-gray-700">
-                        <ul className="space-y-1 list-disc list-inside">
-                          <li>Pemesanan minimal H-1 sebelum pengambilan</li>
-                          <li>Untuk pesanan dalam jumlah besar (&gt;10 pcs), harap konfirmasi ketersediaan stok</li>
-                          <li>Produk tahan 5-7 hari dalam suhu ruang</li>
-                          <li>Disarankan simpan di tempat sejuk untuk menjaga kualitas</li>
-                        </ul>
+                  {/* Jumlah & Tags sejajar */}
+                  <div className="flex flex-row gap-8 items-end mt-6">
+                    {/* Pilihan Jumlah */}
+                    <div>
+                      <h4 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
+                        Jumlah
+                      </h4>
+                      <div className="flex items-center">
+                        <button
+                          className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-lg hover:bg-gray-50"
+                          onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                        >
+                          -
+                        </button>
+                        <span className="text-lg font-semibold w-10 text-center">
+                          {quantity}
+                        </span>
+                        <button
+                          className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-lg hover:bg-gray-50"
+                          onClick={() => setQuantity((q) => q + 1)}
+                        >
+                          +
+                        </button>
                       </div>
-                    )}
-                  </details>
+                    </div>
+
+                    {/* Tags */}
+                    <div>
+                      <h4 className="font-semibold text-batik-brown dark:text-batik-gold mb-2 p-2">
+                        Tags
+                      </h4>
+                      <div className="flex flex-center flex-wrap gap-2">
+                        {selectedProduct.tags.map((tag, index) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contact Information */}
+              <div className="mt-8 p-6 bg-batik-cream/30 dark:bg-gray-800 rounded-xl">
+                <h3 className="font-serif text-lg font-semibold text-batik-brown dark:text-batik-gold mb-4">
+                  Butuh Informasi Lebih Lanjut?
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="flex items-center space-x-3">
+                    <Phone size={20} className="text-batik-gold" />
+                    <div>
+                      <div className="font-medium text-batik-brown dark:text-batik-gold">
+                        Telepon
+                      </div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">
+                        +62 811 7874 458
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Mail size={20} className="text-batik-gold" />
+                    <div>
+                      <div className="font-medium text-batik-brown dark:text-batik-gold">
+                        Email
+                      </div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">
+                        dapurazkaqanita@gmail.com
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <MapPin size={20} className="text-batik-gold" />
+                    <div>
+                      <div className="font-medium text-batik-brown dark:text-batik-gold">
+                        Lokasi
+                      </div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">
+                        Palembang, Indonesia
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Stats Section */}
-        <section className="py-20 bg-batik-cream/30 dark:bg-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl font-bold text-batik-brown dark:text-batik-gold mb-4">
-                Pencapaian Kami
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300">
-                Angka-angka yang menunjukkan dedikasi dan kepercayaan klien
-              </p>
+      {/* Stats Section */}
+      <section className="py-20 bg-batik-cream/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl font-bold text-batik-brown mb-4">
+              Pencapaian Kami
+            </h2>
+            <p className="text-gray-600">
+              Angka-angka yang menunjukkan dedikasi dan kepercayaan klien
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-serif font-bold text-batik-brown mb-2">
+                150+
+              </div>
+              <div className="text-gray-600">Acara Telah Kami Layani</div>
             </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-4xl font-serif font-bold text-batik-brown dark:text-batik-gold mb-2">150+</div>
-                <div className="text-gray-600 dark:text-gray-400">Proyek Selesai</div>
+            <div className="text-center">
+              <div className="text-4xl font-serif font-bold text-batik-brown mb-2">
+                100%
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-serif font-bold text-batik-brown mb-2">50+</div>
-                <div className="text-gray-600">Klien Korporat</div>
+              <div className="text-gray-600">Tanpa Pengawet Buatan</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-serif font-bold text-batik-brown mb-2">
+                98%
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-serif font-bold text-batik-brown mb-2">98%</div>
-                <div className="text-gray-600">Tingkat Kepuasan</div>
+              <div className="text-gray-600">Tingkat Kepuasan</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-serif font-bold text-batik-brown mb-2">
+                100+
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-serif font-bold text-batik-brown mb-2">15+</div>
-                <div className="text-gray-600">Tahun Pengalaman</div>
-              </div>
+              <div className="text-gray-600">Tahun Pengalaman</div>
             </div>
           </div>
-        </section>
-      </div>
-    </motion.div>
-  )
-}
+        </div>
+      </section>
+    </div>
+  );
+};
 
-export default Product
+export default Product;

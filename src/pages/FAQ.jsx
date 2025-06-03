@@ -8,6 +8,7 @@ import {
   MessageCircle,
   Phone,
   Mail,
+  InstagramIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -306,15 +307,15 @@ const FAQ = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-batik-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="text-white" size={24} />
+                  <InstagramIcon className="text-white" size={24} />
                 </div>
                 <h3 className="font-serif text-xl font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                  Live Chat
+                  DM Kami
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Chat langsung dengan tim support kami
                 </p>
-                <button className="btn-primary">Mulai Chat</button>
+                <button className="btn-primary">@dapur_azka_qanita</button>
               </div>
 
               <div className="text-center">
@@ -327,7 +328,7 @@ const FAQ = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Hubungi hotline customer service kami
                 </p>
-                <button className="btn-primary">+62 21 1234 5678</button>
+                <button className="btn-primary">+62 811-7874-456</button>
               </div>
 
               <div className="text-center">
@@ -341,42 +342,6 @@ const FAQ = () => {
                   Kirim pertanyaan detail via email
                 </p>
                 <button className="btn-primary">info@batiknusantara.com</button>
-              </div>
-            </div>
-
-            {/* Quick Contact Form */}
-            <div className="mt-16 max-w-2xl mx-auto">
-              <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8">
-                <h3 className="font-serif text-2xl font-bold text-batik-brown dark:text-batik-gold mb-6 text-center">
-                  Kirim Pertanyaan Cepat
-                </h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      placeholder="Nama Anda"
-                      className="px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-batik-gold focus:border-transparent"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Email Anda"
-                      className="px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-batik-gold focus:border-transparent"
-                    />
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Subjek Pertanyaan"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-batik-gold focus:border-transparent"
-                  />
-                  <textarea
-                    rows={4}
-                    placeholder="Pertanyaan Anda..."
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-batik-gold focus:border-transparent"
-                  ></textarea>
-                  <button type="submit" className="w-full btn-primary">
-                    Kirim Pertanyaan
-                  </button>
-                </form>
               </div>
             </div>
           </div>

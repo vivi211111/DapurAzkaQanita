@@ -12,6 +12,9 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -20,28 +23,49 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    alert("Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.");
+    setLoading(true);
+    setSuccess("");
+    setError("");
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setSuccess("Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.");
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+      } else {
+        setError("Gagal mengirim pesan. Silakan coba lagi.");
+      }
+    } catch (err) {
+      setError("Terjadi kesalahan. Silakan coba lagi.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: MapPin,
       title: "Alamat",
-      details: ["Pasar Kito Ilir Barat Permai", "Palembang 30131", "Indonesia"],
+      details: [
+        "Komplek TOP 100, Blok. A7 No. 27",
+        "Jakabaring-Palembang",
+        "Indonesia",
+      ],
     },
     {
       icon: Phone,
       title: "Telepon",
-      details: ["+62 895 2489 3101 ", "+62 882 7672 9787"],
+      details: ["+62 811 7874 458 ", "+62 812 7116 550"],
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@domesa.co", "sales@domesa.co"],
+      details: ["dapurazkaqanita@gmail.com"],
     },
     {
       icon: Clock,
@@ -68,8 +92,9 @@ const Contact = () => {
               Hubungi Kami
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Kami siap membantu mewujudkan proyek handycraft impian Anda. Jangan
-              ragu untuk menghubungi tim profesional kami.
+              Nikmati kelezatan kue tradisional khas Palembang buatan kami.
+              Hubungi tim kami untuk pemesanan dan ciptakan momen manis bersama
+              orang tercinta.
             </p>
           </div>
         </section>
@@ -187,11 +212,17 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="w-full btn-primary inline-flex items-center justify-center"
+                    className="w-full btn-primary inline-flex items-center justify-center disabled:opacity-60"
+                    disabled={loading}
                   >
-                    <Send className="mr-2" size={20} />
-                    Kirim Pesan
+                    {loading ? (
+                      <span className="flex items-center"><svg className="animate-spin mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg> Mengirim...</span>
+                    ) : (
+                      <><Send className="mr-2" size={20} />Kirim Pesan</>
+                    )}
                   </button>
+                  {success && <div className="text-green-600 text-center font-semibold mt-2">{success}</div>}
+                  {error && <div className="text-red-600 text-center font-semibold mt-2">{error}</div>}
                 </form>
               </div>
 
@@ -201,15 +232,18 @@ const Contact = () => {
                   Lokasi Kami
                 </h2>
 
-                {/* Map Placeholder */}
-                <div className="w-full h-64 bg-gradient-to-br from-batik-gold/20 to-batik-brown/20 dark:from-batik-gold/10 dark:to-batik-brown/10 rounded-lg mb-6 flex items-center justify-center">
-                  <div className="text-center text-batik-brown dark:text-batik-gold">
-                    <MapPin size={48} className="mx-auto mb-2" />
-                    <p className="font-medium">Peta Lokasi</p>
-                    <p className="text-sm">
-                      Pasar Kito Ilir Barat Permai, Palembang
-                    </p>
-                  </div>
+                {/* Google Maps Embed */}
+                <div className="w-full h-64 rounded-lg mb-6 overflow-hidden border border-batik-gold/30">
+                  <iframe
+                    src="https://www.google.com/maps?q=-3.022857,104.782857&hl=id&z=17&output=embed"
+                    title="Lokasi Dapur Azka Qanita"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
 
                 {/* Additional Info */}
@@ -227,68 +261,14 @@ const Contact = () => {
                 </div>
 
                 {/* Quick Contact */}
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="mt-6 grid grid-cols-1 gap-4">
                   <a
-                    href="tel:+6221123456789"
+                    href="tel:+6288276729787"
                     className="bg-batik-gold text-white text-center py-3 px-4 rounded-lg hover:bg-batik-brown transition-colors duration-300"
                   >
-                    Telepon Sekarang
-                  </a>
-                  <a
-                    href="mailto:info@domesa.co"
-                    className="bg-batik-brown text-white text-center py-3 px-4 rounded-lg hover:bg-batik-navy transition-colors duration-300"
-                  >
-                    Kirim Email
+                    Chat Sekarang
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-20 bg-batik-cream/30 dark:bg-gray-900">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl font-bold text-batik-brown dark:text-batik-gold mb-4">
-                Pertanyaan yang Sering Diajukan
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300">
-                Temukan jawaban untuk pertanyaan umum seputar layanan kami
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-                <h3 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                  Berapa lama waktu pengerjaan produk custom?
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Waktu pengerjaan bervariasi tergantung kompleksitas desain,
-                  biasanya 2-4 minggu untuk produk fashion dan 1-3 minggu untuk
-                  aksesoris.
-                </p>
-              </div>
-
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-                <h3 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                  Apakah ada minimum order untuk pemesanan?
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Tidak ada minimum order untuk produk ready stock. Untuk custom
-                  design, minimum order adalah 10 pieces.
-                </p>
-              </div>
-
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-                <h3 className="font-semibold text-batik-brown dark:text-batik-gold mb-2">
-                  Bagaimana cara perawatan produk batik?
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Kami akan memberikan panduan perawatan lengkap untuk setiap
-                  produk. Umumnya disarankan dry clean atau hand wash dengan
-                  detergen khusus.
-                </p>
               </div>
             </div>
           </div>
