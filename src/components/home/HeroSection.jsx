@@ -536,6 +536,45 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Tombol Panah Kiri */}
+      <button
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-batik-gold text-batik-brown rounded-full shadow p-2 z-20"
+        onClick={() => handleSlide("left")}
+        aria-label="Sebelumnya"
+      >
+        <svg
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+
+      {/* Tombol Panah Kanan */}
+      <button
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-batik-gold text-batik-brown rounded-full shadow p-2 z-20"
+        onClick={() => handleSlide("right")}
+        aria-label="Berikutnya"
+      >
+        <svg
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+
+      {/* Kontainer Utama Slide */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between w-full py-16 md:py-24 transition-all duration-700">
         {/* Slide Container */}
         <div className="flex-1 flex flex-col md:flex-row items-center justify-between w-full">
@@ -602,21 +641,6 @@ const HeroSection = () => {
             ></button>
           ))}
         </div>
-        {/* Prev/Next Button (optional) */}
-        <button
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-batik-gold text-batik-brown rounded-full shadow p-2 z-20"
-          onClick={() => handleSlide("left")}
-          aria-label="Sebelumnya"
-        >
-          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-        <button
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-batik-gold text-batik-brown rounded-full shadow p-2 z-20"
-          onClick={() => handleSlide("right")}
-          aria-label="Berikutnya"
-        >
-          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
       </div>
     </section>
   );

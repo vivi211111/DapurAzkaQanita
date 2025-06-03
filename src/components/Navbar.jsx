@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { Menu, X, ShoppingCart } from "lucide-react"
 import { useCart } from "../context/CartContext"
@@ -12,14 +12,9 @@ const Navbar = () => {
   const location = useLocation()
   const { cartItems, updateQuantity, removeFromCart, getTotalItems, getTotalPrice } = useCart()
   const [selectedItems, setSelectedItems] = useState(cartItems.map(item => item.variantId))
-  
 
   useEffect(() => {
     setSelectedItems(cartItems.map(item => item.variantId))
-    // Listen event untuk buka keranjang dari notifikasi produk
-    const handleOpenCart = () => setIsCartOpen(true);
-    window.addEventListener("open-cart", handleOpenCart);
-    return () => window.removeEventListener("open-cart", handleOpenCart);
   }, [cartItems])
 
   const navigation = [
@@ -83,9 +78,9 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-batik-gold rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">D</span>
+                <span className="text-white font-bold text-xl">B</span>
               </div>
-              <span className="font-serif text-xl font-bold text-batik-brown">Dapur Azka Qanita</span>
+              <span className="font-serif text-xl font-bold text-batik-brown">Domesa.co</span>
             </Link>
           </div>
 
