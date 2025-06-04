@@ -172,7 +172,7 @@ const Checkout = () => {
     document.body.innerHTML = `
       <div style="font-family: Arial, sans-serif; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #d4af37; margin-bottom: 10px;">Domesa Batik</h1>
+          <h1 style="color: #d4af37; margin-bottom: 10px;">Dapur </h1>
           <p style="color: #666;">Ringkasan Pesanan</p>
         </div>
         ${printContent.innerHTML}
@@ -186,7 +186,7 @@ const Checkout = () => {
 
   const handleSendToWhatsApp = () => {
     const orderDetails = `
-*🛍️ RINGKASAN PESANAN DOMESA BATIK*
+*🛍️ RINGKASAN PESANAN Dapur Azka Qanita *
 📋 Nomor Pesanan: *${orderNumber}*
 📅 Tanggal: ${new Date().toLocaleDateString("id-ID")}
 
@@ -225,7 +225,7 @@ ${formData.city}, ${formData.province} ${formData.postalCode}
 
 ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
 
-✨ Terima kasih telah berbelanja di Domesa Batik!
+✨ Terima kasih telah berbelanja di Dapur Azka Qanita Batik!
 🙏 Kami akan segera memproses pesanan Anda.
     `;
 
@@ -780,7 +780,7 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
 
                 <div className="mt-6 text-center text-sm text-gray-600 bg-blue-50 p-4 rounded-lg">
                   <p className="font-semibold text-blue-800 mb-2">
-                    🙏 Terima kasih telah berbelanja di Domesa Batik!
+                    🙏 Terima kasih telah berbelanja di Dapur Azka Qanita Batik!
                   </p>
                   <p>
                     Kami akan segera memproses pesanan Anda dan menghubungi Anda

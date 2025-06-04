@@ -87,9 +87,9 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-batik-gold rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">B</span>
+                <span className="text-white font-bold text-xl">D</span>
               </div>
-              <span className="font-serif text-xl font-bold text-batik-brown">Domesa.co</span>
+              <span className="font-serif text-xl font-bold text-batik-brown">Dapur Azka Qanita</span>
             </Link>
           </div>
 
@@ -216,91 +216,187 @@ const Navbar = () => {
                     {cartItems.map((item) => (
                       <div
                         key={item.variantId}
-                        className="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg"
+                        className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 p-3 border border-gray-200 rounded-lg relative bg-white"
                       >
-                        <input
-                          type="checkbox"
-                          checked={selectedItems.includes(item.variantId)}
-                          onChange={() => handleSelectItem(item.variantId)}
-                          className="mr-2"
-                        />
-                        <div className="flex-shrink-0 w-20 h-20 border border-gray-200 rounded-md overflow-hidden">
-                          <img
-                            src={item.image || "/placeholder.svg"}
-                            alt={item.title}
-                            className="w-full h-full object-center object-cover"
+                        {/* MOBILE: grid 2 kolom, centang kiri gambar, info kanan, jumlah & hapus di bawah, ukuran kecil */}
+                        <div className="block sm:hidden w-full">
+                          <div className="grid grid-cols-[auto_1fr] gap-2 items-center p-1">
+                            {/* Checkbox + Gambar */}
+                            <div className="flex gap-3 items-center justify-center">
+                              <input
+                                type="checkbox"
+                                checked={selectedItems.includes(item.variantId)}
+                                onChange={() => handleSelectItem(item.variantId)}
+                                className="mb-1 w-3 h-3 accent-batik-gold"
+                              />
+                              <img
+                                src={item.image || "/placeholder.svg"}
+                                alt={item.title}
+                                className="w-12 h-12 object-cover rounded border"
+                              />
+                            </div>
+                            {/* Info kanan */}
+                            <div className="flex flex-col justify-center">
+                              <span className="font-bold text-batik-brown text-xs leading-tight truncate max-w-[80px]">
+                                {item.title}
+                              </span>
+                              {item.selectedSize && (
+                                <span className="text-[10px] text-gray-500 mt-0.5">Ukuran: {item.selectedSize}</span>
+                              )}
+                              <span className="text-sm font-bold text-batik-gold mt-0.5">
+                                {formatPrice(item.priceNumber)}
+                              </span>
+                            </div>
+                          </div>
+                          {/* Jumlah & Hapus */}
+                          <div className="flex items-center justify-between mt-1 px-1">
+                            <div className="flex items-center gap-1">
+                              <button
+                                className="w-5 h-5 flex items-center justify-center border border-gray-300 rounded text-gray-600 hover:text-batik-gold text-xs"
+                                onClick={() => updateQuantity(item.variantId, item.quantity - 1)}
+                              >
+                                -
+                              </button>
+                              <span className="w-5 text-center text-xs font-semibold">
+                                {item.quantity}
+                              </span>
+                              <button
+                                className="w-5 h-5 flex items-center justify-center border border-gray-300 rounded text-gray-600 hover:text-batik-gold text-xs"
+                                onClick={() => updateQuantity(item.variantId, item.quantity + 1)}
+                              >
+                                +
+                              </button>
+                            </div>
+                            <button
+                              type="button"
+                              className="text-red-500 hover:text-red-700 text-[10px] font-medium"
+                              onClick={() => removeFromCart(item.variantId)}
+                            >
+                              Hapus
+                            </button>
+                          </div>
+                        </div>
+                        {/* DESKTOP: layout horizontal sesuai foto, tidak diubah, gambar kiri, info tengah, jumlah & hapus kanan */}
+                        <div className="hidden sm:flex w-full items-center gap-4 relative">
+                          {/* Checkbox */}
+                          <input
+                            type="checkbox"
+                            checked={selectedItems.includes(item.variantId)}
+                            onChange={() => handleSelectItem(item.variantId)}
+                            className="mr-2"
                           />
+                          {/* Gambar */}
+                          <div className="flex-shrink-0 w-20 h-20 border border-gray-200 rounded-md overflow-hidden">
+                            <img
+                              src={item.image || "/placeholder.svg"}
+                              alt={item.title}
+                              className="w-full h-full object-center object-cover"
+                            />
+                          </div>
+                          {/* Info tengah */}
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-semibold text-batik-brown text-base mb-0.5">
+                              {item.title}
+                            </h3>
+                            <div className="text-[13px] text-gray-500 mb-0.5">
+                              {item.material && <span>{item.material}</span>}
+                              {item.material && (item.selectedColor || item.selectedSize) && <span>, </span>}
+                              {item.selectedColor && <span>{item.selectedColor}</span>}
+                              {item.selectedColor && item.selectedSize && <span> • </span>}
+                              {item.selectedSize && <span>{item.selectedSize}</span>}
+                            </div>
+                            <span className="text-batik-gold font-bold text-base">
+                              {formatPrice(item.priceNumber)}
+                            </span>
+                          </div>
+                          {/* Jumlah & Hapus kanan */}
+                          <div className="flex items-center gap-2 ml-4">
+                            <button
+                              className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded text-gray-600 hover:text-batik-gold text-base"
+                              onClick={() => updateQuantity(item.variantId, item.quantity - 1)}
+                            >
+                              -
+                            </button>
+                            <span className="w-8 text-center text-base font-semibold">
+                              {item.quantity}
+                            </span>
+                            <button
+                              className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded text-gray-600 hover:text-batik-gold text-base"
+                              onClick={() => updateQuantity(item.variantId, item.quantity + 1)}
+                            >
+                              +
+                            </button>
+                            <button
+                              type="button"
+                              className="ml-3 text-red-500 hover:text-red-700 text-base font-medium"
+                              onClick={() => removeFromCart(item.variantId)}
+                            >
+                              Hapus
+                            </button>
+                          </div>
                         </div>
-
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-batik-brown">{item.title}</h3>
-                          <p className="text-sm text-gray-500">{item.material}</p>
-                          <p className="text-sm text-gray-500">
-                            {item.selectedColor} • {item.selectedSize}
-                          </p>
-                          <p className="text-sm font-medium text-batik-gold">{item.price}</p>
-                        </div>
-
-                        <div className="flex items-center space-x-2">
-                          <button
-                            className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-md text-gray-600 hover:text-batik-gold"
-                            onClick={() => updateQuantity(item.variantId, item.quantity - 1)}
-                          >
-                            -
-                          </button>
-                          <span className="w-8 text-center">{item.quantity}</span>
-                          <button
-                            className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-md text-gray-600 hover:text-batik-gold"
-                            onClick={() => updateQuantity(item.variantId, item.quantity + 1)}
-                          >
-                            +
-                          </button>
-                        </div>
-
-                        <button
-                          type="button"
-                          className="text-red-500 hover:text-red-700 text-sm font-medium"
-                          onClick={() => removeFromCart(item.variantId)}
-                        >
-                          Hapus
-                        </button>
                       </div>
                     ))}
                   </div>
 
                   {/* Total */}
                   <div className="border-t border-gray-200 pt-4 mb-6">
-                    <div className="flex justify-between text-lg font-semibold text-batik-brown">
-                      <span>Total:</span>
-                      <span>{formatPrice(selectedTotal)}</span>
+                    {/* MOBILE: tampilan kecil */}
+                    <div className="block sm:hidden">
+                      <div className="flex justify-between text-sm font-semibold text-batik-brown mb-1">
+                        <span>Total:</span>
+                        <span>{formatPrice(selectedTotal)}</span>
+                      </div>
+                      <p className="text-[11px] text-gray-500 mb-2">Pengiriman & pajak dihitung saat checkout.</p>
+                      <button
+                        onClick={handleCheckout}
+                        className="w-full bg-batik-gold text-white py-1.5 px-2 rounded font-semibold text-xs hover:bg-batik-brown transition-colors disabled:opacity-50 mb-2"
+                        disabled={selectedCartItems.length === 0}
+                      >
+                        Checkout
+                      </button>
+                      <div className="text-center">
+                        <button
+                          type="button"
+                          className="text-batik-gold font-medium text-xs hover:text-batik-brown"
+                          onClick={() => {
+                            closeCart();
+                            window.location.href = "/product";
+                          }}
+                        >
+                          Lanjutkan Belanja
+                        </button>
+                      </div>
                     </div>
-                    <p className="text-sm text-gray-500 mt-1">Pengiriman dan pajak dihitung saat checkout.</p>
-                  </div>
-
-                  {/* Checkout Button */}
-                  <div className="mb-4">
-                    <button
-                      onClick={handleCheckout}
-                      className="w-full bg-batik-gold text-white py-3 px-4 rounded-lg font-semibold hover:bg-batik-brown transition-colors disabled:opacity-50"
-                      disabled={selectedCartItems.length === 0}
-                    >
-                      Checkout
-                    </button>
-                  </div>
-
-                  {/* Continue Shopping */}
-                  <div className="text-center">
-                    <button
-                      type="button"
-                      className="text-batik-gold font-medium hover:text-batik-brown"
-                      onClick={() => {
-                        closeCart();
-                        // Tidak ada clearCart, hanya tutup modal dan redirect
-                        window.location.href = "/product";
-                      }}
-                    >
-                      Lanjutkan Belanja
-                    </button>
+                    {/* DESKTOP: tetap */}
+                    <div className="hidden sm:block">
+                      <div className="flex justify-between text-lg font-semibold text-batik-brown">
+                        <span>Total:</span>
+                        <span>{formatPrice(selectedTotal)}</span>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-1">Pengiriman dan pajak dihitung saat checkout.</p>
+                      <div className="mb-4 mt-2">
+                        <button
+                          onClick={handleCheckout}
+                          className="w-full bg-batik-gold text-white py-3 px-4 rounded-lg font-semibold hover:bg-batik-brown transition-colors disabled:opacity-50"
+                          disabled={selectedCartItems.length === 0}
+                        >
+                          Checkout
+                        </button>
+                      </div>
+                      <div className="text-center">
+                        <button
+                          type="button"
+                          className="text-batik-gold font-medium hover:text-batik-brown"
+                          onClick={() => {
+                            closeCart();
+                            window.location.href = "/product";
+                          }}
+                        >
+                          Lanjutkan Belanja
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </>
               )}

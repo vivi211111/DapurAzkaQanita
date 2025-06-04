@@ -49,7 +49,8 @@ const FAQ = () => {
             "Tentu, Anda dapat menambahkan permintaan kartu ucapan, lilin ulang tahun, atau dekorasi tambahan saat melakukan pemesanan. Silakan tulis permintaan khusus Anda di catatan pesanan.",
         },
         {
-          question: "Apakah ada promo atau diskon untuk pembelian dalam jumlah banyak?",
+          question:
+            "Apakah ada promo atau diskon untuk pembelian dalam jumlah banyak?",
           answer:
             "Kami menyediakan promo dan diskon khusus untuk pembelian dalam jumlah besar, seperti untuk acara kantor, arisan, atau event. Hubungi customer service kami untuk info lebih lanjut.",
         },
@@ -89,7 +90,8 @@ const FAQ = () => {
       title: "Pengiriman & Pengambilan",
       faqs: [
         {
-          question: "Apakah tersedia layanan delivery? Area mana saja yang dijangkau?",
+          question:
+            "Apakah tersedia layanan delivery? Area mana saja yang dijangkau?",
           answer:
             "Kami melayani pengiriman kue ke area Jabodetabek dan sekitarnya. Untuk area lain, silakan konfirmasi ke customer service kami. Pengiriman dilakukan dengan armada khusus agar kue tetap aman sampai tujuan.",
         },
@@ -139,7 +141,8 @@ const FAQ = () => {
             "Untuk brownies atau bolu, Anda bisa memanaskan ulang di microwave selama 10-20 detik atau di oven dengan suhu rendah selama 3-5 menit. Jangan terlalu lama agar tekstur tetap lembut.",
         },
         {
-          question: "Bagaimana cara memastikan kue tetap segar saat acara outdoor?",
+          question:
+            "Bagaimana cara memastikan kue tetap segar saat acara outdoor?",
           answer:
             "Simpan kue di tempat teduh dan sejuk, hindari paparan sinar matahari langsung. Untuk acara outdoor, gunakan ice gel atau cooler box agar kue tetap segar dan tidak mudah meleleh.",
         },
@@ -165,23 +168,45 @@ const FAQ = () => {
     >
       <div className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-batik-cream to-batik-gold/20 dark:from-gray-900 dark:to-gray-800">
+        {/*MOBILE*/}
+        <section className="block md:hidden py-10 bg-gradient-to-br from-batik-cream to-batik-gold/20 dark:from-gray-900 dark:to-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-batik-brown dark:text-batik-gold mb-6">
+            <h1 className="font-serif text-2xl font-bold text-batik-brown dark:text-batik-gold mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              Temukan jawaban untuk pertanyaan yang sering diajukan seputar produk
-              dan layanan Batik Nusantara.
+            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+              Temukan jawaban untuk pertanyaan yang sering diajukan seputar
+              produk dan layanan Batik Nusantara.
             </p>
 
             {/* Search Bar */}
             <div className="max-w-md mx-auto relative">
               <div className="relative">
-                <Search
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
-                  size={20}
+                <input
+                  type="text"
+                  placeholder="Cari pertanyaan..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full max-w-[220px] px-3 py-2 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-batik-gold focus:border-batik-gold text-sm bg-white"
                 />
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*DESKTOP*/}
+        <section className="hidden md:block py-20 bg-gradient-to-br from-batik-cream to-batik-gold/20 dark:from-gray-900 dark:to-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-batik-brown dark:text-batik-gold mb-6">
+              Frequently Asked Questions
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+              Temukan jawaban untuk pertanyaan yang sering diajukan seputar
+              produk dan layanan Batik Nusantara.
+            </p>
+
+            {/* Search Bar */}
+            <div className="max-w-md mx-auto relative">
+              <div className="relative">
                 <input
                   type="text"
                   placeholder="Cari pertanyaan..."
@@ -200,10 +225,10 @@ const FAQ = () => {
             {searchTerm ? (
               // Search Results
               <div>
-                <h2 className="font-serif text-2xl font-bold text-batik-brown dark:text-batik-gold mb-8">
+                <h2 className="font-serif text-xl md:text-2xl font-bold text-batik-brown dark:text-batik-gold mb-8">
                   Hasil Pencarian "{searchTerm}" ({filteredFaqs.length} hasil)
                 </h2>
-                <div className="space-y-4">
+                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-1 gap-4">
                   {filteredFaqs.map((faq, index) => (
                     <div
                       key={index}
@@ -211,25 +236,25 @@ const FAQ = () => {
                     >
                       <button
                         onClick={() => toggleItem(index)}
-                        className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
+                        className="w-full px-4 md:px-6 py-3 md:py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
                       >
                         <div>
-                          <h3 className="font-semibold text-batik-brown dark:text-batik-gold">
+                          <h3 className="font-semibold text-sm md:text-base text-batik-brown dark:text-batik-gold">
                             {faq.question}
                           </h3>
-                          <span className="text-sm text-batik-gold">
+                          <span className="text-[10px] md:text-sm text-batik-gold">
                             {faq.category}
                           </span>
                         </div>
                         {openItems.includes(index) ? (
-                          <ChevronUp className="text-batik-gold" size={20} />
+                          <ChevronUp className="text-batik-gold" size={18} />
                         ) : (
-                          <ChevronDown className="text-batik-gold" size={20} />
+                          <ChevronDown className="text-batik-gold" size={18} />
                         )}
                       </button>
                       {openItems.includes(index) && (
-                        <div className="px-6 pb-4">
-                          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <div className="px-4 md:px-6 pb-3 md:pb-4">
+                          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>
@@ -243,10 +268,10 @@ const FAQ = () => {
               <div className="space-y-12">
                 {faqCategories.map((category, categoryIndex) => (
                   <div key={categoryIndex}>
-                    <h2 className="font-serif text-2xl font-bold text-batik-brown dark:text-batik-gold mb-6">
+                    <h2 className="font-serif text-xl md:text-2xl font-bold text-batik-brown dark:text-batik-gold mb-6">
                       {category.title}
                     </h2>
-                    <div className="space-y-4">
+                    <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-1 gap-4">
                       {category.faqs.map((faq, faqIndex) => {
                         const globalIndex = categoryIndex * 10 + faqIndex;
                         return (
@@ -256,26 +281,26 @@ const FAQ = () => {
                           >
                             <button
                               onClick={() => toggleItem(globalIndex)}
-                              className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
+                              className="w-full px-4 md:px-6 py-3 md:py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
                             >
-                              <h3 className="font-semibold text-batik-brown dark:text-batik-gold">
+                              <h3 className="font-semibold text-sm md:text-base text-batik-brown dark:text-batik-gold">
                                 {faq.question}
                               </h3>
                               {openItems.includes(globalIndex) ? (
                                 <ChevronUp
                                   className="text-batik-gold"
-                                  size={20}
+                                  size={18}
                                 />
                               ) : (
                                 <ChevronDown
                                   className="text-batik-gold"
-                                  size={20}
+                                  size={18}
                                 />
                               )}
                             </button>
                             {openItems.includes(globalIndex) && (
-                              <div className="px-6 pb-4">
-                                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                              <div className="px-4 md:px-6 pb-3 md:pb-4">
+                                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                                   {faq.answer}
                                 </p>
                               </div>
@@ -294,7 +319,18 @@ const FAQ = () => {
         {/* Contact Support */}
         <section className="py-20 bg-batik-cream/30 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            {/*MOBILE*/}
+            <div className="block md:hidden text-center mb-12">
+              <h2 className="font-serif text-xl font-bold text-batik-brown dark:text-batik-gold mb-4">
+                Tidak Menemukan Jawaban?
+              </h2>
+              <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Tim customer service kami siap membantu Anda dengan pertanyaan
+                atau kebutuhan khusus lainnya.
+              </p>
+            </div>
+            {/*DESKTOP*/}
+            <div className="hidden md:block text-center mb-12">
               <h2 className="font-serif text-3xl font-bold text-batik-brown dark:text-batik-gold mb-4">
                 Tidak Menemukan Jawaban?
               </h2>
@@ -304,7 +340,54 @@ const FAQ = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/*CONTACT*/}
+            {/*MOBILE*/}
+            <div className="block md:hidden grid grid-cols-2 gap-4">
+              <div className="text-center">
+                <div className="w-10 h-10 bg-batik-gold rounded-full flex items-center justify-center mx-auto mb-2">
+                  <InstagramIcon className="text-white" size={18} />
+                </div>
+                <h3 className="font-serif text-xs font-semibold text-batik-brown dark:text-batik-gold mb-1">
+                  DM Kami
+                </h3>
+                <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
+                  Chat langsung dengan tim support kami
+                </p>
+                <button className="btn-primary text-xs py-1 px-2">
+                  @dapur_azka_qanita
+                </button>
+              </div>
+              <div className="text-center">
+                <div className="w-10 h-10 bg-batik-brown rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Phone className="text-white" size={18} />
+                </div>
+                <h3 className="font-serif text-xs font-semibold text-batik-brown dark:text-batik-gold mb-1">
+                  Telepon
+                </h3>
+                <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
+                  Hubungi hotline customer service kami
+                </p>
+                <button className="btn-primary text-xs py-1 px-2">
+                  +62 811-7874-456
+                </button>
+              </div>
+              <div className="text-center col-span-2">
+                <div className="w-10 h-10 bg-batik-maroon rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Mail className="text-white" size={18} />
+                </div>
+                <h3 className="font-serif text-xs font-semibold text-batik-brown dark:text-batik-gold mb-1">
+                  Email
+                </h3>
+                <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
+                  Kirim pertanyaan detail via email
+                </p>
+                <button className="btn-primary text-xs py-1 px-2">
+                  info@batiknusantara.com
+                </button>
+              </div>
+            </div>
+            {/*DESKTOP*/}
+            <div className="hidden md:grid grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-batik-gold rounded-full flex items-center justify-center mx-auto mb-4">
                   <InstagramIcon className="text-white" size={24} />

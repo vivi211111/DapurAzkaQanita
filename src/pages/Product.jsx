@@ -961,7 +961,7 @@ const Product = () => {
                   <img
                     src={selectedProduct.image || "/placeholder.svg"}
                     alt={selectedProduct.title}
-                    className="w-[250px] h-[200px] sm:w-40 sm:h-40 md:w-72 md:h-96 object-cover rounded-xl shadow-lg"
+                    className="w-[250                                                                                               px] h-[200px] sm:w-40 sm:h-40 md:w-72 md:h-96 object-cover rounded-xl shadow-lg"
                   />
                   {/* Action Buttons */}
                   <div className="flex space-x-1 sm:space-x-2 md:space-x-3 w-full">
@@ -1162,7 +1162,7 @@ const Product = () => {
       <section className="py-12 bg-batik-cream/30">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="font-serif font-bold text-batik-brown mb-2 md:mb-4 text-2xl md:text-3xl lg:text-4xl">
+            <h2 className="font-serif font-bold text-batik-brown mb-2 md:mb-4 text-xl md:text-3xl lg:text-4xl">
               Pencapaian Kami
             </h2>
             <p className="text-xs md:text-base text-gray-600">

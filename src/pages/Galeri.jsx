@@ -14,62 +14,62 @@ const Galeri = () => {
   const offers = [
     {
       icon: Package,
-      title: "Bundling Batik Keluarga",
+      title: "Paket Kue Keluarga",
       description:
-        "Paket hemat untuk keluarga, terdiri dari 4 baju batik motif pilihan. Gratis ongkir dan gift box!",
+        "Paket hemat kue basah untuk keluarga, terdiri dari aneka kue tradisional Palembang. Gratis ongkir dan kemasan eksklusif!",
       features: [
-        "4 Baju Batik Dewasa & Anak",
-        "Motif Bisa Pilih",
-        "Gift Box Eksklusif",
+        "Aneka Kue Basah Keluarga",
+        "Varian Bisa Pilih",
+        "Kemasan Eksklusif",
         "Gratis Ongkir",
       ],
-      originalPrice: "Rp 2.000.000",
-      specialPrice: "Rp 1.500.000",
+      originalPrice: "Rp 350.000",
+      specialPrice: "Rp 275.000",
       popular: true,
     },
     {
       icon: Palette,
-      title: "Batik Tradisional Spesial",
+      title: "Kue Tradisional Spesial",
       description:
-        "Dapatkan koleksi batik tradisional dengan harga spesial hanya di bulan ini! Stok terbatas.",
+        "Dapatkan koleksi kue tradisional Palembang dengan harga spesial hanya di bulan ini! Stok terbatas.",
       features: [
-        "Motif Klasik Jawa",
-        "Pewarna Alami",
-        "Handmade Premium",
-        "Sertifikat Keaslian",
+        "Kue Khas Palembang",
+        "Bahan Pilihan",
+        "Rasa Autentik",
+        "Sertifikat Halal",
       ],
-      originalPrice: "Rp 700.000",
-      specialPrice: "Rp 500.000",
+      originalPrice: "Rp 200.000",
+      specialPrice: "Rp 150.000",
       popular: false,
     },
     {
       icon: Shirt,
-      title: "Fashion Modern Diskon 20%",
+      title: "Kue Modern Diskon 20%",
       description:
-        "Fashion batik modern untuk gaya kekinian, dapatkan diskon spesial untuk pembelian minggu ini.",
+        "Kue modern kekinian, dapatkan diskon spesial untuk pembelian minggu ini.",
       features: [
-        "Desain Trendy",
+        "Desain Menarik",
         "Bahan Premium",
-        "Custom Design",
-        "Size Chart Lengkap",
+        "Custom Rasa",
+        "Pilihan Ukuran Lengkap",
       ],
-      originalPrice: "Rp 950.000",
-      specialPrice: "Rp 750.000",
+      originalPrice: "Rp 180.000",
+      specialPrice: "Rp 145.000",
       popular: false,
     },
     {
       icon: Gift,
-      title: "Souvenir Eksklusif Promo",
+      title: "Hampers Kue Promo",
       description:
-        "Cinderamata unik dengan harga promo, cocok untuk hadiah spesial dan koleksi.",
+        "Hampers kue eksklusif dengan harga promo, cocok untuk hadiah spesial dan hantaran.",
       features: [
         "Limited Edition",
         "Packaging Mewah",
         "Personalisasi",
         "Bulk Order",
       ],
-      originalPrice: "Rp 200.000",
-      specialPrice: "Rp 150.000",
+      originalPrice: "Rp 400.000",
+      specialPrice: "Rp 320.000",
       popular: false,
     },
   ];
@@ -77,22 +77,11 @@ const Galeri = () => {
   // Data galeri penjualan (foto & video produk kue)
   const galeriPenjualan = [
     {
-      type: "image",
-      src: "/portfolio/kue-maksubah-original.jpg",
-      title: "Maksubah Original",
-      desc: "Maksubah klasik dengan lapisan legit dan aroma rempah khas Palembang.",
-    },
-    {
-      type: "image",
-      src: "/portfolio/kue-maksubah-prunes.jpg",
-      title: "Maksubah Prunes",
-      desc: "Maksubah dengan topping prunes premium, rasa manis legit dan segar.",
-    },
-    {
-      type: "image",
-      src: "/portfolio/kue-maksubah-keju.jpg",
-      title: "Maksubah Keju",
-      desc: "Maksubah dengan taburan keju melimpah, gurih dan lembut.",
+      type: "video",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      poster: "/portfolio/proses-maksubah.jpg",
+      title: "Proses Pembuatan Maksubah",
+      desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     {
       type: "video",
@@ -102,16 +91,18 @@ const Galeri = () => {
       desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     {
-      type: "image",
-      src: "/portfolio/kue-lapis-legit.jpg",
-      title: "Lapis Legit Spesial",
-      desc: "Lapis legit dengan 18 lapisan, tekstur lembut dan aroma butter.",
+      type: "video",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      poster: "/portfolio/proses-maksubah.jpg",
+      title: "Proses Pembuatan Maksubah",
+      desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     {
-      type: "image",
-      src: "/portfolio/kue-bolu-kukus.jpg",
-      title: "Bolu Kukus Pelangi",
-      desc: "Bolu kukus warna-warni, lembut dan cocok untuk acara keluarga.",
+      type: "video",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      poster: "/portfolio/proses-maksubah.jpg",
+      title: "Proses Pembuatan Maksubah",
+      desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     // Tambahkan lebih banyak foto/video produk kue jika diperlukan
   ];
@@ -130,12 +121,6 @@ const Galeri = () => {
       poster: "/testimonials/Budi Santoso.jpeg?height=400&width=600",
       title: "Budi Santoso",
       desc: "Review video Maksubah Prunes dari pelanggan.",
-    },
-    {
-      type: "image",
-      src: "/testimonials/Maya Sari.jpeg?height=400&width=600",
-      title: "Maya Sari",
-      desc: "Maksubah Keju sangat lembut dan kejunya melimpah.",
     },
     {
       type: "image",
@@ -161,14 +146,27 @@ const Galeri = () => {
     >
       <div className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-batik-cream to-batik-gold/20">
+        {/* MOBILE HERO: hanya tampil di <md */}
+        <section className="block md:hidden py-10 bg-gradient-to-br from-batik-cream to-batik-gold/20">
+          <div className="max-w-7xl mx-auto px-2 text-center">
+            <h1 className="font-serif text-2xl font-bold text-batik-brown mb-3">
+              Galeri Kami
+            </h1>
+            <p className="text-sm text-gray-600 max-w-xs mx-auto">
+              Temukan ragam kue khas Palembang dengan cita rasa autentik dan
+              tampilan yang menggoda.
+            </p>
+          </div>
+        </section>
+        {/* DESKTOP HERO: hanya tampil di md+ */}
+        <section className="hidden md:block py-20 bg-gradient-to-br from-batik-cream to-batik-gold/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-batik-brown mb-6">
               Galeri Kami
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Temukan ragam kue khas Palembang dengan 
-              cita rasa autentik dan tampilan yang menggoda.
+              Temukan ragam kue khas Palembang dengan cita rasa autentik dan
+              tampilan yang menggoda.
             </p>
           </div>
         </section>
@@ -176,46 +174,58 @@ const Galeri = () => {
         {/* Offers Grid */}
         <section className="py-20 bg-white">
           <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            {/*MOBILE*/}
+            <div className="block md:hidden text-center mb-12">
+              <h2 className="font-serif text-xl font-bold text-batik-brown mb-4">
+                Galeri Penjualan
+              </h2>
+              <p className="text-sm text-gray-600 max-w-3xl mx-auto">
+                Video produk, proses produksi, dan dokumentasi milik toko kami.
+              </p>
+            </div>
+            {/*DESKTOP:*/}
+            <div className="hidden md:block text-center mb-12">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-batik-brown mb-4">
                 Galeri Penjualan
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Foto & video produk, proses produksi, dan dokumentasi milik toko
-                kami.
+                Video produk, proses produksi, dan dokumentasi milik toko kami.
               </p>
             </div>
             <div className="max-w-screen-xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {galeriPenjualan.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="relative group rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
-                >
-                  {item.type === "image" ? (
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-64 object-cover"
-                    />
-                  ) : (
-                    <video
-                      controls
-                      poster={item.poster}
-                      className="w-full h-64 object-cover"
-                    >
-                      <source src={item.src} type="video/mp4" />
-                    </video>
-                  )}
-                  <div className="p-4">
-                    <h3 className="font-semibold text-batik-brown mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-600">{item.desc}</p>
+              {/* MOBILE: grid 2 kolom, DESKTOP: tetap */}
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
+                {galeriPenjualan.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="relative group rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
+                  >
+                    {item.type === "image" ? (
+                      <img
+                        src={item.src}
+                        alt={item.title}
+                        className="w-full h-40 md:h-64 object-cover"
+                      />
+                    ) : (
+                      <video
+                        controls
+                        poster={item.poster}
+                        className="w-full h-40 md:h-64 object-cover"
+                      >
+                        <source src={item.src} type="video/mp4" />
+                      </video>
+                    )}
+                    <div className="p-2 md:p-4">
+                      <h3 className="font-semibold text-batik-brown mb-1 text-xs md:text-base">
+                        {item.title}
+                      </h3>
+                      <p className="text-[11px] md:text-sm text-gray-600">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -223,58 +233,98 @@ const Galeri = () => {
         {/* Galeri Testimoni Klien */}
         <section className="py-20 bg-batik-cream/30">
           <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            {/*MOBILE*/}
+            <div className="block md:hidden text-center mb-12">
+              <h2 className="font-serif text-xl font-bold text-batik-brown mb-4">
+                Galeri Testimoni Klien
+              </h2>
+              <p className="text-sm text-gray-600 max-w-3xl mx-auto">
+                Foto & video review dari pelanggan kami yang telah mencoba
+                produk.
+              </p>
+            </div>
+            {/*DESKTOP*/}
+            <div className="hidden md:block text-center mb-12">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-batik-brown mb-4">
                 Galeri Testimoni Klien
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Foto & video review dari pelanggan kami yang telah mencoba produk.
+                Foto & video review dari pelanggan kami yang telah mencoba
+                produk.
               </p>
             </div>
             <div className="max-w-screen-xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-8">
-              {galeriTestimoni.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="relative group rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
-                >
-                  {item.type === "image" ? (
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-64 object-cover"
-                    />
-                  ) : (
-                    <video
-                      controls
-                      poster={item.poster}
-                      className="w-full h-64 object-cover"
-                    >
-                      <source src={item.src} type="video/mp4" />
-                    </video>
-                  )}
-                  <div className="p-4">
-                    <h3 className="font-semibold text-batik-brown mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-600">{item.desc}</p>
+              {/* MOBILE: grid 2 kolom, DESKTOP: tetap */}
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 md:gap-8">
+                {galeriTestimoni.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="relative group rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
+                  >
+                    {item.type === "image" ? (
+                      <img
+                        src={item.src}
+                        alt={item.title}
+                        className="w-full h-40 md:h-64 object-cover"
+                      />
+                    ) : (
+                      <video
+                        controls
+                        poster={item.poster}
+                        className="w-full h-40 md:h-64 object-cover"
+                      >
+                        <source src={item.src} type="video/mp4" />
+                      </video>
+                    )}
+                    <div className="p-2 md:p-4">
+                      <h3 className="font-semibold text-batik-brown mb-1 text-xs md:text-base">
+                        {item.title}
+                      </h3>
+                      <p className="text-[11px] md:text-sm text-gray-600">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
+        {/*MOBILE*/}
+        <section className="block md:hidden py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-6">
+              Sudah Tertarik Untuk Membeli?
+            </h2>
+            <p className="text-sm text-batik-cream mb-8 max-w-3xl mx-auto">
+              Jangan lewatkan penawaran bundling hemat untuk kue khas Palembang.
+              Stok terbatas, buruan checkout sekarang!
+            </p>
+            <div className="flex sm:flex-row gap-4 justify-center">
+              <Link to="/product">
+                <button className="bg-batik-gold hover:bg-batik-gold/90 text-white text-xs font-semibold py-1 px-8 rounded-lg transition-all duration-300">
+                  Lihat Semua Product
+                </button>
+              </Link>
+              <Link to="/contact">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown text-xs font-semibold py-1 px-8 rounded-lg transition-all duration-300">
+                  Hubungi Admin
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
+        {/*DESKTOP*/}
+        <section className="hidden md:block py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
               Sudah Tertarik Untuk Membeli?
             </h2>
             <p className="text-xl text-batik-cream mb-8 max-w-3xl mx-auto">
-              Jangan lewatkan penawaran bundling hemat untuk
-              kue khas Palembang. Stok terbatas, buruan checkout sekarang!
+              Jangan lewatkan penawaran bundling hemat untuk kue khas Palembang.
+              Stok terbatas, buruan checkout sekarang!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/product">
