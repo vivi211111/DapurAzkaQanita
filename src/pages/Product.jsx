@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ExternalLink,
   Calendar,
@@ -741,6 +741,11 @@ const Product = () => {
     setTimeout(() => setShowNotif(false), 2000);
   };
 
+    // Fungsi untuk trigger buka keranjang di Navbar
+  const openCartFromNotif = () => {
+    window.dispatchEvent(new CustomEvent("open-cart"));
+  };
+
   // Helper untuk format harga dengan prefix Rp
   const formatRupiah = (value) => {
     if (typeof value !== "number") return value;
@@ -773,6 +778,16 @@ const Product = () => {
   } else if (activeFilter === "premium") {
     limitedItems = filteredItems.slice(0, 7);
   }
+
+    // Tutup modal produk jika event open-cart dipanggil (misal dari notifikasi)
+  useEffect(() => {
+    const handleOpenCart = () => {
+      setIsModalOpen(false);
+      setSelectedProduct(null);
+    };
+    window.addEventListener("open-cart", handleOpenCart);
+    return () => window.removeEventListener("open-cart", handleOpenCart);
+  }, []);
 
   return (
     <div className="pt-16">
@@ -929,12 +944,8 @@ const Product = () => {
               <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-green-500 text-white px-3 py-2 sm:px-6 sm:py-3 rounded-lg shadow-lg z-50 font-semibold animate-fade-in flex items-center gap-2 sm:gap-4 text-xs sm:text-base">
                 Produk berhasil ditambahkan ke keranjang!
                 <button
-                  onClick={() => {
-                    openCart();
-                    setTimeout(() => {
-                      setShowNotif(false);
-                    }, 1000);
-                  }}
+                type="button"
+                   onClick={openCartFromNotif}
                   className="ml-2 sm:ml-4 underline font-bold hover:text-yellow-200"
                 >
                   Lihat Keranjang

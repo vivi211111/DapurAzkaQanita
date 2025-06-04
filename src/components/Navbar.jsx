@@ -15,6 +15,10 @@ const Navbar = () => {
 
   useEffect(() => {
     setSelectedItems(cartItems.map(item => item.variantId))
+     // Listen event untuk buka keranjang dari notifikasi produk
+    const handleOpenCart = () => setIsCartOpen(true);
+    window.addEventListener("open-cart", handleOpenCart);
+    return () => window.removeEventListener("open-cart", handleOpenCart);
   }, [cartItems])
 
   useEffect(() => {
