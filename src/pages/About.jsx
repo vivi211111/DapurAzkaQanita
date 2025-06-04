@@ -7,25 +7,25 @@ const About = () => {
     {
       name: "Fika Luhrida",
       role: "Founder & CEO",
-      description: "Pengalaman 20 tahun di industri batik dan fashion",
+      description: "Berpengalaman lebih dari 20 tahun di dunia kuliner dan kue tradisional Palembang.",
       image: "/about/hatta.jpg",
     },
     {
       name: "Evania Loveola",
       role: "Creative Director",
-      description: "Desainer senior dengan spesialisasi motif tradisional",
+      description: "Ahli dalam inovasi resep dan pengembangan varian kue basah Dapur Azka.",
       image: "/about/Eva.jpg",
     },
     {
       name: "Aidilya Laila Andhini",
       role: "Production Manager",
-      description: "Ahli dalam manajemen produksi dan quality control",
+      description: "Mengelola proses produksi kue dengan standar kualitas tinggi dan higienis.",
       image: "/about/Andhini.jpg",
     },
     {
       name: "Dhea Mutmainah",
       role: "Marketing Director",
-      description: "Strategi pemasaran dan pengembangan bisnis",
+      description: "Strategi pemasaran dan pengembangan bisnis kue Dapur Azka.",
       image: "/about/Eka.jpg",
     },
   ];
@@ -64,22 +64,13 @@ const About = () => {
                 Cerita Kami
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Usaha ini lahir dari semangat untuk mengenalkan keindahan dan
-                nilai budaya Indonesia melalui kerajinan batik khas dari
-                berbagai daerah. Kami percaya bahwa setiap karya tangan memiliki
-                cerita, filosofi, dan identitas yang layak dikenal dunia.
+                Dapur Azka berdiri dari kecintaan keluarga kami terhadap kue basah tradisional Palembang. Kami ingin menghadirkan cita rasa otentik dan kualitas terbaik untuk setiap pelanggan.
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Berawal dari inisiatif kecil untuk memberdayakan pengrajin
-                lokal, kini kami membangun platform digital yang menjembatani
-                antara pelaku UMKM kerajinan dan konsumen, baik di dalam negeri
-                maupun mancanegara.
+                Berawal dari dapur rumah, kini Dapur Azka berkembang menjadi produsen kue basah yang dipercaya untuk berbagai acara, mulai dari keluarga hingga perusahaan.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                Setiap produk yang kami pasarkan adalah hasil karya autentik,
-                penuh makna, dan dibuat dengan sentuhan tradisional. Melalui
-                usaha ini, kami ingin merayakan warisan budaya sambil
-                menciptakan peluang baru di era modern.
+                Setiap produk Dapur Azka dibuat dengan bahan pilihan, resep turun-temurun, dan sentuhan modern agar selalu menghadirkan pengalaman rasa yang istimewa.
               </p>
             </motion.div>
             <motion.div

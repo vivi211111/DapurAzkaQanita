@@ -14,62 +14,62 @@ const Galeri = () => {
   const offers = [
     {
       icon: Package,
-      title: "Bundling Batik Keluarga",
+      title: "Paket Kue Keluarga",
       description:
-        "Paket hemat untuk keluarga, terdiri dari 4 baju batik motif pilihan. Gratis ongkir dan gift box!",
+        "Paket hemat kue basah untuk keluarga, terdiri dari aneka kue tradisional Palembang. Gratis ongkir dan kemasan eksklusif!",
       features: [
-        "4 Baju Batik Dewasa & Anak",
-        "Motif Bisa Pilih",
-        "Gift Box Eksklusif",
+        "Aneka Kue Basah Keluarga",
+        "Varian Bisa Pilih",
+        "Kemasan Eksklusif",
         "Gratis Ongkir",
       ],
-      originalPrice: "Rp 2.000.000",
-      specialPrice: "Rp 1.500.000",
+      originalPrice: "Rp 350.000",
+      specialPrice: "Rp 275.000",
       popular: true,
     },
     {
       icon: Palette,
-      title: "Batik Tradisional Spesial",
+      title: "Kue Tradisional Spesial",
       description:
-        "Dapatkan koleksi batik tradisional dengan harga spesial hanya di bulan ini! Stok terbatas.",
+        "Dapatkan koleksi kue tradisional Palembang dengan harga spesial hanya di bulan ini! Stok terbatas.",
       features: [
-        "Motif Klasik Jawa",
-        "Pewarna Alami",
-        "Handmade Premium",
-        "Sertifikat Keaslian",
+        "Kue Khas Palembang",
+        "Bahan Pilihan",
+        "Rasa Autentik",
+        "Sertifikat Halal",
       ],
-      originalPrice: "Rp 700.000",
-      specialPrice: "Rp 500.000",
+      originalPrice: "Rp 200.000",
+      specialPrice: "Rp 150.000",
       popular: false,
     },
     {
       icon: Shirt,
-      title: "Fashion Modern Diskon 20%",
+      title: "Kue Modern Diskon 20%",
       description:
-        "Fashion batik modern untuk gaya kekinian, dapatkan diskon spesial untuk pembelian minggu ini.",
+        "Kue modern kekinian, dapatkan diskon spesial untuk pembelian minggu ini.",
       features: [
-        "Desain Trendy",
+        "Desain Menarik",
         "Bahan Premium",
-        "Custom Design",
-        "Size Chart Lengkap",
+        "Custom Rasa",
+        "Pilihan Ukuran Lengkap",
       ],
-      originalPrice: "Rp 950.000",
-      specialPrice: "Rp 750.000",
+      originalPrice: "Rp 180.000",
+      specialPrice: "Rp 145.000",
       popular: false,
     },
     {
       icon: Gift,
-      title: "Souvenir Eksklusif Promo",
+      title: "Hampers Kue Promo",
       description:
-        "Cinderamata unik dengan harga promo, cocok untuk hadiah spesial dan koleksi.",
+        "Hampers kue eksklusif dengan harga promo, cocok untuk hadiah spesial dan hantaran.",
       features: [
         "Limited Edition",
         "Packaging Mewah",
         "Personalisasi",
         "Bulk Order",
       ],
-      originalPrice: "Rp 200.000",
-      specialPrice: "Rp 150.000",
+      originalPrice: "Rp 400.000",
+      specialPrice: "Rp 320.000",
       popular: false,
     },
   ];
@@ -167,7 +167,7 @@ const Galeri = () => {
               Galeri Kami
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Temukan ragam kue khas Palembang dengan 
+              Temukan ragam kue khas Palembang dengan
               cita rasa autentik dan tampilan yang menggoda.
             </p>
           </div>
@@ -186,36 +186,36 @@ const Galeri = () => {
               </p>
             </div>
             <div className="max-w-screen-xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {galeriPenjualan.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="relative group rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
-                >
-                  {item.type === "image" ? (
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-64 object-cover"
-                    />
-                  ) : (
-                    <video
-                      controls
-                      poster={item.poster}
-                      className="w-full h-64 object-cover"
-                    >
-                      <source src={item.src} type="video/mp4" />
-                    </video>
-                  )}
-                  <div className="p-4">
-                    <h3 className="font-semibold text-batik-brown mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-600">{item.desc}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                {galeriPenjualan.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="relative group rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
+                  >
+                    {item.type === "image" ? (
+                      <img
+                        src={item.src}
+                        alt={item.title}
+                        className="w-full h-64 object-cover"
+                      />
+                    ) : (
+                      <video
+                        controls
+                        poster={item.poster}
+                        className="w-full h-64 object-cover"
+                      >
+                        <source src={item.src} type="video/mp4" />
+                      </video>
+                    )}
+                    <div className="p-4">
+                      <h3 className="font-semibold text-batik-brown mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">{item.desc}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -232,36 +232,36 @@ const Galeri = () => {
               </p>
             </div>
             <div className="max-w-screen-xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-8">
-              {galeriTestimoni.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="relative group rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
-                >
-                  {item.type === "image" ? (
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-64 object-cover"
-                    />
-                  ) : (
-                    <video
-                      controls
-                      poster={item.poster}
-                      className="w-full h-64 object-cover"
-                    >
-                      <source src={item.src} type="video/mp4" />
-                    </video>
-                  )}
-                  <div className="p-4">
-                    <h3 className="font-semibold text-batik-brown mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-600">{item.desc}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-8">
+                {galeriTestimoni.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="relative group rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
+                  >
+                    {item.type === "image" ? (
+                      <img
+                        src={item.src}
+                        alt={item.title}
+                        className="w-full h-64 object-cover"
+                      />
+                    ) : (
+                      <video
+                        controls
+                        poster={item.poster}
+                        className="w-full h-64 object-cover"
+                      >
+                        <source src={item.src} type="video/mp4" />
+                      </video>
+                    )}
+                    <div className="p-4">
+                      <h3 className="font-semibold text-batik-brown mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">{item.desc}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

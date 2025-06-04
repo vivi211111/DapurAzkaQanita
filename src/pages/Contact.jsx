@@ -93,8 +93,7 @@ const Contact = () => {
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Nikmati kelezatan kue tradisional khas Palembang buatan kami.
-              Hubungi tim kami untuk pemesanan dan ciptakan momen manis bersama
-              orang tercinta.
+              Hubungi tim kami untuk pemesanan dan ciptakan momen manis bersama orang tercinta.
             </p>
           </div>
         </section>

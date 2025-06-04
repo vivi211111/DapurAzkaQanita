@@ -11,35 +11,35 @@ const PortfolioSection = () => {
   // Ganti nama array PortfolioSection menjadi portfolioItems agar sesuai dengan pemakaian di map()
   const portfolioItems = [
     {
-      title: "Koleksi Batik Royal",
-      category: "Fashion",
+      title: "Lapis Legit Klasik",
+      category: "Kue Basah",
       description:
-        "Koleksi eksklusif untuk acara formal dengan motif klasik Yogyakarta",
+        "Lapis Legit klasik Dapur Azka, berlapis-lapis, lembut, dan harum rempah, cocok untuk segala acara spesial.",
       type: "video",
-      thumbnail: "/portfolio/BATIK.jpg",
+      thumbnail: "/placeholder.jpg",
       video: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
-      title: "Dekorasi Hotel Bintang 5",
-      category: "Interior",
-      description: "Proyek dekorasi hotel mewah dengan tema budaya Nusantara",
+      title: "Maksubah Prunes",
+      category: "Kue Basah",
+      description: "Maksubah dengan topping prunes premium, rasa manis legit dan segar, favorit keluarga.",
       type: "image",
-      thumbnail: "/portfolio/BATIK2.jpg",
+      thumbnail: "/placeholder.jpg",
     },
     {
-      title: "Seragam Perusahaan",
-      category: "Corporate",
-      description: "Desain seragam korporat dengan identitas batik modern",
+      title: "Bolu Kukus Pelangi",
+      category: "Kue Basah",
+      description: "Bolu kukus warna-warni, lembut, dan cocok untuk hantaran atau acara keluarga.",
       type: "video",
-      thumbnail: "/portfolio/BATIK3.jpg",
+      thumbnail: "/placeholder.jpg",
       video: "https://www.w3schools.com/html/movie.mp4",
     },
     {
-      title: "Souvenir Pernikahan",
-      category: "Wedding",
-      description: "Paket souvenir pernikahan dengan kemasan premium",
+      title: "Lapis Kojo Duren",
+      category: "Kue Basah",
+      description: "Lapis Kojo Duren dengan aroma pandan dan durian, tekstur lembut dan rasa khas Palembang.",
       type: "image",
-      thumbnail: "/portfolio/Souvenir1.jpg",
+      thumbnail: "/placeholder.jpg",
     },
   ];
 
@@ -80,11 +80,10 @@ const PortfolioSection = () => {
         <div className="mb-20">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-batik-brown dark:text-batik-gold mb-4">
-              Galeri Kami
+              Galeri Dapur Azka
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Beberapa proyek terbaik yang telah kami kerjakan bersama
-              klien-klien terpercaya.
+              Kumpulan kue basah spesial Dapur Azka, dibuat dengan resep tradisional dan bahan pilihan, cocok untuk berbagai momen istimewa.
             </p>
           </div>
 
