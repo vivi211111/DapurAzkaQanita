@@ -86,14 +86,14 @@ const Navbar = () => {
 
   return (
     <motion.nav initial={{ y: -40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }} className="shadow-lg sticky top-0 z-50 bg-white overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="flex justify-between h-14 md:h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-batik-gold rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">D</span>
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-batik-gold rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-base md:text-xl">D</span>
               </div>
-              <span className="font-serif text-xl font-bold text-batik-brown">Dapur Azka Qanita</span>
+              <span className="font-serif text-base md:text-xl font-bold text-batik-brown">Dapur Azka Qanita</span>
             </Link>
           </div>
 
@@ -131,13 +131,13 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button and cart icon */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-3">
             <button
               onClick={toggleCart}
               className="relative text-gray-700 hover:text-batik-gold transition-colors duration-200"
               aria-label="Shopping Cart"
             >
-              <ShoppingCart size={24} />
+              <ShoppingCart size={20} />
               {getTotalItems() > 0 && (
                 <span className="absolute -top-2 -right-2 bg-batik-gold text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                   {getTotalItems()}
@@ -146,7 +146,7 @@ const Navbar = () => {
             </button>
 
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 hover:text-batik-brown">
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -160,7 +160,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                className={`block px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                   location.pathname === item.href
                     ? "text-batik-gold bg-batik-cream"
                     : "text-gray-700 hover:text-batik-brown hover:bg-gray-50"
@@ -177,7 +177,7 @@ const Navbar = () => {
       {/* Shopping Cart Modal */}
       {isCartOpen && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto ">
             {/* Modal Header */}
             <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex items-center justify-between rounded-t-2xl">
               <h2 className="font-serif text-xl font-bold text-batik-brown">Keranjang Belanja</h2>
@@ -190,10 +190,10 @@ const Navbar = () => {
             <div className="p-6">
               {cartItems.length === 0 ? (
                 <div className="text-center py-10">
-                  <ShoppingCart size={64} className="mx-auto text-gray-400 mb-4" />
-                  <p className="text-gray-500 mb-6">Keranjang belanja Anda kosong</p>
+                  <ShoppingCart size={56} className="mx-auto text-gray-400 mb-4" />
+                  <p className="text-gray-500 text-sm mb-6">Keranjang belanja Anda kosong</p>
                   <button
-                    className="bg-batik-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-batik-brown transition-colors"
+                    className="bg-batik-gold text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-batik-brown transition-colors"
                     onClick={() => {
                       closeCart();
                       window.location.href = "/product";
@@ -232,7 +232,7 @@ const Navbar = () => {
                                 type="checkbox"
                                 checked={selectedItems.includes(item.variantId)}
                                 onChange={() => handleSelectItem(item.variantId)}
-                                className="mb-1 w-3 h-3 accent-batik-gold"
+                                className="mb-1 w-3 h-3"
                               />
                               <img
                                 src={item.image || "/placeholder.svg"}
@@ -355,7 +355,7 @@ const Navbar = () => {
                       <p className="text-[11px] text-gray-500 mb-2">Pengiriman & pajak dihitung saat checkout.</p>
                       <button
                         onClick={handleCheckout}
-                        className="w-full bg-batik-gold text-white py-1.5 px-2 rounded font-semibold text-xs hover:bg-batik-brown transition-colors disabled:opacity-50 mb-2"
+                        className="w-full bg-batik-gold text-white py-2 px-2 rounded font-semibold text-xs hover:bg-batik-brown transition-colors disabled:opacity-50 mb-2"
                         disabled={selectedCartItems.length === 0}
                       >
                         Checkout

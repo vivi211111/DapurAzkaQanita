@@ -132,7 +132,7 @@ const Contact = () => {
                   <div className="w-10 h-10 md:w-16 md:h-16 bg-batik-gold rounded-full flex items-center justify-center mx-auto mb-2 md:mb-4">
                     <info.icon className="text-white" size={18} />
                   </div>
-                  <h3 className="font-serif text-xs md:text-lg font-semibold text-batik-brown dark:text-batik-gold mb-1 md:mb-3">
+                  <h3 className="font-serif text-sm md:text-lg font-semibold text-batik-brown dark:text-batik-gold mb-1 md:mb-3">
                     {info.title}
                   </h3>
                   <div className="space-y-0.5 md:space-y-1">
@@ -239,7 +239,7 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="w-full btn-primary inline-flex items-center justify-center disabled:opacity-60 text-xs md:text-base py-2 md:py-3"
+                    className="w-full btn-primary inline-flex items-center justify-center disabled:opacity-60 text-xs md:text-base py-3 md:py-3"
                     disabled={loading}
                   >
                     {loading ? (
@@ -323,7 +323,7 @@ const Contact = () => {
                 <div className="mt-4 md:mt-6 grid grid-cols-1 gap-3 md:gap-4">
                   <a
                     href="tel:+6288276729787"
-                    className="bg-batik-gold text-white text-center py-2 md:py-3 px-3 md:px-4 rounded-lg hover:bg-batik-brown transition-colors duration-300 text-xs md:text-base"
+                    className="bg-batik-gold text-white text-center py-3 md:py-3 px-3 md:px-4 rounded-lg hover:bg-batik-brown transition-colors duration-300 text-xs md:text-base"
                   >
                     Chat Sekarang
                   </a>

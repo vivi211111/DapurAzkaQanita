@@ -334,7 +334,7 @@ const Testimonials = () => {
           <div className="flex flex-col md:flex-row gap-4 md:gap-12 items-center md:items-start">
             {/* MOBILE: rating & distribusi lebih kecil, desktop tetap */}
             <div className="w-full md:w-1/3 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0 md:pr-8">
-              <div className="text-3xl md:text-5xl font-bold text-batik-brown font-serif mb-1 md:mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-batik-brown font-serif mb-1 md:mb-2">
                 {avgRating.toFixed(1)}
               </div>
               <div className="flex items-center mb-1">
