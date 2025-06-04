@@ -304,12 +304,12 @@ const Galeri = () => {
             </p>
             <div className="flex sm:flex-row gap-4 justify-center">
               <Link to="/product">
-                <button className="bg-batik-gold hover:bg-batik-gold/90 text-white text-xs font-semibold py-1 px-8 rounded-lg transition-all duration-300">
+                <button className="bg-batik-gold hover:bg-batik-gold/90 text-white text-sm font-semibold py-3 px-8 rounded-lg transition-all duration-300">
                   Lihat Semua Product
                 </button>
               </Link>
               <Link to="/contact">
-                <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown text-xs font-semibold py-1 px-8 rounded-lg transition-all duration-300">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown text-sm font-semibold py-3 px-8 rounded-lg transition-all duration-300">
                   Hubungi Admin
                 </button>
               </Link>
