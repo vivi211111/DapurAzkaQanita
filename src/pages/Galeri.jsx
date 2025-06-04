@@ -77,22 +77,11 @@ const Galeri = () => {
   // Data galeri penjualan (foto & video produk kue)
   const galeriPenjualan = [
     {
-      type: "image",
-      src: "/portfolio/kue-maksubah-original.jpg",
-      title: "Maksubah Original",
-      desc: "Maksubah klasik dengan lapisan legit dan aroma rempah khas Palembang.",
-    },
-    {
-      type: "image",
-      src: "/portfolio/kue-maksubah-prunes.jpg",
-      title: "Maksubah Prunes",
-      desc: "Maksubah dengan topping prunes premium, rasa manis legit dan segar.",
-    },
-    {
-      type: "image",
-      src: "/portfolio/kue-maksubah-keju.jpg",
-      title: "Maksubah Keju",
-      desc: "Maksubah dengan taburan keju melimpah, gurih dan lembut.",
+      type: "video",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      poster: "/portfolio/proses-maksubah.jpg",
+      title: "Proses Pembuatan Maksubah",
+      desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     {
       type: "video",
@@ -102,16 +91,18 @@ const Galeri = () => {
       desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     {
-      type: "image",
-      src: "/portfolio/kue-lapis-legit.jpg",
-      title: "Lapis Legit Spesial",
-      desc: "Lapis legit dengan 18 lapisan, tekstur lembut dan aroma butter.",
+      type: "video",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      poster: "/portfolio/proses-maksubah.jpg",
+      title: "Proses Pembuatan Maksubah",
+      desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     {
-      type: "image",
-      src: "/portfolio/kue-bolu-kukus.jpg",
-      title: "Bolu Kukus Pelangi",
-      desc: "Bolu kukus warna-warni, lembut dan cocok untuk acara keluarga.",
+      type: "video",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      poster: "/portfolio/proses-maksubah.jpg",
+      title: "Proses Pembuatan Maksubah",
+      desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     // Tambahkan lebih banyak foto/video produk kue jika diperlukan
   ];
@@ -130,12 +121,6 @@ const Galeri = () => {
       poster: "/testimonials/Budi Santoso.jpeg?height=400&width=600",
       title: "Budi Santoso",
       desc: "Review video Maksubah Prunes dari pelanggan.",
-    },
-    {
-      type: "image",
-      src: "/testimonials/Maya Sari.jpeg?height=400&width=600",
-      title: "Maya Sari",
-      desc: "Maksubah Keju sangat lembut dan kejunya melimpah.",
     },
     {
       type: "image",
@@ -181,8 +166,7 @@ const Galeri = () => {
                 Galeri Penjualan
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Foto & video produk, proses produksi, dan dokumentasi milik toko
-                kami.
+                Video produk, proses produksi, dan dokumentasi milik toko kami.
               </p>
             </div>
             <div className="max-w-screen-xl mx-auto">
