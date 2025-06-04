@@ -516,7 +516,7 @@ const Product = () => {
 
                     {/* Price Badge */}
                     <div className="absolute top-4 right-4 bg-batik-gold text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {item.price}
+                      Rp {item.price.toLocaleString("id-ID")}
                     </div>
                   </div>
 
