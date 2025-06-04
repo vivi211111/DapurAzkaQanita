@@ -12,11 +12,6 @@ const kueList = [
 		image: "/portfolio/kue-lapis-legit.jpg",
 		desc: "Kue lapis klasik, simbol kebersamaan dan ketekunan.",
 	},
-	{
-		name: "Bolu Kukus Pelangi",
-		image: "/portfolio/kue-bolu-kukus.jpg",
-		desc: "Bolu kukus warna-warni, favorit anak-anak dan keluarga.",
-	},
 ];
 
 const maxHampers = 3;

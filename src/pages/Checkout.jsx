@@ -1,7 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
 import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import {
   ArrowLeft,
   MapPin,
@@ -13,8 +15,6 @@ import {
   X,
   Loader2,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -23,6 +23,18 @@ const Checkout = () => {
   const [orderNumber, setOrderNumber] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
+
+  // Ambil selectedCartItems dari localStorage jika ada
+  const [selectedCartItems, setSelectedCartItems] = useState([]);
+
+  useEffect(() => {
+    const selected = localStorage.getItem("selectedCartItems");
+    if (selected) {
+      setSelectedCartItems(JSON.parse(selected));
+    } else {
+      setSelectedCartItems(cartItems);
+    }
+  }, [cartItems]);
 
   const [formData, setFormData] = useState({
     // Data Pelanggan
@@ -147,8 +159,11 @@ const Checkout = () => {
     }).format(price);
   };
 
-  const subtotal = getTotalPrice();
-  const total = subtotal + formData.shippingCost;
+  const subtotal = selectedCartItems.reduce(
+    (total, item) => total + (item.priceNumber || 0) * (item.quantity || 1),
+    0
+  );
+  const total = subtotal + (formData.shippingCost || 0);
 
   const handlePrint = () => {
     const printContent = document.getElementById("order-summary-print");
@@ -176,7 +191,7 @@ const Checkout = () => {
 📅 Tanggal: ${new Date().toLocaleDateString("id-ID")}
 
 *📦 PRODUK PESANAN:*
-${cartItems
+${selectedCartItems
   .map(
     (item) =>
       `• *${item.title}*
@@ -227,28 +242,16 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
     navigate("/");
   };
 
-  if (cartItems.length === 0 && !showOrderSummary) {
+  if (selectedCartItems.length === 0 && !showOrderSummary) {
     return (
-      <div className="pt-16 min-h-screen bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <div className="text-center">
-            <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-4xl">🛒</span>
-            </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
-              Keranjang Kosong
-            </h1>
-            <p className="text-gray-600 mb-8">
-              Silakan tambahkan produk ke keranjang terlebih dahulu
-            </p>
-            <button
-              onClick={() => navigate("/product")}
-              className="bg-batik-gold text-white px-8 py-3 rounded-lg hover:bg-batik-brown transition-colors font-semibold"
-            >
-              Belanja Sekarang
-            </button>
-          </div>
-        </div>
+      <div className="min-h-[60vh] flex flex-col items-center justify-center">
+        <h2 className="text-2xl font-bold mb-4">Keranjang kosong</h2>
+        <button
+          className="bg-batik-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-batik-brown transition-colors"
+          onClick={() => navigate("/product")}
+        >
+          Belanja Sekarang
+        </button>
       </div>
     );
   }
@@ -519,7 +522,7 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
 
                 {/* Cart Items */}
                 <div className="space-y-4 mb-6">
-                  {cartItems.map((item) => (
+                  {selectedCartItems.map((item) => (
                     <div
                       key={item.variantId}
                       className="flex space-x-3 p-3 bg-gray-50 rounded-lg"
@@ -668,7 +671,7 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
                       <span className="mr-2">📦</span> Produk Pesanan
                     </h4>
                     <div className="space-y-3">
-                      {cartItems.map((item) => (
+                      {selectedCartItems.map((item) => (
                         <div
                           key={item.variantId}
                           className="flex justify-between items-center bg-gray-50 p-4 rounded-lg"

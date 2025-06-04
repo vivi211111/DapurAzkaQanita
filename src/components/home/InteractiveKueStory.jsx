@@ -17,13 +17,6 @@ const kueStories = [
 		trivia: "Lapis Legit bisa memiliki lebih dari 18 lapisan!",
 	},
 	{
-		name: "Bolu Kukus Pelangi",
-		image: "/portfolio/kue-bolu-kukus.jpg",
-		story:
-			"Bolu Kukus Pelangi dengan warna-warni ceria sering menjadi favorit anak-anak saat Lebaran, melambangkan kebahagiaan dan harapan baru.",
-		trivia: "Warna-warni bolu pelangi berasal dari pewarna makanan alami dan aman.",
-	},
-	{
 		name: "Kue Delapan Jam",
 		image: "/portfolio/BATIK2.jpg",
 		story:
@@ -44,20 +37,6 @@ const kueStories = [
 			"Kue Kojo berwarna hijau dengan rasa manis legit, terbuat dari telur, santan, dan daun pandan. Sering dijadikan hantaran atau suguhan tamu.",
 		trivia: "Nama 'Kojo' berasal dari kata 'koci' (kecil) karena bentuknya mungil.",
 	},
-    	{
-		name: "Kue Kojo",
-		image: "/portfolio/BATIK4.jpg",
-		story:
-			"Kue Kojo berwarna hijau dengan rasa manis legit, terbuat dari telur, santan, dan daun pandan. Sering dijadikan hantaran atau suguhan tamu.",
-		trivia: "Nama 'Kojo' berasal dari kata 'koci' (kecil) karena bentuknya mungil.",
-	},
-    {
-        name: "Kue Kembang Goyang",
-        image: "/portfolio/BATIK5.jpg",
-        story:
-            "Kue Kembang Goyang adalah kue tradisional yang digoreng dan berbentuk bunga. Rasanya renyah dan manis, sering disajikan saat Lebaran.",
-        trivia: "Kue ini dinamai 'Goyang' karena cara membuatnya dengan mengocok adonan.",
-    },
 ];
 
 const InteractiveKueStory = () => {
