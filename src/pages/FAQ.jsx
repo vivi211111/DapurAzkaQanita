@@ -347,13 +347,13 @@ const FAQ = () => {
                 <div className="w-10 h-10 bg-batik-gold rounded-full flex items-center justify-center mx-auto mb-2">
                   <InstagramIcon className="text-white" size={18} />
                 </div>
-                <h3 className="font-serif text-xs font-semibold text-batik-brown dark:text-batik-gold mb-1">
+                <h3 className="font-serif text-sm font-semibold text-batik-brown dark:text-batik-gold mb-1">
                   DM Kami
                 </h3>
                 <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
                   Chat langsung dengan tim support kami
                 </p>
-                <button className="btn-primary text-xs py-1 px-2">
+                <button className="btn-primary text-sm py-2 px-4 rounded-lg min-w-[120px]">
                   @dapur_azka_qanita
                 </button>
               </div>
@@ -361,13 +361,13 @@ const FAQ = () => {
                 <div className="w-10 h-10 bg-batik-brown rounded-full flex items-center justify-center mx-auto mb-2">
                   <Phone className="text-white" size={18} />
                 </div>
-                <h3 className="font-serif text-xs font-semibold text-batik-brown dark:text-batik-gold mb-1">
+                <h3 className="font-serif text-sm font-semibold text-batik-brown dark:text-batik-gold mb-1">
                   Telepon
                 </h3>
                 <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
                   Hubungi hotline customer service kami
                 </p>
-                <button className="btn-primary text-xs py-1 px-2">
+                <button className="btn-primary text-sm py-2 px-4 rounded-lg min-w-[120px]">
                   +62 811-7874-456
                 </button>
               </div>
@@ -375,13 +375,13 @@ const FAQ = () => {
                 <div className="w-10 h-10 bg-batik-maroon rounded-full flex items-center justify-center mx-auto mb-2">
                   <Mail className="text-white" size={18} />
                 </div>
-                <h3 className="font-serif text-xs font-semibold text-batik-brown dark:text-batik-gold mb-1">
+                <h3 className="font-serif text-sm font-semibold text-batik-brown dark:text-batik-gold mb-1">
                   Email
                 </h3>
                 <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
                   Kirim pertanyaan detail via email
                 </p>
-                <button className="btn-primary text-xs py-1 px-2">
+                <button className="btn-primary text-sm py-2 px-4 rounded-lg min-w-[120px]">
                   info@batiknusantara.com
                 </button>
               </div>
