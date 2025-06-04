@@ -870,17 +870,6 @@ const Product = () => {
                       {item.description}
                     </p>
 
-                    <div className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                      <div className="flex items-center space-x-2">
-                        <User size={14} />
-                        <span>{item.client}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Calendar size={14} />
-                        <span>{item.year}</span>
-                      </div>
-                    </div>
-
                     {/* Rating */}
                     {item.rating && (
                       <div className="flex items-center space-x-2 mt-3">
