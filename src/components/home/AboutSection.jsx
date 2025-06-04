@@ -126,7 +126,7 @@ const AboutSection = () => {
 
 				{/* DESKTOP: grid 2 kolom, layout tetap */}
 				<div className="hidden md:block">
-					<div className="grid grid-cols-2 gap-10 items-center">
+					<div className="grid grid-cols-2 gap-10 items-start">
 						{/* Left: Image */}
 						<motion.div
 							initial={{ opacity: 0, x: -40 }}
@@ -139,7 +139,7 @@ const AboutSection = () => {
 								<img
 									src="/about/DapurAzka.jpg"
 									alt="Dapur Azka Qanita"
-									className="w-full h-[420px] lg:h-[460px] object-center scale-110 hover:scale-105 transition-transform duration-500 rounded-t-2xl"
+									className="w-full object-center scale-110 hover:scale-105 transition-transform duration-500 rounded-t-2xl"
 								/>
 							</div>
 						</motion.div>
