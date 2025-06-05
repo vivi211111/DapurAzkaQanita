@@ -657,19 +657,19 @@ const Testimonials = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-center gap-2 mb-10">
+              <div className="flex justify-center gap-2 mb-8">
                 <button
                   onClick={() => setPage(page - 1)}
                   disabled={page === 1}
-                  className="px-3 py-1 rounded bg-gray-200 text-batik-brown disabled:opacity-50"
+                  className="px-2 py-1 rounded bg-gray-200 text-batik-brown text-xs disabled:opacity-50"
                 >
-                  Sebelumnya
+                  &lt;
                 </button>
                 {[...Array(totalPages)].map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setPage(i + 1)}
-                    className={`px-3 py-1 rounded ${
+                    className={`px-2 py-1 rounded text-xs ${
                       page === i + 1
                         ? "bg-batik-gold text-white"
                         : "bg-gray-100 text-batik-brown"
@@ -681,9 +681,9 @@ const Testimonials = () => {
                 <button
                   onClick={() => setPage(page + 1)}
                   disabled={page === totalPages}
-                  className="px-3 py-1 rounded bg-batik-gold text-white disabled:opacity-50"
+                  className="px-2 py-1 rounded bg-batik-gold text-white text-xs disabled:opacity-50"
                 >
-                  Berikutnya
+                  &gt;
                 </button>
               </div>
             </div>
