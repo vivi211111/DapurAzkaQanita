@@ -715,7 +715,7 @@ const Testimonials = () => {
             </div>
             <div className="flex justify-center mt-10">
               <span
-                className="block md:hidden text-xs text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
+                className=" md:hidden  text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
                 onClick={() => (window.location.href = "/galeri")}
                 role="button"
                 tabIndex={0}
@@ -728,7 +728,7 @@ const Testimonials = () => {
                 <span className="text-xs font-bold">&gt;</span>
               </span>
               <span
-                className="hidden md:block text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
+                className="md:block text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
                 onClick={() => (window.location.href = "/galeri")}
                 role="button"
                 tabIndex={0}
