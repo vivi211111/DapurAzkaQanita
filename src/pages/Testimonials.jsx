@@ -693,9 +693,12 @@ const Testimonials = () => {
 
           {/* Video Grid */}
           <div className="max-w-screen-xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex overflow-x-auto gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
               {videoTestimonials.map((vid) => (
-                <div key={vid.id} className="relative group cursor-pointer">
+                <div
+                  key={vid.id}
+                  className="relative group cursor-pointer flex-shrink-0 w-[60vw] max-w-xs md:w-auto"
+                >
                   <div className="aspect-video w-full rounded-xl bg-gradient-to-br from-batik-gold/10 to-batik-brown/10 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:brightness-95">
                     {!showVideo[vid.id] ? (
                       <>
