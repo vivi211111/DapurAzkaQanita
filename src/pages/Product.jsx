@@ -819,11 +819,11 @@ const Product = () => {
       </section>
 
       {/* Search and Filter Section */}
-      <section className="py-12 bg-white dark:bg-gray-900">
-        <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6">
+      <section className="py-8 bg-white dark:bg-gray-900">
+        <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-3 sm:px-4 lg:px-6">
           {/* Filter Buttons */}
           {/* MOBILE FILTER: hanya tampil di <md */}
-          <div className="flex flex-wrap justify-center gap-2 mb-6 md:hidden">
+          <div className="flex flex-wrap justify-center gap-2 mb-8 md:hidden">
             {categories.map((category) => (
               <button
                 key={category.id}
@@ -920,7 +920,7 @@ const Product = () => {
 
       {/* Product Detail Modal */}
       {isModalOpen && selectedProduct && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-1 sm:p-2 md:p-4">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 sm:p-2 md:p-4">
           <div
             className="bg-white dark:bg-gray-900 rounded-2xl w-full max-w-[95vw] sm:max-w-md md:max-w-2xl lg:max-w-4xl max-h-[98vh] overflow-y-auto relative shadow-xl"
           >
@@ -954,14 +954,14 @@ const Product = () => {
               </button>
             </div>
             {/* Modal Content */}
-            <div className="p-2 sm:p-4 md:p-6">
+            <div className="p-5 sm:p-4 md:p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4 md:gap-8 items-start">
                 {/* Product Image */}
                 <div className="space-y-1 sm:space-y-2 md:space-y-4 flex flex-col items-center">
                   <img
                     src={selectedProduct.image || "/placeholder.svg"}
                     alt={selectedProduct.title}
-                    className="w-[250                                                                                               px] h-[200px] sm:w-40 sm:h-40 md:w-72 md:h-96 object-cover rounded-xl shadow-lg"
+                    className="w-[250]                                                                                               px] h-[200px] sm:w-40 sm:h-40 md:w-72 md:h-96 object-cover rounded-xl shadow-lg"
                   />
                   {/* Action Buttons */}
                   <div className="flex space-x-1 sm:space-x-2 md:space-x-3 w-full">

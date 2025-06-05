@@ -527,119 +527,196 @@ const HeroSection = () => {
   }, [currentAd]);
 
   return (
-    <section className="relative flex items-center justify-center min-h-[480px] md:min-h-[600px] overflow-hidden">
-      {/* Enhanced Interactive Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-batik-cream via-batik-gold/20 to-batik-brown/10 dark:from-gray-900 dark:via-batik-brown/30 dark:to-gray-950">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(218,165,32,0.3)_0%,transparent_50%)] animate-pulse"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(139,69,19,0.3)_0%,transparent_50%)] animate-pulse"></div>
+    <section className="relative flex items-center justify-center mt-0 md:mt-0 md:min-h-[600px] overflow-hidden">
+      {/* MOBILE/TABLET */}
+      <div className="w-full flex justify-center md:hidden">
+        <div className="w-full max-w-3xl md:max-w-none md:w-full md:rounded-none md:shadow-none md:bg-transparent shadow-lg bg-gradient-to-br from-batik-cream via-batik-gold/20 to-batik-brown/10 dark:from-gray-900 dark:via-batik-brown/30 dark:to-gray-950 relative">
+          <div className="absolute inset-0 opacity-30 pointer-events-none z-0 md:hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(218,165,32,0.3)_0%,transparent_50%)] animate-pulse"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(139,69,19,0.3)_0%,transparent_50%)] animate-pulse"></div>
+          </div>
+          <div className="relative z-10 w-full px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between py-16 md:py-24 transition-all duration-700">
+            {/* Slide Container */}
+            <div className="flex gap-5 md:flex-row items-center justify-between w-full">
+              {/* Left: Text */}
+              <div
+                className={`order-none md:order-1 flex-1 text-left md:pr-12 transition-all duration-500 transform ${
+                  isSliding
+                    ? slideDirection === "right"
+                      ? "-translate-x-16 opacity-0"
+                      : "translate-x-16 opacity-0"
+                    : "translate-x-0 opacity-100"
+                }`}
+                key={currentAd + "-text"}
+              >
+                <h1 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-batik-brown mb-2 sm:mb-3 md:mb-4 leading-tight">
+                  {ads[currentAd].title}
+                </h1>
+                <div className="flex items-center mb-2 sm:mb-3 md:mb-4">
+                  <span
+                    className={`inline-block ${ads[currentAd].badgeColor} text-white text-[10px] sm:text-xs font-semibold rounded-full px-3 sm:px-4 py-0.5 sm:py-1 mr-2 sm:mr-3`}
+                  >
+                    {ads[currentAd].badge}
+                  </span>
+                </div>
+                <p className="text-xs sm:text-base md:text-lg text-gray-700 mb-4 sm:mb-6 md:mb-8 max-w-xs sm:max-w-md md:max-w-xl">
+                  {ads[currentAd].desc}
+                </p>
+                <Link
+                  to={ads[currentAd].link}
+                  className={`inline-block ${ads[currentAd].ctaColor} text-white font-bold py-2 sm:py-3 px-5 sm:px-8 rounded-lg shadow-lg transition-all duration-300 text-xs sm:text-base`}
+                >
+                  {ads[currentAd].cta}
+                </Link>
+              </div>
+              {/* Right: Image */}
+              <div
+                className={`order-2 md:order-2 flex-1 flex items-center justify-center mt-6 sm:mt-10 md:mt-0 transition-all duration-500 transform ${
+                  isSliding
+                    ? slideDirection === "right"
+                      ? "-translate-x-16 opacity-0"
+                      : "translate-x-16 opacity-0"
+                    : "translate-x-0 opacity-100"
+                }`}
+                key={currentAd + "-img"}
+              >
+                <img
+                  src={ads[currentAd].img}
+                  alt={ads[currentAd].title}
+                  className="rounded-xl shadow-2xl w-full max-w-[220px] sm:max-w-[320px] md:max-w-[600px] max-h-[160px] sm:max-h-[240px] md:max-h-[400px] aspect-square object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Carousel Dots */}
+            <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-1 sm:gap-2">
+              {ads.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() =>
+                    handleSlide(idx > currentAd ? "right" : "left", idx)
+                  }
+                  className={`w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full border-2 border-batik-brown transition-all duration-300 ${
+                    currentAd === idx ? "bg-batik-brown" : "bg-white"
+                  }`}
+                  aria-label={`Iklan ${idx + 1}`}
+                ></button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Tombol Panah Kiri */}
-      <button
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-batik-gold text-batik-brown rounded-full shadow p-2 z-20"
-        onClick={() => handleSlide("left")}
-        aria-label="Sebelumnya"
-      >
-        <svg
-          width="24"
-          height="24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
-
-      {/* Tombol Panah Kanan */}
-      <button
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-batik-gold text-batik-brown rounded-full shadow p-2 z-20"
-        onClick={() => handleSlide("right")}
-        aria-label="Berikutnya"
-      >
-        <svg
-          width="24"
-          height="24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </button>
-
-      {/* Kontainer Utama Slide */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between w-full py-16 md:py-24 transition-all duration-700">
-        {/* Slide Container */}
-        <div className="flex-1 flex flex-col md:flex-row items-center justify-between w-full">
-          {/* Left: Text */}
-          <div
-            className={`flex-1 text-left md:pr-12 transition-all duration-500 transform ${
-              isSliding
-                ? slideDirection === "right"
-                  ? "-translate-x-16 opacity-0"
-                  : "translate-x-16 opacity-0"
-                : "translate-x-0 opacity-100"
-            }`}
-            key={currentAd + "-text"}
-          >
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-batik-brown mb-4 leading-tight">
-              {ads[currentAd].title}
-            </h1>
-            <div className="flex items-center mb-4">
-              <span
-                className={`inline-block ${ads[currentAd].badgeColor} text-white text-xs font-semibold rounded-full px-4 py-1 mr-3`}
-              >
-                {ads[currentAd].badge}
-              </span>
+      {/* DESKTOP */}
+      <div className="hidden md:block w-full">
+        <div className="relative flex items-center justify-center min-h-[600px] overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-batik-cream via-batik-gold/20 to-batik-brown/10 dark:from-gray-900 dark:via-batik-brown/30 dark:to-gray-950">
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(218,165,32,0.3)_0%,transparent_50%)] animate-pulse"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(139,69,19,0.3)_0%,transparent_50%)] animate-pulse"></div>
             </div>
-            <p className="text-lg text-gray-700 mb-8 max-w-xl">
-              {ads[currentAd].desc}
-            </p>
-            <Link
-              to={ads[currentAd].link}
-              className={`inline-block ${ads[currentAd].ctaColor} text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 text-base`}
-            >
-              {ads[currentAd].cta}
-            </Link>
-          </div>
-          {/* Right: Image */}
-          <div
-            className={`flex-1 flex items-center justify-center mt-10 md:mt-0 transition-all duration-500 transform ${
-              isSliding
-                ? slideDirection === "right"
-                  ? "-translate-x-16 opacity-0"
-                  : "translate-x-16 opacity-0"
-                : "translate-x-0 opacity-100"
-            }`}
-            key={currentAd + "-img"}
-          >
-            <img
-              src={ads[currentAd].img}
-              alt={ads[currentAd].title}
-              className="rounded-xl shadow-2xl w-full max-w-[600px] max-h-[400px] aspect-square object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Carousel Dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-          {ads.map((_, idx) => (
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between py-24 md:py-24 transition-all duration-700">
+              <div className="flex-1 flex flex-row items-center justify-between w-full">
+                {/* Left: Text */}
+                <div
+                  className={`flex-1 text-left md:pr-12 transition-all duration-500 transform ${
+                    isSliding
+                      ? slideDirection === "right"
+                        ? "-translate-x-16 opacity-0"
+                        : "translate-x-16 opacity-0"
+                      : "translate-x-0 opacity-100"
+                  }`}
+                  key={currentAd + "-text-d"}
+                >
+                  <h1 className="font-serif text-5xl lg:text-6xl font-bold text-batik-brown mb-4 leading-tight">
+                    {ads[currentAd].title}
+                  </h1>
+                  <div className="flex items-center mb-4">
+                    <span
+                      className={`inline-block ${ads[currentAd].badgeColor} text-white text-xs font-semibold rounded-full px-4 py-1 mr-3`}
+                    >
+                      {ads[currentAd].badge}
+                    </span>
+                  </div>
+                  <p className="text-lg text-gray-700 mb-8 max-w-xl">
+                    {ads[currentAd].desc}
+                  </p>
+                  <Link
+                    to={ads[currentAd].link}
+                    className={`inline-block ${ads[currentAd].ctaColor} text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-base`}
+                  >
+                    {ads[currentAd].cta}
+                  </Link>
+                </div>
+                {/* Right: Image */}
+                <div
+                  className={`flex-1 flex items-center justify-center mt-0 transition-all duration-500 transform ${
+                    isSliding
+                      ? slideDirection === "right"
+                        ? "-translate-x-16 opacity-0"
+                        : "translate-x-16 opacity-0"
+                      : "translate-x-0 opacity-100"
+                  }`}
+                  key={currentAd + "-img-d"}
+                >
+                  <img
+                    src={ads[currentAd].img}
+                    alt={ads[currentAd].title}
+                    className="rounded-xl shadow-2xl w-full max-w-[600px] max-h-[400px] aspect-square object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            {/* Carousel Dots */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+              {ads.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() =>
+                    handleSlide(idx > currentAd ? "right" : "left", idx)
+                  }
+                  className={`w-3 h-3 rounded-full border-2 border-batik-brown transition-all duration-300 ${
+                    currentAd === idx ? "bg-batik-brown" : "bg-white"
+                  }`}
+                  aria-label={`Iklan ${idx + 1}`}
+                ></button>
+              ))}
+            </div>
+            {/* Tombol Panah */}
             <button
-              key={idx}
-              onClick={() => handleSlide(idx > currentAd ? "right" : "left", idx)}
-              className={`w-3 h-3 rounded-full border-2 border-batik-brown transition-all duration-300 ${
-                currentAd === idx ? "bg-batik-brown" : "bg-white"
-              }`}
-              aria-label={`Iklan ${idx + 1}`}
-            ></button>
-          ))}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-batik-gold text-batik-brown rounded-full shadow p-2 z-20"
+              onClick={() => handleSlide("left")}
+              aria-label="Sebelumnya"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-batik-gold text-batik-brown rounded-full shadow p-2 z-20"
+              onClick={() => handleSlide("right")}
+              aria-label="Berikutnya"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
