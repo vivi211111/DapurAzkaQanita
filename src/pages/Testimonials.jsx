@@ -119,18 +119,6 @@ const Testimonials = () => {
       image: "/testimonials/profil9.jpg",
     },
     {
-      id: 10,
-      name: "Hatta Ramadhan",
-      role: "Karyawan Swasta",
-      company: "-",
-      rating: 5,
-      content:
-        "Maksubah Engkak Kojo (MakEngKo) sangat spesial, kombinasi rasa yang unik dan enak!",
-      project: "Maksubah Engkak Kojo (MakEngKo)",
-      date: "Oktober 2025",
-      image: "/testimonials/profil10.jpg",
-    },
-    {
       id: 11,
       name: "Dewi Anggraini",
       role: "PNS",
@@ -141,18 +129,6 @@ const Testimonials = () => {
       project: "Lapis Legit Prunes",
       date: "November 2025",
       image: "/testimonials/profil11.jpg",
-    },
-    {
-      id: 12,
-      name: "Rizal Fadli",
-      role: "Mahasiswa",
-      company: "Universitas Sriwijaya",
-      rating: 4,
-      content:
-        "Maksubah Kojo (Makjo) Prunes recommended untuk pecinta prunes, teksturnya lembut dan rasa buahnya terasa.",
-      project: "Maksubah Kojo (Makjo) Prunes",
-      date: "Desember 2025",
-      image: "/testimonials/profil12.jpg",
     },
   ]);
 
@@ -602,22 +578,22 @@ const Testimonials = () => {
         <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-2 md:px-4 xl:px-6">
           <div className="max-w-screen-xl mx-auto">
             {/* MOBILE: grid 3 kolom, DESKTOP: tetap */}
-            <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
               {filteredTestimonials.map((t, idx) => (
                 <div
                   key={t.id}
-                  className="bg-white rounded-xl shadow p-4 md:p-10 flex flex-col gap-3 border border-gray-100 text-base"
-                  style={{ minHeight: 180 }}
+                  className="bg-white rounded-xl shadow p-2 md:p-6 flex flex-col gap-1 md:gap-3 border border-gray-100 text-xs md:text-base mx-auto w-full max-w-sm"
+                  style={{ minHeight: 80 }}
                 >
-                  <div className="flex items-center gap-3 mb-1">
+                  <div className="flex items-center gap-2 mb-1">
                     {t.image ? (
                       <img
                         src={t.image}
                         alt={t.name}
-                        className="w-10 h-10 rounded-full object-cover"
+                        className="w-8 h-8 rounded-full object-cover"
                       />
                     ) : (
-                      <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-batik-brown text-lg">
+                      <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center font-bold text-batik-brown text-xs">
                         {t.name
                           ?.split(" ")
                           .map((w) => w[0])
@@ -625,7 +601,7 @@ const Testimonials = () => {
                       </div>
                     )}
                     <div>
-                      <div className="font-semibold text-batik-brown text-sm">
+                      <div className="font-semibold text-batik-brown text-xs md:text-base">
                         {t.name}
                       </div>
                       {/* MOBILE: role & tanggal 2 baris, DESKTOP: tetap 1 baris */}
@@ -638,7 +614,7 @@ const Testimonials = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 mb-1">
+                  <div className="flex items-center gap-1 md:gap-2 mb-1 md:mb-2">
                     {[...Array(t.rating)].map((_, i) => (
                       <Star
                         key={i}
@@ -656,10 +632,10 @@ const Testimonials = () => {
                     </span>
                   </div>
                   {/* Perkecil text deskripsi review di mobile */}
-                  <div className="text-gray-700 text-xs md:text-sm mb-2">
+                  <div className="text-gray-700 text-xs md:text-base mb-1 md:mb-2">
                     {t.content}
                   </div>
-                  <button className="flex items-center text-xs text-batik-orange hover:underline w-fit">
+                  <button className="flex items-center text-[10px] md:text-xs text-batik-orange hover:underline w-fit">
                     <span>Membantu (0)</span>
                   </button>
                 </div>
@@ -693,9 +669,12 @@ const Testimonials = () => {
 
           {/* Video Grid */}
           <div className="max-w-screen-xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex overflow-x-auto gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
               {videoTestimonials.map((vid) => (
-                <div key={vid.id} className="relative group cursor-pointer">
+                <div
+                  key={vid.id}
+                  className="relative group cursor-pointer flex-shrink-0 w-[60vw] max-w-xs md:w-auto"
+                >
                   <div className="aspect-video w-full rounded-xl bg-gradient-to-br from-batik-gold/10 to-batik-brown/10 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:brightness-95">
                     {!showVideo[vid.id] ? (
                       <>
@@ -736,7 +715,7 @@ const Testimonials = () => {
             </div>
             <div className="flex justify-center mt-10">
               <span
-                className="block md:hidden text-xs text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
+                className=" md:hidden  text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
                 onClick={() => (window.location.href = "/galeri")}
                 role="button"
                 tabIndex={0}
@@ -749,7 +728,7 @@ const Testimonials = () => {
                 <span className="text-xs font-bold">&gt;</span>
               </span>
               <span
-                className="hidden md:block text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
+                className="md:block text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
                 onClick={() => (window.location.href = "/galeri")}
                 role="button"
                 tabIndex={0}

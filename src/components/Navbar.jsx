@@ -87,23 +87,23 @@ const Navbar = () => {
   return (
     <motion.nav initial={{ y: -40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }} className="shadow-lg sticky top-0 z-50 bg-white overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-        <div className="flex justify-between h-14 md:h-20">
+        <div className="flex justify-between h-14 sm:h-16 md:h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-batik-gold rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-base md:text-xl">D</span>
+            <Link to="/" className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-batik-gold rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-base sm:text-lg md:text-xl">D</span>
               </div>
-              <span className="font-serif text-base md:text-xl font-bold text-batik-brown">Dapur Azka Qanita</span>
+              <span className="font-serif text-base sm:text-lg md:text-xl font-bold text-batik-brown">Dapur Azka Qanita</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`text-sm sm:text-base font-medium transition-colors duration-200 ${
                   location.pathname === item.href
                     ? "text-batik-gold border-b-2 border-batik-gold"
                     : "text-gray-700 hover:text-batik-brown"
@@ -115,13 +115,13 @@ const Navbar = () => {
           </div>
 
           {/* Shopping Cart Icon */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
             <button
               onClick={toggleCart}
               className="relative text-gray-700 hover:text-batik-gold transition-colors duration-200"
               aria-label="Shopping Cart"
             >
-              <ShoppingCart size={24} />
+              <ShoppingCart size={22} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
               {getTotalItems() > 0 && (
                 <span className="absolute -top-2 -right-2 bg-batik-gold text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                   {getTotalItems()}
@@ -131,13 +131,13 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button and cart icon */}
-          <div className="md:hidden flex items-center space-x-3">
+          <div className="md:hidden flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={toggleCart}
               className="relative text-gray-700 hover:text-batik-gold transition-colors duration-200"
               aria-label="Shopping Cart"
             >
-              <ShoppingCart size={20} />
+              <ShoppingCart size={18} className="sm:w-5 sm:h-5" />
               {getTotalItems() > 0 && (
                 <span className="absolute -top-2 -right-2 bg-batik-gold text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                   {getTotalItems()}
@@ -146,7 +146,7 @@ const Navbar = () => {
             </button>
 
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 hover:text-batik-brown">
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
+              {isOpen ? <X size={18} className="sm:w-5 sm:h-5" /> : <Menu size={18} className="sm:w-5 sm:h-5" />}
             </button>
           </div>
         </div>
