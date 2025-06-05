@@ -646,7 +646,7 @@ const Testimonials = () => {
       </section>
 
       {/* Video Testimonials */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           {/*MOBILE*/}
           <div className="block md:hidden text-center mb-16">
@@ -715,7 +715,7 @@ const Testimonials = () => {
             </div>
             <div className="flex justify-center mt-10">
               <span
-                className=" md:hidden  text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
+                className="block md:hidden  text-batik-gold hover:text-batik-orange font-semibold text-xs cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
                 onClick={() => (window.location.href = "/galeri")}
                 role="button"
                 tabIndex={0}
@@ -728,7 +728,7 @@ const Testimonials = () => {
                 <span className="text-xs font-bold">&gt;</span>
               </span>
               <span
-                className="md:block text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
+                className="hidden md:block text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
                 onClick={() => (window.location.href = "/galeri")}
                 role="button"
                 tabIndex={0}

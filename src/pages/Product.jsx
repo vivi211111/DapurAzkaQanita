@@ -1170,7 +1170,7 @@ const Product = () => {
       )}
 
       {/* Stats Section */}
-      <section className="py-12 bg-batik-cream/30">
+      <section className="py-6 md:py-12 bg-batik-cream/30">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="font-serif font-bold text-batik-brown mb-2 md:mb-4 text-xl md:text-3xl lg:text-4xl">

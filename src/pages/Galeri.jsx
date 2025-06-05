@@ -172,7 +172,7 @@ const Galeri = () => {
         </section>
 
         {/* Offers Grid */}
-        <section className="py-20 bg-white">
+        <section className="py-10 md:py-20 bg-white">
           <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
             {/*MOBILE*/}
             <div className="block md:hidden text-center mb-12">
@@ -231,7 +231,7 @@ const Galeri = () => {
         </section>
 
         {/* Galeri Testimoni Klien */}
-        <section className="py-20 bg-batik-cream/30">
+        <section className="py-10 md:py-20 bg-batik-cream/30">
           <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
             {/*MOBILE*/}
             <div className="block md:hidden text-center mb-12">
@@ -293,7 +293,7 @@ const Galeri = () => {
 
         {/* CTA Section */}
         {/*MOBILE*/}
-        <section className="block md:hidden py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
+        <section className="block md:hidden py-10 md:py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-6">
               Sudah Tertarik Untuk Membeli?
@@ -304,12 +304,12 @@ const Galeri = () => {
             </p>
             <div className="flex sm:flex-row gap-4 justify-center">
               <Link to="/product">
-                <button className="bg-batik-gold hover:bg-batik-gold/90 text-white text-sm font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                <button className="bg-batik-gold hover:bg-batik-gold/90 text-white text-sm font-semibold py-2 px-8 rounded-lg transition-all duration-300">
                   Lihat Semua Product
                 </button>
               </Link>
               <Link to="/contact">
-                <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown text-sm font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown text-sm font-semibold py-2 px-8 rounded-lg transition-all duration-300">
                   Hubungi Admin
                 </button>
               </Link>

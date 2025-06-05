@@ -220,7 +220,7 @@ const FAQ = () => {
         </section>
 
         {/* FAQ Content */}
-        <section className="py-20 bg-white dark:bg-gray-900">
+        <section className="py-10 md:py-20 bg-white dark:bg-gray-900">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             {searchTerm ? (
               // Search Results
@@ -317,7 +317,7 @@ const FAQ = () => {
         </section>
 
         {/* Contact Support */}
-        <section className="py-20 bg-batik-cream/30 dark:bg-gray-800">
+        <section className="py-10 md:py-20 bg-batik-cream/30 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/*MOBILE*/}
             <div className="block md:hidden text-center mb-12">

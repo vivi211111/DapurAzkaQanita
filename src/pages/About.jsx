@@ -49,7 +49,7 @@ const About = () => {
       className="pt-16"
     >
       {/* Hero Section */}
-      <section className="py-10 md:20 bg-gradient-to-br from-batik-cream/100 to-batik-gold/20 dark:from-gray-900 dark:to-gray-800">
+      <section className="py-10 md:py-20 md:20 bg-gradient-to-br from-batik-cream/100 to-batik-gold/20 dark:from-gray-900 dark:to-gray-800">
         {/*MOBILE*/}
         <div className="block md:hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-serif text-2xl md:text-5xl font-bold text-batik-brown dark:text-batik-gold mb-6">
@@ -73,7 +73,7 @@ const About = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-white dark:bg-gray-950">
+      <section className="py-10 md:py-20 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -126,7 +126,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-batik-cream/30">
+      <section className="py-10 md:py-20 bg-batik-cream/30">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-xl md:text-3xl font-bold text-batik-brown mb-12 text-center">
             Nilai-Nilai Kami
@@ -179,7 +179,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-white dark:bg-gray-950">
+      <section className="py-10 md:py-20 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-serif text-2xl md:text-4xl font-bold text-batik-brown dark:text-batik-gold mb-4">
@@ -217,7 +217,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
+      <section className="py-10 md:py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-serif text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
             Siap Merasakan Kelezatan Kue Kami?
@@ -227,12 +227,12 @@ const About = () => {
           </p>
           <div className="flex sm:flex-row gap-4 justify-center">
             <Link to="/product" className="w-full md:w-auto">
-              <button className="w-full md:w-auto bg-batik-gold hover:bg-batik-gold/90 text-sm text-white font-semibold py-3 md:py-4 px-8 md:px-8 rounded-lg transition-all duration-300 md:text-lg">
+              <button className="w-full md:w-auto bg-batik-gold hover:bg-batik-gold/90 text-sm text-white font-semibold py-2 md:py-4 px-8 md:px-8 rounded-lg transition-all duration-300 md:text-lg">
                 Lihat Semua Product
               </button>
             </Link>
             <Link to="/contact" className="w-full md:w-auto">
-              <button className="w-full md:w-auto border-2 border-white text-sm text-white hover:bg-white hover:text-batik-brown font-semibold py-3 md:py-4 px-8 md:px-8 rounded-lg transition-all duration-300 md:text-lg">
+              <button className="w-full md:w-auto border-2 border-white text-sm text-white hover:bg-white hover:text-batik-brown font-semibold py-2 md:py-4 px-8 md:px-8 rounded-lg transition-all duration-300 md:text-lg">
                 Hubungi Admin
               </button>
             </Link>
