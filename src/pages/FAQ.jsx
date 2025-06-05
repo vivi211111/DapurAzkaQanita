@@ -342,8 +342,8 @@ const FAQ = () => {
 
             {/*CONTACT*/}
             {/*MOBILE*/}
-            <div className="block md:hidden grid grid-cols-1 xs:grid-cols-2 gap-4">
-              <div className="text-center">
+            <div className="md:hidden flex flex-nowrap overflow-x-auto gap-4 pb-2 -mx-4 px-4">
+              <div className="text-center flex-shrink-0 min-w-[120px] bg-white/80 rounded-xl shadow-sm py-3">
                 <div className="w-10 h-10 bg-batik-gold rounded-full flex items-center justify-center mx-auto mb-2">
                   <InstagramIcon className="text-white" size={18} />
                 </div>
@@ -357,7 +357,7 @@ const FAQ = () => {
                   @dapur_azka_qanita
                 </button>
               </div>
-              <div className="text-center">
+              <div className="text-center flex-shrink-0 min-w-[220px] bg-white/80 rounded-xl shadow-sm py-3">
                 <div className="w-10 h-10 bg-batik-brown rounded-full flex items-center justify-center mx-auto mb-2">
                   <Phone className="text-white" size={18} />
                 </div>
@@ -371,7 +371,7 @@ const FAQ = () => {
                   +62 811-7874-456
                 </button>
               </div>
-              <div className="text-center col-span-1 xs:col-span-2">
+              <div className="text-center flex-shrink-0 min-w-[220px] bg-white/80 rounded-xl shadow-sm py-3">
                 <div className="w-10 h-10 bg-batik-maroon rounded-full flex items-center justify-center mx-auto mb-2">
                   <Mail className="text-white" size={18} />
                 </div>

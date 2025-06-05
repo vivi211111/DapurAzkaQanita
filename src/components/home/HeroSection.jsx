@@ -526,10 +526,36 @@ const HeroSection = () => {
     prevAd.current = currentAd;
   }, [currentAd]);
 
+  // --- SWIPE GESTURE FOR MOBILE CAROUSEL ---
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = () => {
+    if (touchStartX.current !== null && touchEndX.current !== null) {
+      const diff = touchStartX.current - touchEndX.current;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) handleSlide("right"); // swipe left
+        else handleSlide("left"); // swipe right
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
     <section className="relative flex items-center justify-center mt-0 md:mt-0 md:min-h-[600px] overflow-hidden">
       {/* MOBILE/TABLET */}
-      <div className="w-full flex justify-center md:hidden">
+      <div className="w-full flex justify-center md:hidden"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className="w-full max-w-3xl md:max-w-none md:w-full md:rounded-none md:shadow-none md:bg-transparent shadow-lg bg-gradient-to-br from-batik-cream via-batik-gold/20 to-batik-brown/10 dark:from-gray-900 dark:via-batik-brown/30 dark:to-gray-950 relative">
           <div className="absolute inset-0 opacity-30 pointer-events-none z-0 md:hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(218,165,32,0.3)_0%,transparent_50%)] animate-pulse"></div>

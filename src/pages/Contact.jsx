@@ -122,12 +122,12 @@ const Contact = () => {
         {/* Contact Info */}
         <section className="py-10 md:py-20 bg-white dark:bg-gray-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* MOBILE: grid 2 kolom, card lebih kecil */}
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-10 md:mb-16">
+            {/* MOBILE: 1 baris horizontal scrollable, DESKTOP: grid 4 kolom */}
+            <div className="flex flex-nowrap overflow-x-auto gap-4 pb-2 -mx-4 px-2 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 md:mb-16 mb-10">
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="text-center px-2 py-4 md:px-0 md:py-0"
+                  className="text-center px-2 py-4 md:px-0 md:py-0 flex-shrink-0 min-w-[180px] md:min-w-0"
                 >
                   <div className="w-10 h-10 md:w-16 md:h-16 bg-batik-gold rounded-full flex items-center justify-center mx-auto mb-2 md:mb-4">
                     <info.icon className="text-white" size={18} />

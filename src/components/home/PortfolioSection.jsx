@@ -91,11 +91,11 @@ const PortfolioSection = () => {
               tradisional dan bahan pilihan, cocok untuk berbagai momen istimewa.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="flex flex-nowrap overflow-x-auto gap-3 pb-2 -mx-4 px-2 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6">
             {portfolioItems.map((item, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-batik-cream to-batik-gold/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                className="group relative bg-gradient-to-br from-batik-cream to-batik-gold/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex-shrink-0 min-w-[220px] md:min-w-0"
               >
                 {/* Video or Image */}
                 {item.type === "video" ? (
@@ -168,7 +168,7 @@ const PortfolioSection = () => {
               }}
             >
               Lihat Semua Galeri{" "}
-              <span className="text-base font-bold">&gt;</span>
+              <span className="text-xs font-bold">&gt;</span>
             </span>
           </div>
         </div>
@@ -257,7 +257,7 @@ const PortfolioSection = () => {
                 if (e.key === "Enter" || e.key === " ") navigate("/galeri");
               }}
             >
-              Lihat Semua Galeri <span className="text-lg font-bold">&gt;</span>
+              Lihat Semua Galeri <span className="text-base font-bold">&gt;</span>
             </span>
           </div>
         </div>
