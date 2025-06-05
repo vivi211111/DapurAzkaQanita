@@ -416,7 +416,7 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
               {selectedCartItems.map((item, idx) => (
                 <li key={idx} className="py-2 flex items-center gap-2">
                   <img
-                    src={item.image || "/placeholder.svg"}
+                    src={item.image || "placeholder.jpg"}
                     alt={item.title}
                     className="w-10 h-10 rounded border object-cover"
                   />
@@ -739,7 +739,7 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
                           className="flex space-x-3 p-3 bg-gray-50 rounded-lg"
                         >
                           <img
-                            src={item.image || "/placeholder.svg"}
+                            src={item.image || "placeholder.jpg"}
                             alt={item.title}
                             className="w-16 h-16 object-cover rounded-lg"
                           />
@@ -895,7 +895,7 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
                             >
                               <div className="flex items-center space-x-3">
                                 <img
-                                  src={item.image || "/placeholder.svg"}
+                                  src={item.image || "placeholder.jpg"}
                                   alt={item.title}
                                   className="w-12 h-12 object-cover rounded-lg"
                                 />

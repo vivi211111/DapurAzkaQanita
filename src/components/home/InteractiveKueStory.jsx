@@ -4,35 +4,35 @@ import { motion, AnimatePresence } from "framer-motion";
 const kueStories = [
 	{
 		name: "Maksubah",
-		image: "/portfolio/kue-maksubah-prunes.jpg",
+		image: "placeholder.jpg",
 		story:
 			"Maksubah adalah kue tradisional Palembang yang hanya dibuat pada momen istimewa seperti Lebaran dan pernikahan. Kue ini melambangkan kemakmuran dan kehangatan keluarga.",
 		trivia: "Butuh hingga 30 butir telur untuk membuat satu loyang Maksubah!",
 	},
 	{
 		name: "Lapis Legit",
-		image: "/portfolio/kue-lapis-legit.jpg",
+		image: "placeholder.jpg",
 		story:
 			"Lapis Legit dikenal sebagai kue seribu lapis, simbol kesabaran dan ketekunan. Biasanya disajikan saat hari besar sebagai tanda syukur dan kebersamaan.",
 		trivia: "Lapis Legit bisa memiliki lebih dari 18 lapisan!",
 	},
 	{
 		name: "Kue Delapan Jam",
-		image: "/portfolio/BATIK2.jpg",
+		image: "placeholder.jpg",
 		story:
 			"Kue Delapan Jam adalah kue khas Palembang yang dimasak selama 8 jam, biasanya disajikan pada acara besar dan pernikahan. Teksturnya lembut dan legit.",
 		trivia: "Dinamakan Delapan Jam karena proses memasaknya yang sangat lama!",
 	},
 	{
 		name: "Kue Srikaya",
-		image: "/portfolio/BATIK3.jpg",
+		image: "placeholder.jpg",
 		story:
 			"Kue Srikaya terbuat dari santan, telur, dan gula, dikukus hingga lembut. Biasanya disantap bersama ketan dan menjadi sajian favorit saat Lebaran.",
 		trivia: "Kue ini punya aroma harum khas daun pandan dan tekstur creamy.",
 	},
 	{
 		name: "Kue Kojo",
-		image: "/portfolio/BATIK4.jpg",
+		image: "placeholder.jpg",
 		story:
 			"Kue Kojo berwarna hijau dengan rasa manis legit, terbuat dari telur, santan, dan daun pandan. Sering dijadikan hantaran atau suguhan tamu.",
 		trivia:

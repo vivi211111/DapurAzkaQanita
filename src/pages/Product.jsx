@@ -41,7 +41,7 @@ const Product = () => {
       category: "middle",
       description:
         "Maksubah lapis legit khas Palembang, rasa klasik legit dan lembut.",
-      image: "/portfolio/Maksubah.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 325000,
       material: "Telur, gula, mentega",
@@ -61,7 +61,7 @@ const Product = () => {
       category: "middle",
       description:
         "Maksubah dengan topping prunes premium, rasa manis legit dan segar.",
-      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
+      image: "placeholder.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
       price: 375000,
       material: "Telur, gula, mentega, prunes",
@@ -80,7 +80,7 @@ const Product = () => {
       title: "Maksubah Keju",
       category: "middle",
       description: "Maksubah dengan taburan keju melimpah, gurih dan lembut.",
-      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
+      image: "placeholder.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
       price: 355000,
       material: "Telur, gula, mentega, keju",
@@ -99,7 +99,7 @@ const Product = () => {
       title: "Maksubah Coklat",
       category: "middle",
       description: "Maksubah dengan rasa coklat premium, manis dan legit.",
-      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
+      image: "placeholder.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
       price: 355000,
       material: "Telur, gula, mentega, coklat",
@@ -119,7 +119,7 @@ const Product = () => {
       category: "middle",
       description:
         "Kue legit khas Palembang, dimasak selama 8 jam, tekstur lembut.",
-      image: "/portfolio/LapanJam.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 325000,
       material: "Telur, gula, mentega",
@@ -139,7 +139,7 @@ const Product = () => {
       category: "middle",
       description:
         "Lapan Jam dengan tambahan durian, aroma harum dan rasa khas.",
-      image: "/portfolio/LapanJam.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 365000,
       material: "Telur, gula, mentega, durian",
@@ -158,7 +158,7 @@ const Product = () => {
       title: "Lapan Jam Keju",
       category: "middle",
       description: "Lapan Jam dengan taburan keju, gurih dan lembut.",
-      image: "/portfolio/LapanJam.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 355000,
       material: "Telur, gula, mentega, keju",
@@ -177,7 +177,7 @@ const Product = () => {
       category: "middle",
       description:
         "Kue lapis hijau khas Palembang, rasa manis legit dan aroma pandan.",
-      image: "/portfolio/BATIK6.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 325000,
       material: "Telur, gula, santan, daun pandan",
@@ -197,7 +197,7 @@ const Product = () => {
       category: "middle",
       description:
         "Lapis Kojo dengan tambahan durian, rasa legit dan aroma khas.",
-      image: "/portfolio/BATIK6.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 365000,
       material: "Telur, gula, santan, daun pandan, durian",
@@ -217,7 +217,7 @@ const Product = () => {
       category: "middle",
       description:
         "Kue lapis legit tradisional, tekstur lembut dan rasa manis.",
-      image: "/portfolio/BATIK10.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 325000,
       material: "Telur, gula, mentega",
@@ -236,7 +236,7 @@ const Product = () => {
       title: "Engkak Duren",
       category: "middle",
       description: "Engkak dengan tambahan durian, rasa legit dan aroma khas.",
-      image: "/portfolio/BATIK11.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 365000,
       material: "Telur, gula, mentega, durian",
@@ -255,7 +255,7 @@ const Product = () => {
       title: "Maksubah Kojo (Makjo)",
       category: "middle",
       description: "Maksubah dengan campuran Kojo, rasa unik dan legit.",
-      image: "/portfolio/BATIK12.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 325000,
       material: "Telur, gula, mentega, daun pandan",
@@ -273,7 +273,7 @@ const Product = () => {
       title: "Maksubah Kojo (Makjo) Prunes",
       category: "middle",
       description: "Maksubah Kojo dengan topping prunes, rasa unik dan segar.",
-      image: "/portfolio/BATIK13.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 375000,
       material: "Telur, gula, mentega, daun pandan, prunes",
@@ -293,7 +293,7 @@ const Product = () => {
       category: "middle",
       description:
         "Maksubah, Engkak, dan Kojo dalam satu kue, kombinasi rasa unik.",
-      image: "/portfolio/BATIK14.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Middle"],
       price: 325000,
       material: "Telur, gula, mentega, daun pandan",
@@ -314,7 +314,7 @@ const Product = () => {
       category: "premium",
       description:
         "Maksubah premium, tekstur lebih lembut dan rasa lebih kaya.",
-      image: "/portfolio/kue-maksubah-original.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, mentega premium",
@@ -334,7 +334,7 @@ const Product = () => {
       category: "premium",
       description:
         "Maksubah premium dengan topping prunes, rasa manis legit dan segar.",
-      image: "/portfolio/kue-maksubah-prunes.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 485000,
       material: "Telur, gula, mentega premium, prunes",
@@ -354,7 +354,7 @@ const Product = () => {
       category: "premium",
       description:
         "Maksubah premium dengan taburan keju melimpah, gurih dan lembut.",
-      image: "/portfolio/kue-maksubah-keju.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 465000,
       material: "Telur, gula, mentega premium, keju",
@@ -374,7 +374,7 @@ const Product = () => {
       category: "premium",
       description:
         "Maksubah premium dengan rasa coklat premium, manis dan legit.",
-      image: "/portfolio/kue-maksubah-coklat.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, coklat",
@@ -394,7 +394,7 @@ const Product = () => {
       category: "premium",
       description:
         "Lapan Jam premium, tekstur lebih lembut dan rasa lebih kaya.",
-      image: "/portfolio/LapanJam.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, mentega premium",
@@ -414,7 +414,7 @@ const Product = () => {
       category: "premium",
       description:
         "Lapan Jam premium dengan tambahan durian, aroma harum dan rasa khas.",
-      image: "/portfolio/LapanJam.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, durian",
@@ -433,7 +433,7 @@ const Product = () => {
       title: "Lapan Jam Keju",
       category: "premium",
       description: "Lapan Jam premium dengan taburan keju, gurih dan lembut.",
-      image: "/portfolio/LapanJam.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 465000,
       material: "Telur, gula, mentega premium, keju",
@@ -453,7 +453,7 @@ const Product = () => {
       category: "premium",
       description:
         "Lapis Kojo premium, rasa manis legit dan aroma pandan lebih kuat.",
-      image: "/portfolio/BATIK6.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, santan, daun pandan premium",
@@ -473,7 +473,7 @@ const Product = () => {
       category: "premium",
       description:
         "Lapis Kojo premium dengan tambahan durian, rasa legit dan aroma khas.",
-      image: "/portfolio/BATIK9.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, santan, daun pandan premium, durian",
@@ -492,7 +492,7 @@ const Product = () => {
       title: "Engkak",
       category: "premium",
       description: "Engkak premium, tekstur lebih lembut dan rasa lebih kaya.",
-      image: "/portfolio/BATIK10.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, mentega premium",
@@ -512,7 +512,7 @@ const Product = () => {
       category: "premium",
       description:
         "Engkak premium dengan tambahan durian, rasa legit dan aroma khas.",
-      image: "/portfolio/BATIK11.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, durian",
@@ -531,7 +531,7 @@ const Product = () => {
       title: "Maksubah Kojo (Makjo)",
       category: "premium",
       description: "Maksubah Kojo premium, rasa unik dan legit.",
-      image: "/portfolio/BATIK12.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, mentega premium, daun pandan premium",
@@ -550,7 +550,7 @@ const Product = () => {
       category: "premium",
       description:
         "Maksubah Kojo premium dengan topping prunes, rasa unik dan segar.",
-      image: "/portfolio/BATIK13.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 485000,
       material: "Telur, gula, mentega premium, daun pandan premium, prunes",
@@ -570,7 +570,7 @@ const Product = () => {
       category: "premium",
       description:
         "Maksubah, Engkak, dan Kojo premium dalam satu kue, kombinasi rasa unik.",
-      image: "/portfolio/BATIK14.jpg",
+      image: "placeholder.jpg",
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, mentega premium, daun pandan premium",
@@ -590,7 +590,7 @@ const Product = () => {
       title: "Lapis Legit Original",
       category: "premium",
       description: "Lapis Legit premium, tekstur lembut dan aroma butter.",
-      image: "/portfolio/LapisLegitNanas.jpg", // Ganti ke foto yang ada
+      image: "placeholder.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, mentega premium",
@@ -610,7 +610,7 @@ const Product = () => {
       category: "premium",
       description:
         "Lapis Legit premium dengan tambahan nanas, rasa segar dan legit.",
-      image: "/portfolio/LapisLegitNanas.jpg", // Ganti ke foto yang ada
+      image: "placeholder.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, nanas",
@@ -629,7 +629,7 @@ const Product = () => {
       title: "Lapis Legit Keju",
       category: "premium",
       description: "Lapis Legit premium dengan taburan keju, gurih dan lembut.",
-      image: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
+      image: "placeholder.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, keju",
@@ -648,7 +648,7 @@ const Product = () => {
       title: "Lapis Legit Coklat",
       category: "premium",
       description: "Lapis Legit premium dengan rasa coklat, manis dan legit.",
-      image: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
+      image: "placeholder.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, coklat",
@@ -668,7 +668,7 @@ const Product = () => {
       category: "premium",
       description:
         "Lapis Legit premium dengan topping prunes, rasa segar dan legit.",
-      image: "/portfolio/LapisLegitPrunes.jpg", // Ganti ke foto yang ada
+      image: "placeholder.jpg", // Ganti ke foto yang ada
       tags: ["Kue", "Premium"],
       price: 485000,
       material: "Telur, gula, mentega premium, prunes",
@@ -880,7 +880,7 @@ const Product = () => {
                 >
                   <div className="relative overflow-hidden">
                     <img
-                      src={item.image || "/BATIK.jpg"}
+                      src={item.image || "placeholder.jpg"}
                       alt={item.title}
                       className="w-full h-44 sm:h-52 md:h-56 lg:h-64 object-cover group-hover:scale-105 transition-transform duration-300 rounded-t-xl"
                     />
@@ -970,7 +970,7 @@ const Product = () => {
                 {/* Product Image */}
                 <div className="space-y-1 sm:space-y-2 md:space-y-4 flex flex-col items-center">
                   <img
-                    src={selectedProduct.image || "/placeholder.svg"}
+                    src={selectedProduct.image || "placeholder.jpg"}
                     alt={selectedProduct.title}
                     className="w-[250]                                                                                               px] h-[200px] sm:w-40 sm:h-40 md:w-72 md:h-96 object-cover rounded-xl shadow-lg"
                   />

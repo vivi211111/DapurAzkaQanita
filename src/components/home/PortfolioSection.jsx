@@ -16,7 +16,7 @@ const PortfolioSection = () => {
       description:
         "Lapis Legit klasik Dapur Azka, berlapis-lapis, lembut, dan harum rempah, cocok untuk segala acara spesial.",
       type: "video",
-      thumbnail: "/placeholder.jpg",
+      thumbnail: "placeholder.jpg",
       video: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
@@ -25,7 +25,7 @@ const PortfolioSection = () => {
       description:
         "Maksubah dengan topping prunes premium, rasa manis legit dan segar, favorit keluarga.",
       type: "image",
-      thumbnail: "/placeholder.jpg",
+      thumbnail: "placeholder.jpg",
     },
     {
       title: "Bolu Kukus Pelangi",
@@ -33,7 +33,7 @@ const PortfolioSection = () => {
       description:
         "Bolu kukus warna-warni, lembut, dan cocok untuk hantaran atau acara keluarga.",
       type: "video",
-      thumbnail: "/placeholder.jpg",
+      thumbnail: "placeholder.jpg",
       video: "https://www.w3schools.com/html/movie.mp4",
     },
     {
@@ -42,7 +42,7 @@ const PortfolioSection = () => {
       description:
         "Lapis Kojo Duren dengan aroma pandan dan durian, tekstur lembut dan rasa khas Palembang.",
       type: "image",
-      thumbnail: "/placeholder.jpg",
+      thumbnail: "placeholder.jpg",
     },
   ];
 

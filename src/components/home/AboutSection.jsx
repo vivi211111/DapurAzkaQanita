@@ -5,19 +5,19 @@ import { useState } from "react";
 const kueStories = [
 	{
 		name: "Maksubah",
-		image: "/portfolio/kue-maksubah-prunes.jpg",
+		image: "placeholder.jpg",
 		story:
 			"Maksubah adalah kue tradisional Palembang yang hanya dibuat pada momen istimewa seperti Lebaran dan pernikahan. Kue ini melambangkan kemakmuran dan kehangatan keluarga.",
 	},
 	{
 		name: "Lapis Legit",
-		image: "/portfolio/kue-lapis-legit.jpg",
+		image: "placeholder.jpg",
 		story:
 			"Lapis Legit dikenal sebagai kue seribu lapis, simbol kesabaran dan ketekunan. Biasanya disajikan saat hari besar sebagai tanda syukur dan kebersamaan.",
 	},
 	{
 		name: "Bolu Kukus Pelangi",
-		image: "/portfolio/kue-bolu-kukus.jpg",
+		image: "placeholder.jpg",
 		story:
 			"Bolu Kukus Pelangi dengan warna-warni ceria sering menjadi favorit anak-anak saat Lebaran, melambangkan kebahagiaan dan harapan baru.",
 	},
@@ -42,7 +42,7 @@ const AboutSection = () => {
 						>
 							<div className="rounded-lg overflow-hidden shadow border border-batik-gold/30">
 								<img
-									src="/about/DapurAzka.jpg"
+									src="placeholder.jpg"
 									alt="Dapur Azka Qanita"
 									className="w-full h-50 object-center scale-105"
 								/>
@@ -137,7 +137,7 @@ const AboutSection = () => {
 						>
 							<div className="rounded-2xl overflow-hidden shadow-lg border border-batik-gold/30 dark:border-batik-gold/10">
 								<img
-									src="/about/DapurAzka.jpg"
+									src="placeholder.jpg"
 									alt="Dapur Azka Qanita"
 									className="w-full object-center scale-110 hover:scale-105 transition-transform duration-500 rounded-t-2xl"
 								/>

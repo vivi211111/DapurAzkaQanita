@@ -20,7 +20,7 @@ const Testimonials = () => {
         "Kuenya enak banget, teksturnya lembut dan rasa manisnya pas. Anak-anak di rumah suka sekali dengan Maksubah!",
       project: "Maksubah",
       date: "Januari 2025",
-      image: "/testimonials/Sarah Wijaya.jpeg?height=80&width=80",
+      image: "placeholder.jpg",
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ const Testimonials = () => {
         "Maksubah Prunes benar-benar favorit pelanggan di toko saya. Rasa prunes-nya menambah cita rasa unik!",
       project: "Maksubah Prunes",
       date: "Februari 2025",
-      image: "/testimonials/Budi Santoso.jpeg?height=80&width=80",
+      image: "placeholder.jpg",
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ const Testimonials = () => {
         "Maksubah Keju sangat lembut dan kejunya melimpah. Cocok untuk hantaran keluarga!",
       project: "Maksubah Keju",
       date: "Maret 2025",
-      image: "/testimonials/Maya Sari.jpeg?height=80&width=80",
+      image: "placeholder.jpg",
     },
     {
       id: 4,
@@ -56,7 +56,7 @@ const Testimonials = () => {
         "Lapan Jam Duren aromanya harum dan rasa duriannya terasa. Cocok untuk oleh-oleh khas Palembang.",
       project: "Lapan Jam Duren",
       date: "April 2025",
-      image: "/testimonials/Dr. Ahmad Fauzi.jpeg?height=80&width=80",
+      image: "placeholder.jpg",
     },
     {
       id: 5,
@@ -68,7 +68,7 @@ const Testimonials = () => {
         "Lapis Kojo Duren warnanya cantik dan rasa duriannya pas, tidak terlalu manis. Anak-anak suka!",
       project: "Lapis Kojo Duren",
       date: "Mei 2025",
-      image: "/testimonials/Rina Kusuma.jpeg?height=80&width=80",
+      image: "placeholder.jpg",
     },
     {
       id: 6,
@@ -80,7 +80,7 @@ const Testimonials = () => {
         "Engkak Duren teksturnya legit dan rasa duriannya mantap. Sangat recommended untuk acara keluarga!",
       project: "Engkak Duren",
       date: "Juni 2025",
-      image: "/testimonials/profil12.jpg?height=60&width=60",
+      image: "placeholder.jpg",
     },
     {
       id: 7,
@@ -92,7 +92,7 @@ const Testimonials = () => {
         "Maksubah Coklat cocok untuk pecinta coklat, rasa manis dan coklatnya seimbang.",
       project: "Maksubah Coklat",
       date: "Juli 2025",
-      image: "/testimonials/profil7.jpg",
+      image: "placeholder.jpg",
     },
     {
       id: 8,
@@ -104,7 +104,7 @@ const Testimonials = () => {
         "Lapis Legit Original sangat lembut dan aromanya harum. Cocok untuk hantaran lebaran.",
       project: "Lapis Legit Original",
       date: "Agustus 2025",
-      image: "/testimonials/profil8.jpg",
+      image: "placeholder.jpg",
     },
     {
       id: 9,
@@ -116,7 +116,7 @@ const Testimonials = () => {
         "Lapan Jam Keju rasanya unik, manis dan gurih kejunya terasa. Pasti order lagi!",
       project: "Lapan Jam Keju",
       date: "September 2025",
-      image: "/testimonials/profil9.jpg",
+      image: "placeholder.jpg",
     },
     {
       id: 11,
@@ -128,7 +128,7 @@ const Testimonials = () => {
         "Lapis Legit Prunes cocok untuk oleh-oleh, rasa prunes-nya segar dan tidak terlalu manis.",
       project: "Lapis Legit Prunes",
       date: "November 2025",
-      image: "/testimonials/profil11.jpg",
+      image: "placeholder.jpg",
     },
   ]);
 
@@ -252,22 +252,22 @@ const Testimonials = () => {
       id: 1,
       name: "Sarah Wijaya",
       title: "Testimoni Klien 1",
-      thumbnail: "/testimonials/Sarah Wijaya.jpeg?height=400&width=600",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+      thumbnail: "placeholder.jpg",
+      video: "placeholder.jpg",
     },
     {
       id: 2,
       name: "Budi Santoso",
       title: "Testimoni Klien 2",
-      thumbnail: "/testimonials/Budi Santoso.jpeg?height=400&width=600",
-      video: "https://www.w3schools.com/html/movie.mp4",
+      thumbnail: "placeholder.jpg",
+      video: "placeholder.jpg",
     },
     {
       id: 3,
       name: "Maya Sari",
       title: "Testimoni Klien 3",
-      thumbnail: "/testimonials/Maya Sari.jpeg?height=400&width=600",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+      thumbnail: "placeholder.jpg",
+      video: "placeholder.jpg",
     },
     // Tambahkan video baru di sini
   ];
@@ -715,7 +715,7 @@ const Testimonials = () => {
             </div>
             <div className="flex justify-center mt-10">
               <span
-                className="block md:hidden  text-batik-gold hover:text-batik-orange font-semibold text-xs cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
+                className="block md:hidden  text-batik-gold hover:text-batik-orange font-semibold text-xs cursor-pointer underline underline-offset-4 transition-colors duration-200 items-center gap-1"
                 onClick={() => (window.location.href = "/galeri")}
                 role="button"
                 tabIndex={0}
@@ -728,7 +728,7 @@ const Testimonials = () => {
                 <span className="text-xs font-bold">&gt;</span>
               </span>
               <span
-                className="hidden md:block text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 flex items-center gap-1"
+                className="hidden md:block text-batik-gold hover:text-batik-orange font-semibold text-base cursor-pointer underline underline-offset-4 transition-colors duration-200 items-center gap-1"
                 onClick={() => (window.location.href = "/galeri")}
                 role="button"
                 tabIndex={0}

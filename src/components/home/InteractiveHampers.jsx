@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 const kueList = [
 	{
 		name: "Maksubah",
-		image: "/portfolio/kue-maksubah-prunes.jpg",
+		image: "placeholder.jpg",
 		desc: "Kue legit khas Palembang, cocok untuk momen spesial.",
 	},
 	{
 		name: "Lapis Legit",
-		image: "/portfolio/kue-lapis-legit.jpg",
+		image: "placeholder.jpg",
 		desc: "Kue lapis klasik, simbol kebersamaan dan ketekunan.",
 	},
 ];

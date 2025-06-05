@@ -17,27 +17,27 @@ const About = () => {
       role: "Founder & CEO",
       description:
         "Berpengalaman lebih dari 20 tahun di dunia kuliner dan kue tradisional Palembang.",
-      image: "/about/hatta.jpg",
+      image: "placeholder.jpg",
     },
     {
       name: "Evania Loveola",
       role: "Creative Director",
       description:
         "Ahli dalam inovasi resep dan pengembangan varian kue basah Dapur Azka.",
-      image: "/about/Eva.jpg",
+      image: "placeholder.jpg",
     },
     {
       name: "Aidilya Laila Andhini",
       role: "Production Manager",
       description:
         "Mengelola proses produksi kue dengan standar kualitas tinggi dan higienis.",
-      image: "/about/Andhini.jpg",
+      image: "placeholder.jpg",
     },
     {
       name: "Dhea Mutmainah",
       role: "Marketing Director",
       description: "Strategi pemasaran dan pengembangan bisnis kue Dapur Azka.",
-      image: "/about/Eka.jpg",
+      image: "placeholder.jpg",
     },
   ];
 
@@ -112,12 +112,12 @@ const About = () => {
                 <img
                   alt="Bahan masakan segar"
                   className="rounded-lg shadow-xl w-full h-auto object-cover"
-                  src="https://images.unsplash.com/photo-1556909006-3490b8946a40"
+                  src="placeholder.jpg"
                 />
                 <img
                   alt="Hidangan lezat disajikan"
                   className="rounded-lg shadow-xl w-full h-auto object-cover"
-                  src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759"
+                  src="placeholder.jpg"
                 />
               </div>
             </motion.div>
@@ -197,7 +197,7 @@ const About = () => {
               <div key={index} className="text-center group">
                 <div className="w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-batik-gold/20 to-batik-brown/20 dark:from-batik-gold/10 dark:to-batik-brown/10 rounded-full mx-auto mb-4 md:mb-6 flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                   <img
-                    src={member.image || "/placeholder.svg"}
+                    src={member.image || "placeholder.jpg"}
                     alt={member.name}
                     className="w-full h-full object-cover rounded-full"
                   />

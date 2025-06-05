@@ -459,7 +459,7 @@ const HeroSection = () => {
     {
       title: "Lapis Legit Original",
       desc: "Nikmati Lapis Legit Original kami, dibuat dengan resep tradisional dan bahan-bahan pilihan terbaik.",
-      img: "/portfolio/LapisLegitNanas.jpg", // Ada
+      img: "placeholder.jpg", // Ada
       badge: "Best Seller",
       badgeColor: "bg-orange-500",
       cta: "Coba Sekarang",
@@ -469,7 +469,7 @@ const HeroSection = () => {
     {
       title: "Maksubah Prunes",
       desc: "Maksubah Prunes dengan topping buah prunes premium, legit dan segar untuk keluarga.",
-      img: "/portfolio/Maksubah.jpg", // Ada
+      img: "placeholder.jpg", // Ada
       badge: "Favorit Keluarga",
       badgeColor: "bg-batik-gold",
       cta: "Pesan Sekarang",
@@ -479,7 +479,7 @@ const HeroSection = () => {
     {
       title: "Bolu Kukus Pelangi",
       desc: "Bolu kukus warna-warni, lembut dan cocok untuk acara spesial Anda.",
-      img: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
+      img: "placeholder.jpg", // Ganti ke foto yang ada
       badge: "Varian Baru",
       badgeColor: "bg-green-500",
       cta: "Lihat Varian",

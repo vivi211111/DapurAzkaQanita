@@ -234,7 +234,7 @@ const Navbar = () => {
                                 className="mb-1 w-3 h-3"
                               />
                               <img
-                                src={item.image || "/placeholder.svg"}
+                                src={item.image || "/placeholder.jpg"}
                                 alt={item.title}
                                 className="w-12 h-12 object-cover rounded border"
                               />
@@ -292,7 +292,7 @@ const Navbar = () => {
                           {/* Gambar */}
                           <div className="flex-shrink-0 w-20 h-20 border border-gray-200 rounded-md overflow-hidden">
                             <img
-                              src={item.image || "/placeholder.svg"}
+                              src={item.image || "placeholder.jpg"}
                               alt={item.title}
                               className="w-full h-full object-center object-cover"
                             />
