@@ -342,7 +342,7 @@ const FAQ = () => {
 
             {/*CONTACT*/}
             {/*MOBILE*/}
-            <div className="block md:hidden grid grid-cols-2 gap-4">
+            <div className="block md:hidden grid grid-cols-1 xs:grid-cols-2 gap-4">
               <div className="text-center">
                 <div className="w-10 h-10 bg-batik-gold rounded-full flex items-center justify-center mx-auto mb-2">
                   <InstagramIcon className="text-white" size={18} />
@@ -353,7 +353,7 @@ const FAQ = () => {
                 <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
                   Chat langsung dengan tim support kami
                 </p>
-                <button className="btn-primary text-sm py-2 px-4 rounded-lg min-w-[120px]">
+                <button className="btn-primary text-xs py-2 px-4 rounded-lg min-w-[120px] mb-2 w-full max-w-xs mx-auto">
                   @dapur_azka_qanita
                 </button>
               </div>
@@ -367,11 +367,11 @@ const FAQ = () => {
                 <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
                   Hubungi hotline customer service kami
                 </p>
-                <button className="btn-primary text-sm py-2 px-4 rounded-lg min-w-[120px]">
+                <button className="btn-primary text-xs py-2 px-4 rounded-lg min-w-[120px] mb-2 w-full max-w-xs mx-auto">
                   +62 811-7874-456
                 </button>
               </div>
-              <div className="text-center col-span-2">
+              <div className="text-center col-span-1 xs:col-span-2">
                 <div className="w-10 h-10 bg-batik-maroon rounded-full flex items-center justify-center mx-auto mb-2">
                   <Mail className="text-white" size={18} />
                 </div>
@@ -381,7 +381,7 @@ const FAQ = () => {
                 <p className="text-xs text-gray-600 dark:text-gray-300 mb-2">
                   Kirim pertanyaan detail via email
                 </p>
-                <button className="btn-primary text-sm py-2 px-4 rounded-lg min-w-[120px]">
+                <button className="btn-primary text-xs py-2 px-4 rounded-lg min-w-[120px] w-full max-w-xs mx-auto">
                   info@batiknusantara.com
                 </button>
               </div>

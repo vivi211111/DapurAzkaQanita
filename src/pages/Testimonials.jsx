@@ -602,7 +602,7 @@ const Testimonials = () => {
         <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-2 md:px-4 xl:px-6">
           <div className="max-w-screen-xl mx-auto">
             {/* MOBILE: grid 3 kolom, DESKTOP: tetap */}
-            <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
               {filteredTestimonials.map((t, idx) => (
                 <div
                   key={t.id}
