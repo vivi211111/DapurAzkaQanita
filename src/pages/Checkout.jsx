@@ -187,7 +187,7 @@ const Checkout = () => {
   const handleSendToWhatsApp = () => {
     const orderDetails = `
     ====================
-    \n🛍️ *RINGKASAN PESANAN Dapur Azka Qanita*
+    🛍️ *RINGKASAN PESANAN Dapur Azka Qanita*
     \n====================
 
     \n\n📋 *Nomor Pesanan:* ${orderNumber}
@@ -209,7 +209,7 @@ const Checkout = () => {
       \n💳 *TOTAL PEMBAYARAN:*
       \n• Subtotal \t: ${formatPrice(subtotal)}
       \n• Ongkir  \t: ${formatPrice(formData.shippingCost)}
-      \n• *Total \t: ${formatPrice(total)}*
+      \n• *Total \t\t: ${formatPrice(total)}*
       
       \n\n====================
       \n👤 *DATA PELANGGAN:*
