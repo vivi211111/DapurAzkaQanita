@@ -138,6 +138,14 @@ const Testimonials = () => {
   const [categoryFilter, setCategoryFilter] = useState("");
   const [showVideo, setShowVideo] = useState({});
 
+  // Tambahkan state untuk pagination dan load more
+  const [page, setPage] = useState(1);
+  const perPage = 5; // jumlah komentar per halaman
+  const [showAll, setShowAll] = useState(false);
+
+  // Untuk infinite scroll
+  const [infiniteCount, setInfiniteCount] = useState(perPage);
+
   // Ambil daftar unik kategori/proyek dari data testimonial
   const testimonialProjects = Array.from(
     new Set(allTestimonials.map((t) => t.project))
@@ -271,6 +279,13 @@ const Testimonials = () => {
     },
     // Tambahkan video baru di sini
   ];
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredTestimonials.length / perPage);
+  const pagedTestimonials = filteredTestimonials.slice(
+    (page - 1) * perPage,
+    page * perPage
+  );
 
   return (
     <motion.div
@@ -573,12 +588,107 @@ const Testimonials = () => {
         </div>
       )}
 
-      {/* Testimonials Grid */}
+      {/* Testimonials Grid - Pagination on Mobile Only */}
       <section className="py-10 bg-batik-cream/30">
         <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-2 md:px-4 xl:px-6">
           <div className="max-w-screen-xl mx-auto">
-            {/* MOBILE: grid 3 kolom, DESKTOP: tetap */}
-            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
+            {/* MOBILE: Pagination */}
+            <div className="block md:hidden">
+              <div className="grid grid-cols-1 gap-4 mb-6">
+                {pagedTestimonials.map((t, idx) => (
+                  <div
+                    key={t.id}
+                    className="bg-white rounded-xl shadow p-2 md:p-6 flex flex-col gap-1 md:gap-3 border border-gray-100 text-xs md:text-base mx-auto w-full max-w-sm"
+                    style={{ minHeight: 80 }}
+                  >
+                    <div className="flex items-center gap-2 mb-1">
+                      {t.image ? (
+                        <img
+                          src={t.image}
+                          alt={t.name}
+                          className="w-8 h-8 rounded-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center font-bold text-batik-brown text-xs">
+                          {t.name
+                            ?.split(" ")
+                            .map((w) => w[0])
+                            .join("")}
+                        </div>
+                      )}
+                      <div>
+                        <div className="font-semibold text-batik-brown text-xs md:text-base">
+                          {t.name}
+                        </div>
+                        {/* MOBILE: role & tanggal 2 baris, DESKTOP: tetap 1 baris */}
+                        <div className="text-xs text-gray-400 hidden md:block">
+                          {t.role} • {t.date}
+                        </div>
+                        <div className="text-xs text-gray-400 block md:hidden">
+                          <div>{t.role}</div>
+                          <div>{t.date}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1 md:gap-2 mb-1 md:mb-2">
+                      {[...Array(t.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 text-batik-gold fill-current"
+                        />
+                      ))}
+                      {[...Array(5 - t.rating)].map((_, i) => (
+                        <Star
+                          key={i + 10}
+                          className="w-4 h-4 text-gray-200 fill-current"
+                        />
+                      ))}
+                      <span className="ml-2 text-xs font-semibold text-batik-brown">
+                        {t.project}
+                      </span>
+                    </div>
+                    {/* Perkecil text deskripsi review di mobile */}
+                    <div className="text-gray-700 text-xs md:text-base mb-1 md:mb-2">
+                      {t.content}
+                    </div>
+                    <button className="flex items-center text-[10px] md:text-xs text-batik-orange hover:underline w-fit">
+                      <span>Membantu (0)</span>
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-center gap-2 mb-8">
+                <button
+                  onClick={() => setPage(page - 1)}
+                  disabled={page === 1}
+                  className="px-2 py-1 rounded bg-gray-200 text-batik-brown text-xs disabled:opacity-50"
+                >
+                  &lt;
+                </button>
+                {[...Array(totalPages)].map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setPage(i + 1)}
+                    className={`px-2 py-1 rounded text-xs ${
+                      page === i + 1
+                        ? "bg-batik-gold text-white"
+                        : "bg-gray-100 text-batik-brown"
+                    }`}
+                  >
+                    {i + 1}
+                  </button>
+                ))}
+                <button
+                  onClick={() => setPage(page + 1)}
+                  disabled={page === totalPages}
+                  className="px-2 py-1 rounded bg-batik-gold text-white text-xs disabled:opacity-50"
+                >
+                  &gt;
+                </button>
+              </div>
+            </div>
+            {/* DESKTOP: Semua testimoni tanpa pagination */}
+            <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 mb-6">
               {filteredTestimonials.map((t, idx) => (
                 <div
                   key={t.id}
