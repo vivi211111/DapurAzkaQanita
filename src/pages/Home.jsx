@@ -14,7 +14,6 @@ const Home = () => {
       <InteractiveKueStory />
       <AdvantagesSection />
       <PortfolioSection />
-      <CTASection />
     </motion.div>
   )
 }
