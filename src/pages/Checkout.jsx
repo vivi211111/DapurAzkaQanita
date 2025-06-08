@@ -204,12 +204,12 @@ ${selectedCartItems
 
 *💳 TOTAL PEMBAYARAN:*
 Subtotal: ${formatPrice(subtotal)}
-🚚 Ongkir: ${formatPrice(formData.shippingCost)}
+🚛 Ongkir: ${formatPrice(formData.shippingCost)}
 *Total: ${formatPrice(total)}*
 
 *👤 DATA PELANGGAN:*
 Nama: ${formData.fullName}
-📞 Telepon: ${formData.phone}
+☎️ Telepon: ${formData.phone}
 ${formData.email ? `📧 Email: ${formData.email}` : ""}
 
 *📍 ALAMAT PENGIRIMAN:*
@@ -219,17 +219,17 @@ ${formData.city}, ${formData.province} ${formData.postalCode}
 *💳 METODE PEMBAYARAN:* ${
       paymentMethods.find((p) => p.id === formData.paymentMethod)?.name
     }
-*🚚 METODE PENGIRIMAN:* ${
+*🚛 METODE PENGIRIMAN:* ${
       shippingMethods.find((s) => s.id === formData.shippingMethod)?.name
     }
 
 ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
 
 ✨ Terima kasih telah berbelanja di Dapur Azka Qanita Batik!
-🙏 Kami akan segera memproses pesanan Anda.
+🙏🏻 Kami akan segera memproses pesanan Anda.
     `;
 
-    const phoneNumber = "6289524893101";
+    const phoneNumber = "6288276729787";
     const encodedMessage = encodeURIComponent(orderDetails);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
@@ -744,9 +744,7 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
                             className="w-16 h-16 object-cover rounded-lg"
                           />
                           <div className="flex-1">
-                            <h3 className="font-medium text-sm">
-                              {item.title}
-                            </h3>
+                            <h3 className="font-medium text-sm">{item.title}</h3>
                             <p className="text-xs text-gray-600">
                               {item.selectedColor} • {item.selectedSize}
                             </p>
@@ -1005,7 +1003,7 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
                         Anda untuk konfirmasi pembayaran.
                       </p>
                       <p className="mt-2">
-                        📞 Hubungi kami di <strong>+62 895-2489-3101</strong>{" "}
+                        📞 Hubungi kami di <strong>+62 882-7672-9787</strong>{" "}
                         jika ada pertanyaan.
                       </p>
                     </div>
@@ -1016,6 +1014,208 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
           </div>
         </motion.div>
       </div>
+
+      {/* Order Summary Modal MOBILE */}
+      {showOrderSummary && (
+        <div className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-2">
+          <div className="bg-white rounded-xl w-full max-w-md max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white border-b border-gray-200 p-3 flex items-center justify-between rounded-t-xl">
+              <h2 className="font-serif text-lg font-bold text-batik-brown">
+                🎉 Pesanan Berhasil!
+              </h2>
+              <button
+                onClick={handleCloseOrderSummary}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+              >
+                <X size={20} className="text-gray-500" />
+              </button>
+            </div>
+            {/* Modal Content */}
+            <div className="p-3" id="order-summary-print-mobile">
+              <div className="text-center mb-4">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <span className="text-xl">✅</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                  Pesanan Anda Telah Diterima
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Nomor Pesanan:{" "}
+                  <span className="font-bold text-batik-brown text-base">
+                    {orderNumber}
+                  </span>
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Tanggal:{" "}
+                  {new Date().toLocaleDateString("id-ID", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+              </div>
+              {/* Order Details */}
+              <div className="space-y-4">
+                {/* Customer Info */}
+                <div className="grid grid-cols-1 gap-2">
+                  <div>
+                    <h4 className="font-semibold text-batik-brown mb-1 flex items-center text-xs">
+                      <span className="mr-1">👤</span> Data Pelanggan
+                    </h4>
+                    <div className="bg-gray-50 p-2 rounded-lg space-y-1 text-xs">
+                      <p>
+                        <strong>Nama:</strong> {formData.fullName}
+                      </p>
+                      <p>
+                        <strong>Telepon:</strong> {formData.phone}
+                      </p>
+                      {formData.email && (
+                        <p>
+                          <strong>Email:</strong> {formData.email}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-batik-brown mb-1 flex items-center text-xs">
+                      <span className="mr-1">📍</span> Alamat Pengiriman
+                    </h4>
+                    <div className="bg-gray-50 p-2 rounded-lg text-xs">
+                      <p>{formData.address}</p>
+                      <p>
+                        {formData.city}, {formData.province}{" "}
+                        {formData.postalCode}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Order Items */}
+                <div>
+                  <h4 className="font-semibold text-batik-brown mb-1 flex items-center text-xs">
+                    <span className="mr-1">📦</span> Produk Pesanan
+                  </h4>
+                  <div className="space-y-2">
+                    {selectedCartItems.map((item) => (
+                      <div
+                        key={item.variantId}
+                        className="flex justify-between items-center bg-gray-50 p-2 rounded-lg"
+                      >
+                        <div className="flex items-center space-x-2">
+                          <img
+                            src={item.image || "/placeholder.svg"}
+                            alt={item.title}
+                            className="w-8 h-8 object-cover rounded-lg"
+                          />
+                          <div>
+                            <p className="font-medium text-xs">{item.title}</p>
+                            <p className="text-[10px] text-gray-600">
+                              {item.selectedColor} • {item.selectedSize} • Qty:{" "}
+                              {item.quantity}
+                            </p>
+                          </div>
+                        </div>
+                        <p className="font-medium text-batik-brown text-xs">
+                          {item.price}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* Payment & Shipping */}
+                <div className="grid grid-cols-1 gap-2">
+                  <div>
+                    <h4 className="font-semibold text-batik-brown mb-1 flex items-center text-xs">
+                      <span className="mr-1">💳</span> Metode Pembayaran
+                    </h4>
+                    <div className="bg-gray-50 p-2 rounded-lg text-xs">
+                      <p>
+                        {
+                          paymentMethods.find(
+                            (p) => p.id === formData.paymentMethod
+                          )?.name
+                        }
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-batik-brown mb-1 flex items-center text-xs">
+                      <span className="mr-1">🚚</span> Metode Pengiriman
+                    </h4>
+                    <div className="bg-gray-50 p-2 rounded-lg text-xs">
+                      <p>
+                        {
+                          shippingMethods.find(
+                            (s) => s.id === formData.shippingMethod
+                          )?.name
+                        }
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Total */}
+                <div className="border-t pt-3">
+                  <div className="bg-batik-cream/30 p-3 rounded-lg">
+                    <div className="flex justify-between items-center mb-1 text-xs">
+                      <span className="text-gray-600">Subtotal:</span>
+                      <span>{formatPrice(subtotal)}</span>
+                    </div>
+                    <div className="flex justify-between items-center mb-2 text-xs">
+                      <span className="text-gray-600">Ongkos Kirim:</span>
+                      <span>{formatPrice(formData.shippingCost)}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-base font-bold text-batik-brown border-t pt-2">
+                      <span>Total:</span>
+                      <span>{formatPrice(total)}</span>
+                    </div>
+                  </div>
+                </div>
+                {formData.notes && (
+                  <div>
+                    <h4 className="font-semibold text-batik-brown mb-1 flex items-center text-xs">
+                      <span className="mr-1">📝</span> Catatan
+                    </h4>
+                    <div className="bg-gray-50 p-2 rounded-lg text-xs">
+                      <p>{formData.notes}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-2 mt-5">
+                <button
+                  onClick={handlePrint}
+                  className="flex-1 bg-gray-600 text-white py-2 px-2 rounded-lg font-semibold hover:bg-gray-700 transition-colors flex items-center justify-center space-x-1 text-xs"
+                >
+                  <Printer size={16} />
+                  <span>Cetak</span>
+                </button>
+                <button
+                  onClick={handleSendToWhatsApp}
+                  className="flex-1 bg-green-600 text-white py-2 px-2 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center space-x-1 text-xs"
+                >
+                  <MessageCircle size={16} />
+                  <span>WhatsApp</span>
+                </button>
+              </div>
+              <div className="mt-4 text-center text-[11px] text-gray-600 bg-blue-50 p-2 rounded-lg">
+                <p className="font-semibold text-blue-800 mb-1">
+                  🙏 Terima kasih telah berbelanja di Dapur Azka Qanita Batik!
+                </p>
+                <p>
+                  Kami akan segera memproses pesanan Anda dan menghubungi Anda
+                  untuk konfirmasi pembayaran.
+                </p>
+                <p className="mt-1">
+                  📞 Hubungi kami di <strong>+62 882-7672-9787</strong> jika ada
+                  pertanyaan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
