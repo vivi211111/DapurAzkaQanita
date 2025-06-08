@@ -704,7 +704,7 @@ const Legal = () => {
                   </h3>
                   <p>
                     Jika Anda menemukan celah keamanan, segera hubungi
-                    <span className="font-semibold text-batik-brown"> security@batiknusantara.com</span>
+                    <span className="font-semibold text-batik-brown"> security@dapurazkaqanita.com</span>
                   </p>
                 </div>
               </div>
@@ -733,7 +733,7 @@ const Legal = () => {
             <div className="mt-6 pt-4 border-t border-white/20 text-batik-cream">
               <p className="text-[10px]">
                 Dokumen terakhir diperbarui: 15 Januari 2024 |
-                <span className="ml-1">Email: legal@batiknusantara.com</span>
+                <span className="ml-1">Email: legal@dapurazkaqanita.com</span>
               </p>
             </div>
           </div>
@@ -759,7 +759,7 @@ const Legal = () => {
             <div className="mt-12 pt-8 border-t border-white/20 text-batik-cream">
               <p className="text-sm">
                 Dokumen terakhir diperbarui: 15 Januari 2024 |
-                <span className="ml-2">Email: legal@batiknusantara.com</span>
+                <span className="ml-2">Email: legal@dapurazkaqanita.com</span>
               </p>
             </div>
           </div>

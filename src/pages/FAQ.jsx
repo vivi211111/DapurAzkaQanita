@@ -382,7 +382,7 @@ const FAQ = () => {
                   Kirim pertanyaan detail via email
                 </p>
                 <button className="btn-primary text-xs py-2 px-4 rounded-lg min-w-[120px] w-full max-w-xs mx-auto">
-                  info@batiknusantara.com
+                  info@dapurazkaqanita.com
                 </button>
               </div>
             </div>
