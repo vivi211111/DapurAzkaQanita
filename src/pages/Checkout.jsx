@@ -739,7 +739,7 @@ ${formData.notes ? `*📝 CATATAN:* ${formData.notes}` : ""}
                           className="flex space-x-3 p-3 bg-gray-50 rounded-lg"
                         >
                           <img
-                            src={item.image || "placeholder.jpg"}
+                            src="placeholder.jpg"
                             alt={item.title}
                             className="w-16 h-16 object-cover rounded-lg"
                           />
