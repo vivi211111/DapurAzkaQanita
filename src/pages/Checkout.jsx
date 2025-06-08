@@ -186,21 +186,24 @@ const Checkout = () => {
 
   const handleSendToWhatsApp = () => {
     const orderDetails = `
-*🛍️ RINGKASAN PESANAN Dapur Azka Qanita *
-📋 Nomor Pesanan: *${orderNumber}*
-📅 Tanggal: ${new Date().toLocaleDateString("id-ID")}
+    ====================
+    🛍️ *RINGKASAN PESANAN Dapur Azka Qanita*
+    \n====================
 
-*📦 PRODUK PESANAN:*
-${selectedCartItems
-  .map(
-    (item) =>
-      `• *${item.title}*
-  🎨 Warna: ${item.selectedColor}
-  📏 Ukuran: ${item.selectedSize}
-  🔢 Jumlah: ${item.quantity}x
-  💰 Harga: ${item.price}`
-  )
-  .join("\n\n")}
+    \n\n📋 *Nomor Pesanan:* ${orderNumber}
+    \n📅 *Tanggal:* ${new Date().toLocaleDateString("id-ID")}
+    
+    \n\n====================
+    \n📦 *PRODUK PESANAN:*\n${selectedCartItems
+      .map(
+        (item) =>
+          `• *${item.title}*\n  
+        🎨Warna: ${item.selectedColor}\n  
+        📏Ukuran: ${item.selectedSize}\n  
+        🔢Jumlah: ${item.quantity}x\n  
+        💰Harga: ${item.price}`
+      )
+      .join("\n\n")}
 
     ====================
     \n🛍️ *RINGKASAN PESANAN Dapur Azka Qanita*
