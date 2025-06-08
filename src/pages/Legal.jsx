@@ -711,59 +711,6 @@ const Legal = () => {
             </div>
           </div>
         </section>
-
-        {/* Contact Legal - MOBILE */}
-        <section className="py-10 bg-gradient-to-r from-batik-brown to-batik-navy block md:hidden">
-          <div className="max-w-7xl mx-auto px-3 text-center">
-            <h2 className="font-serif text-lg font-bold text-white mb-3">
-              Pertanyaan Legal?
-            </h2>
-            <p className="text-xs text-batik-cream mb-4 max-w-3xl mx-auto">
-              Tim legal kami siap membantu menjawab pertanyaan seputar kebijakan
-              dan ketentuan layanan Batik Nusantara.
-            </p>
-            <div className="flex flex-col gap-2 justify-center">
-              <button className="bg-batik-gold hover:bg-batik-gold/90 text-white font-semibold py-2 px-4 rounded-md text-xs transition-all duration-300">
-                Hubungi Tim Legal
-              </button>
-              <button className="border border-white text-white hover:bg-white hover:text-batik-brown font-semibold py-2 px-4 rounded-md text-xs transition-all duration-300">
-                Download PDF
-              </button>
-            </div>
-            <div className="mt-6 pt-4 border-t border-white/20 text-batik-cream">
-              <p className="text-[10px]">
-                Dokumen terakhir diperbarui: 15 Januari 2024 |
-                <span className="ml-1">Email: legal@batiknusantara.com</span>
-              </p>
-            </div>
-          </div>
-        </section>
-        {/* Contact Legal - DESKTOP */}
-        <section className="py-20 bg-gradient-to-r from-batik-brown to-batik-navy hidden md:block">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
-              Pertanyaan Legal?
-            </h2>
-            <p className="text-xl text-batik-cream mb-8 max-w-3xl mx-auto">
-              Tim legal kami siap membantu menjawab pertanyaan seputar kebijakan
-              dan ketentuan layanan Batik Nusantara.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-batik-gold hover:bg-batik-gold/90 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300">
-                Hubungi Tim Legal
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown font-semibold py-4 px-8 rounded-lg transition-all duration-300">
-                Download PDF
-              </button>
-            </div>
-            <div className="mt-12 pt-8 border-t border-white/20 text-batik-cream">
-              <p className="text-sm">
-                Dokumen terakhir diperbarui: 15 Januari 2024 |
-                <span className="ml-2">Email: legal@batiknusantara.com</span>
-              </p>
-            </div>
-          </div>
-        </section>
       </div>
     </motion.div>
   );

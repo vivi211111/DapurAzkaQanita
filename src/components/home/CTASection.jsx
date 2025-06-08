@@ -16,12 +16,12 @@ const CTASection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-serif text-2xl md:text-4xl font-bold text-white mb-6">
-          Siap Mewujudkan Proyek Impian Anda?
+          Siap Menyajikan Kue Tradisional Terbaik untuk Momen Spesial Anda?
         </h2>
 
         <p className="text-sm md:text-xl text-batik-cream mb-8 max-w-3xl mx-auto">
-          Mari berkolaborasi untuk menciptakan produk handycraft yang memukau.
-          Tim ahli kami siap membantu mewujudkan visi kreatif Anda.
+          Mari rayakan hari istimewa Anda dengan cita rasa khas dari Dapur Azka Qanita. 
+          Kue tradisional kami dibuat dengan resep turun-temurun selama 3 generasi, menghadirkan rasa otentik dalam setiap gigitan.
         </p>
         {/*MOBILE */}
         <div className="block md:hidden flex sm:flex-row gap-4 justify-center items-center mb-12">

@@ -379,7 +379,7 @@ const Testimonials = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* MOBILE: pencarian di tengah, filter di bawah pencarian, ukuran kecil */}
           <div className="block md:hidden">
-            <div className="flex justify-center w-full mb-3">
+            <div className="flex justify-center w-full mb-3 gap-5">
               <input
                 type="text"
                 placeholder="Cari review (kue, komentar)..."
@@ -387,6 +387,12 @@ const Testimonials = () => {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
+              <button
+                className="w-48 bg-batik-gold hover:bg-batik-brown text-white font-semibold px-2 py-2 rounded-lg text-[11px] flex items-center justify-center gap-2 transition-all duration-200 mt-0"
+                onClick={() => setShowModal(true)}
+              >
+                <span>Beri Ulasan Kue</span>
+              </button>
             </div>
             <div className="grid grid-cols-3 gap-7 px-5 mx-auto">
               <select
@@ -423,12 +429,6 @@ const Testimonials = () => {
                 <option>Rating Tertinggi</option>
                 <option>Rating Terendah</option>
               </select>
-              <button
-                className="w-full bg-batik-orange hover:bg-batik-gold text-white font-semibold px-2 py-2 rounded-lg text-xs flex items-center justify-center gap-2 transition-all duration-200 mt-1"
-                onClick={() => setShowModal(true)}
-              >
-                <span>Beri Ulasan Kue</span>
-              </button>
             </div>
           </div>
           {/* DESKTOP: tetap seperti semula */}
@@ -478,7 +478,7 @@ const Testimonials = () => {
                 <option>Rating Terendah</option>
               </select>
               <button
-                className="bg-batik-orange hover:bg-batik-gold text-white font-semibold px-4 py-2 rounded-lg text-sm ml-2 flex items-center gap-2 transition-all duration-200"
+                className="w-40 bg-batik-gold hover:bg-batik-brown text-white font-semibold px-4 py-2 rounded-lg text-sm ml-2 flex items-center gap-2 transition-all duration-200"
                 onClick={() => setShowModal(true)}
               >
                 <span>Beri Ulasan Kue</span>
@@ -578,7 +578,7 @@ const Testimonials = () => {
         <div className="max-w-full xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-2 md:px-4 xl:px-6">
           <div className="max-w-screen-xl mx-auto">
             {/* MOBILE: grid 3 kolom, DESKTOP: tetap */}
-            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
               {filteredTestimonials.map((t, idx) => (
                 <div
                   key={t.id}
