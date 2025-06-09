@@ -1017,8 +1017,7 @@ const Checkout = () => {
 
                     <div className="mt-6 text-center text-sm text-gray-600 bg-blue-50 p-4 rounded-lg">
                       <p className="font-semibold text-blue-800 mb-2">
-                        🙏 Terima kasih telah berbelanja di Dapur Azka Qanita
-                        Batik!
+                        🙏 Terima kasih telah berbelanja di Dapur Azka Qanita!
                       </p>
                       <p>
                         Kami akan segera memproses pesanan Anda dan menghubungi

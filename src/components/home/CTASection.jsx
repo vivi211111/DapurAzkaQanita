@@ -24,7 +24,7 @@ const CTASection = () => {
           Kue tradisional kami dibuat dengan resep turun-temurun selama 3 generasi, menghadirkan rasa otentik dalam setiap gigitan.
         </p>
         {/*MOBILE */}
-        <div className="block md:hidden flex sm:flex-row gap-4 justify-center items-center mb-12">
+        <div className="block md:hidden sm:flex-row gap-4 justify-center items-center mb-12">
           <Link
             to="/contact"
             className="bg-batik-gold hover:bg-batik-gold/90 text-white text-sm font-semibold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
@@ -41,7 +41,7 @@ const CTASection = () => {
           </Link>
         </div>
         {/*DESKTOP */}
-        <div className="hidden md:block flex sm:flex-row gap-4 justify-center items-center mb-12">
+        <div className="hidden md:block sm:flex-row gap-4 justify-center items-center mb-12">
           <Link
             to="/contact"
             className="bg-batik-gold hover:bg-batik-gold/90 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
