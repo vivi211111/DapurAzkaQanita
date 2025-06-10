@@ -78,28 +78,28 @@ const Galeri = () => {
   const galeriPenjualan = [
     {
       type: "video",
-      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      src: "video1.mp4",
       poster: "/portfolio/proses-maksubah.jpg",
       title: "Proses Pembuatan Maksubah",
       desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     {
       type: "video",
-      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      src: "video2.mp4",
       poster: "/portfolio/proses-maksubah.jpg",
       title: "Proses Pembuatan Maksubah",
       desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     {
       type: "video",
-      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      src: "video3.mp4",
       poster: "/portfolio/proses-maksubah.jpg",
       title: "Proses Pembuatan Maksubah",
       desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
     },
     {
       type: "video",
-      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      src: "video4.mp4",
       poster: "/portfolio/proses-maksubah.jpg",
       title: "Proses Pembuatan Maksubah",
       desc: "Video dokumentasi proses pembuatan Maksubah di dapur kami.",
