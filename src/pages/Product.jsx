@@ -314,7 +314,7 @@ const Product = () => {
       category: "premium",
       description:
         "Maksubah premium, tekstur lebih lembut dan rasa lebih kaya.",
-      image: "/portfolio/kue-maksubah-original.jpg",
+      image: "/portfolio/Maksubah.jpeg",
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, mentega premium",
@@ -374,7 +374,7 @@ const Product = () => {
       category: "premium",
       description:
         "Maksubah premium dengan rasa coklat premium, manis dan legit.",
-      image: "/portfolio/kue-maksubah-coklat.jpg",
+      image: "/portfolio/MaksubahCoklat.jpeg",
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, coklat",
@@ -394,7 +394,7 @@ const Product = () => {
       category: "premium",
       description:
         "Lapan Jam premium, tekstur lebih lembut dan rasa lebih kaya.",
-      image: "/portfolio/LapanJam.jpg",
+      image: "/portfolio/LapanJam.jpeg",
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, mentega premium",
@@ -410,11 +410,11 @@ const Product = () => {
     },
     {
       id: 20,
-      title: "Lapan Jam Duren",
+      title: "Engkak Ketan Premium",
       category: "premium",
       description:
         "Lapan Jam premium dengan tambahan durian, aroma harum dan rasa khas.",
-      image: "/portfolio/LapanJam.jpg",
+      image: "/portfolio/EngkakKetanPrem.jpeg",
       tags: ["Kue", "Premium"],
       price: 475000,
       material: "Telur, gula, mentega premium, durian",
