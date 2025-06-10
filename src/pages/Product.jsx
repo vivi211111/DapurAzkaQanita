@@ -41,7 +41,7 @@ const Product = () => {
       category: "middle",
       description:
         "Maksubah lapis legit khas Palembang, rasa klasik legit dan lembut.",
-      image: "/portfolio/Maksubah.jpg",
+      image: "/portfolio/MaksubahMiddle.png",
       tags: ["Kue", "Middle"],
       price: 325000,
       material: "Telur, gula, mentega",
@@ -61,7 +61,7 @@ const Product = () => {
       category: "middle",
       description:
         "Maksubah dengan topping prunes premium, rasa manis legit dan segar.",
-      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
+      image: "/portfolio/MaksubahPrunes.png", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
       price: 375000,
       material: "Telur, gula, mentega, prunes",
@@ -80,7 +80,7 @@ const Product = () => {
       title: "Maksubah Keju",
       category: "middle",
       description: "Maksubah dengan taburan keju melimpah, gurih dan lembut.",
-      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
+      image: "/portfolio/MaksubahKeju.png", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
       price: 355000,
       material: "Telur, gula, mentega, keju",
@@ -96,10 +96,29 @@ const Product = () => {
     },
     {
       id: 4,
+      title: "Maksubah Kojo Prunes",
+      category: "middle",
+      description: "Makjo dengan tambahan prunes, menciptakan rasa manis legit dan seimbang.",
+      image: "/portfolio/MaksubahKojoPrunes.png", // Ganti ke foto yang ada
+      tags: ["Kue", "Middle"],
+      price: 355000,
+      material: "Telur, gula, mentega, coklat",
+      size: "Medium",
+      colors: ["Coklat"],
+      stock: 10,
+      rating: 4.7,
+      reviews: 12,
+      detailDescription:
+        "Maksubah dengan rasa coklat premium, manis dan legit.",
+      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
+      origin: "Palembang",
+    },
+        {
+      id: 5,
       title: "Maksubah Coklat",
       category: "middle",
-      description: "Maksubah dengan rasa coklat premium, manis dan legit.",
-      image: "/portfolio/Maksubah.jpg", // Ganti ke foto yang ada
+      description: "Maksubah dengan coklat, cocok untuk pecinta rasa manis dan aroma coklat yang kaya.",
+      image: "/portfolio/MaksubahCoklat.png", // Ganti ke foto yang ada
       tags: ["Kue", "Middle"],
       price: 355000,
       material: "Telur, gula, mentega, coklat",
@@ -114,12 +133,12 @@ const Product = () => {
       origin: "Palembang",
     },
     {
-      id: 5,
+      id: 6,
       title: "Lapan Jam",
       category: "middle",
       description:
         "Kue legit khas Palembang, dimasak selama 8 jam, tekstur lembut.",
-      image: "/portfolio/LapanJam.jpg",
+      image: "/portfolio/LapanJam.png",
       tags: ["Kue", "Middle"],
       price: 325000,
       material: "Telur, gula, mentega",
@@ -134,12 +153,12 @@ const Product = () => {
       origin: "Palembang",
     },
     {
-      id: 6,
-      title: "Lapan Jam Duren",
+      id: 7,
+      title: "Lpis Pandan Wangi",
       category: "middle",
       description:
         "Lapan Jam dengan tambahan durian, aroma harum dan rasa khas.",
-      image: "/portfolio/LapanJam.jpg",
+      image: "/portfolio/LapisPandan.png",
       tags: ["Kue", "Middle"],
       price: 365000,
       material: "Telur, gula, mentega, durian",
@@ -154,7 +173,7 @@ const Product = () => {
       origin: "Palembang",
     },
     {
-      id: 7,
+      id: 8,
       title: "Lapan Jam Keju",
       category: "middle",
       description: "Lapan Jam dengan taburan keju, gurih dan lembut.",
@@ -172,7 +191,7 @@ const Product = () => {
       origin: "Palembang",
     },
     {
-      id: 8,
+      id: 9,
       title: "Lapis Kojo",
       category: "middle",
       description:
@@ -192,7 +211,7 @@ const Product = () => {
       origin: "Palembang",
     },
     {
-      id: 9,
+      id: 10,
       title: "Lapis Kojo Duren",
       category: "middle",
       description:
@@ -212,12 +231,12 @@ const Product = () => {
       origin: "Palembang",
     },
     {
-      id: 10,
-      title: "Engkak",
+      id: 11,
+      title: "Engkak Ketan",
       category: "middle",
       description:
-        "Kue lapis legit tradisional, tekstur lembut dan rasa manis.",
-      image: "/portfolio/BATIK10.jpg",
+        "Kue tradisional berbahan telur dan tepung ketan, bertekstur kenyal dan manis legit.",
+      image: "/portfolio/EngkakKetan.png",
       tags: ["Kue", "Middle"],
       price: 325000,
       material: "Telur, gula, mentega",
@@ -269,25 +288,6 @@ const Product = () => {
       origin: "Palembang",
     },
     {
-      id: 13,
-      title: "Maksubah Kojo (Makjo) Prunes",
-      category: "middle",
-      description: "Maksubah Kojo dengan topping prunes, rasa unik dan segar.",
-      image: "/portfolio/BATIK13.jpg",
-      tags: ["Kue", "Middle"],
-      price: 375000,
-      material: "Telur, gula, mentega, daun pandan, prunes",
-      size: "Medium",
-      colors: ["Hijau"],
-      stock: 10,
-      rating: 4.8,
-      reviews: 6,
-      detailDescription:
-        "Maksubah Kojo dengan topping prunes, rasa unik dan segar.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
       id: 14,
       title: "Maksubah Engkak Kojo (MakEngKo)",
       category: "middle",
@@ -314,7 +314,7 @@ const Product = () => {
       category: "premium",
       description:
         "Maksubah premium, tekstur lebih lembut dan rasa lebih kaya.",
-      image: "/portfolio/Maksubah.jpeg",
+      image: "/portfolio/MaksubahPremium.jpg",
       tags: ["Kue", "Premium"],
       price: 435000,
       material: "Telur, gula, mentega premium",
@@ -330,11 +330,11 @@ const Product = () => {
     },
     {
       id: 16,
-      title: "Maksubah Prunes",
+      title: "Lapis Legit Prunes",
       category: "premium",
       description:
-        "Maksubah premium dengan topping prunes, rasa manis legit dan segar.",
-      image: "/portfolio/kue-maksubah-prunes.jpg",
+        "Lapis legit yang dihiasi dengan prune lembut, memberikan rasa khas dan tampilan elegan.",
+      image: "/portfolio/LapisLegitPrunes.jpg",
       tags: ["Kue", "Premium"],
       price: 485000,
       material: "Telur, gula, mentega premium, prunes",
@@ -350,11 +350,11 @@ const Product = () => {
     },
     {
       id: 17,
-      title: "Maksubah Keju",
+      title: "Lapis Legit Keju",
       category: "premium",
       description:
-        "Maksubah premium dengan taburan keju melimpah, gurih dan lembut.",
-      image: "/portfolio/kue-maksubah-keju.jpg",
+        "Lapis premium dengan taburan keju melimpah, gurih dan lembut.",
+      image: "/portfolio/LapisLegitKeju.jpg",
       tags: ["Kue", "Premium"],
       price: 465000,
       material: "Telur, gula, mentega premium, keju",
@@ -413,7 +413,7 @@ const Product = () => {
       title: "Engkak Ketan Premium",
       category: "premium",
       description:
-        "Lapan Jam premium dengan tambahan durian, aroma harum dan rasa khas.",
+        "Engkak Ketan Premium, kue tradisional khas Palembang, manis legit, berlapis cantik, dan lembut di setiap gigitan.",
       image: "/portfolio/EngkakKetanPrem.jpeg",
       tags: ["Kue", "Premium"],
       price: 475000,
@@ -430,10 +430,10 @@ const Product = () => {
     },
     {
       id: 21,
-      title: "Lapan Jam Keju",
+      title: "Brownies Red Velvet",
       category: "premium",
-      description: "Lapan Jam premium dengan taburan keju, gurih dan lembut.",
-      image: "/portfolio/LapanJam.jpg",
+      description: "Brownies Red Velvet lembut dan moist dengan cita rasa khas red velvet, ditaburi kacang almond panggang yang renyah di setiap gigitan.",
+      image: "/portfolio/BronisVelvet.jpeg",
       tags: ["Kue", "Premium"],
       price: 465000,
       material: "Telur, gula, mentega premium, keju",
