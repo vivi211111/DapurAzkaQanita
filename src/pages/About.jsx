@@ -108,17 +108,21 @@ const About = () => {
               transition={{ duration: 0.7 }}
               className="space-y-4"
             >
-              <div className="grid grid-cols-2 gap-4">
-                <img
-                  alt="Bahan masakan segar"
-                  className="rounded-lg shadow-xl w-full h-auto object-cover"
-                  src="https://images.unsplash.com/photo-1556909006-3490b8946a40"
-                />
-                <img
-                  alt="Hidangan lezat disajikan"
-                  className="rounded-lg shadow-xl w-full h-auto object-cover"
-                  src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759"
-                />
+              <div className="grid grid-cols-2 gap-4 items-center">
+                <div className="w-full aspect-[4/5] bg-gray-100 rounded-lg shadow-xl overflow-hidden flex items-center justify-center">
+                  <img
+                    alt="Bahan masakan segar"
+                    className="w-full h-full object-cover"
+                    src="/about/Dapur1.png"
+                  />
+                </div>
+                <div className="w-full aspect-[4/5] bg-gray-100 rounded-lg shadow-xl overflow-hidden flex items-center justify-center">
+                  <img
+                    alt="Hidangan lezat disajikan"
+                    className="w-full h-full object-cover"
+                    src="/about/Dapur2.png"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>

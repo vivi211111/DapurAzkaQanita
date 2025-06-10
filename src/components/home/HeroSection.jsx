@@ -457,9 +457,9 @@ const HeroSection = () => {
 
   const ads = [
     {
-      title: "Lapis Legit Original",
-      desc: "Nikmati Lapis Legit Original kami, dibuat dengan resep tradisional dan bahan-bahan pilihan terbaik.",
-      img: "/portfolio/LapisLegitNanas.jpg", // Ada
+      title: "Lapis Legit Prunes",
+      desc: "Nikmati Lapis Legit Prunes kami, dibuat dengan resep tradisional dan bahan-bahan pilihan terbaik.",
+      img: "/portfolio/LapisLegitPrunes.jpg", // Ada
       badge: "Best Seller",
       badgeColor: "bg-orange-500",
       cta: "Coba Sekarang",
