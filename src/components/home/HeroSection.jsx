@@ -467,9 +467,9 @@ const HeroSection = () => {
       link: "/product",
     },
     {
-      title: "Maksubah Prunes",
-      desc: "Maksubah Prunes dengan topping buah prunes premium, legit dan segar untuk keluarga.",
-      img: "/portfolio/Maksubah.jpg", // Ada
+      title: "Maksubah",
+      desc: "Kue khas Palembang berbahan telur dan susu kental manis, bertekstur lembut dan kaya rasa.",
+      img: "/portfolio/MaksubahPremium.jpg", // Ada
       badge: "Favorit Keluarga",
       badgeColor: "bg-batik-gold",
       cta: "Pesan Sekarang",
@@ -477,9 +477,9 @@ const HeroSection = () => {
       link: "/product",
     },
     {
-      title: "Bolu Kukus Pelangi",
-      desc: "Bolu kukus warna-warni, lembut dan cocok untuk acara spesial Anda.",
-      img: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
+      title: "Engkak Ketan",
+      desc: "Kue tradisional berbahan telur dan tepung ketan, bertekstur kenyal dan manis legit.",
+      img: "/portfolio/EngkakKetan.png", // Ganti ke foto yang ada
       badge: "Varian Baru",
       badgeColor: "bg-green-500",
       cta: "Lihat Varian",

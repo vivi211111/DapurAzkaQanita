@@ -154,7 +154,7 @@ const Product = () => {
     },
     {
       id: 7,
-      title: "Lpis Pandan Wangi",
+      title: "Lapis Pandan Wangi",
       category: "middle",
       description:
         "Lapan Jam dengan tambahan durian, aroma harum dan rasa khas.",
@@ -174,64 +174,6 @@ const Product = () => {
     },
     {
       id: 8,
-      title: "Lapan Jam Keju",
-      category: "middle",
-      description: "Lapan Jam dengan taburan keju, gurih dan lembut.",
-      image: "/portfolio/LapanJam.jpg",
-      tags: ["Kue", "Middle"],
-      price: 355000,
-      material: "Telur, gula, mentega, keju",
-      size: "Medium",
-      colors: ["Kuning"],
-      stock: 10,
-      rating: 4.7,
-      reviews: 9,
-      detailDescription: "Lapan Jam dengan taburan keju, gurih dan lembut.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 9,
-      title: "Lapis Kojo",
-      category: "middle",
-      description:
-        "Kue lapis hijau khas Palembang, rasa manis legit dan aroma pandan.",
-      image: "/portfolio/BATIK6.jpg",
-      tags: ["Kue", "Middle"],
-      price: 325000,
-      material: "Telur, gula, santan, daun pandan",
-      size: "Medium",
-      colors: ["Hijau"],
-      stock: 10,
-      rating: 4.7,
-      reviews: 10,
-      detailDescription:
-        "Kue lapis hijau khas Palembang, rasa manis legit dan aroma pandan.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 10,
-      title: "Lapis Kojo Duren",
-      category: "middle",
-      description:
-        "Lapis Kojo dengan tambahan durian, rasa legit dan aroma khas.",
-      image: "/portfolio/BATIK6.jpg",
-      tags: ["Kue", "Middle"],
-      price: 365000,
-      material: "Telur, gula, santan, daun pandan, durian",
-      size: "Medium",
-      colors: ["Hijau"],
-      stock: 10,
-      rating: 4.8,
-      reviews: 8,
-      detailDescription:
-        "Lapis Kojo dengan tambahan durian, rasa legit dan aroma khas.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 11,
       title: "Engkak Ketan",
       category: "middle",
       description:
@@ -247,63 +189,6 @@ const Product = () => {
       reviews: 7,
       detailDescription:
         "Kue lapis legit tradisional, tekstur lembut dan rasa manis.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 11,
-      title: "Engkak Duren",
-      category: "middle",
-      description: "Engkak dengan tambahan durian, rasa legit dan aroma khas.",
-      image: "/portfolio/BATIK11.jpg",
-      tags: ["Kue", "Middle"],
-      price: 365000,
-      material: "Telur, gula, mentega, durian",
-      size: "Medium",
-      colors: ["Kuning"],
-      stock: 10,
-      rating: 4.7,
-      reviews: 6,
-      detailDescription:
-        "Engkak dengan tambahan durian, rasa legit dan aroma khas.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 12,
-      title: "Maksubah Kojo (Makjo)",
-      category: "middle",
-      description: "Maksubah dengan campuran Kojo, rasa unik dan legit.",
-      image: "/portfolio/BATIK12.jpg",
-      tags: ["Kue", "Middle"],
-      price: 325000,
-      material: "Telur, gula, mentega, daun pandan",
-      size: "Medium",
-      colors: ["Hijau"],
-      stock: 10,
-      rating: 4.7,
-      reviews: 7,
-      detailDescription: "Maksubah dengan campuran Kojo, rasa unik dan legit.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 14,
-      title: "Maksubah Engkak Kojo (MakEngKo)",
-      category: "middle",
-      description:
-        "Maksubah, Engkak, dan Kojo dalam satu kue, kombinasi rasa unik.",
-      image: "/portfolio/BATIK14.jpg",
-      tags: ["Kue", "Middle"],
-      price: 325000,
-      material: "Telur, gula, mentega, daun pandan",
-      size: "Medium",
-      colors: ["Hijau", "Kuning"],
-      stock: 10,
-      rating: 4.8,
-      reviews: 8,
-      detailDescription:
-        "Maksubah, Engkak, dan Kojo dalam satu kue, kombinasi rasa unik.",
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
@@ -447,241 +332,6 @@ const Product = () => {
       care: "Simpan di tempat sejuk, tahan 5-7 hari.",
       origin: "Palembang",
     },
-    {
-      id: 22,
-      title: "Lapis Kojo",
-      category: "premium",
-      description:
-        "Lapis Kojo premium, rasa manis legit dan aroma pandan lebih kuat.",
-      image: "/portfolio/BATIK6.jpg",
-      tags: ["Kue", "Premium"],
-      price: 435000,
-      material: "Telur, gula, santan, daun pandan premium",
-      size: "Premium",
-      colors: ["Hijau"],
-      stock: 10,
-      rating: 4.8,
-      reviews: 10,
-      detailDescription:
-        "Lapis Kojo premium, rasa manis legit dan aroma pandan lebih kuat.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 23,
-      title: "Lapis Kojo Duren",
-      category: "premium",
-      description:
-        "Lapis Kojo premium dengan tambahan durian, rasa legit dan aroma khas.",
-      image: "/portfolio/BATIK9.jpg",
-      tags: ["Kue", "Premium"],
-      price: 475000,
-      material: "Telur, gula, santan, daun pandan premium, durian",
-      size: "Premium",
-      colors: ["Hijau"],
-      stock: 10,
-      rating: 4.9,
-      reviews: 8,
-      detailDescription:
-        "Lapis Kojo premium dengan tambahan durian, rasa legit dan aroma khas.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 24,
-      title: "Engkak",
-      category: "premium",
-      description: "Engkak premium, tekstur lebih lembut dan rasa lebih kaya.",
-      image: "/portfolio/BATIK10.jpg",
-      tags: ["Kue", "Premium"],
-      price: 435000,
-      material: "Telur, gula, mentega premium",
-      size: "Premium",
-      colors: ["Kuning"],
-      stock: 10,
-      rating: 4.8,
-      reviews: 7,
-      detailDescription:
-        "Engkak premium, tekstur lebih lembut dan rasa lebih kaya.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 25,
-      title: "Engkak Duren",
-      category: "premium",
-      description:
-        "Engkak premium dengan tambahan durian, rasa legit dan aroma khas.",
-      image: "/portfolio/BATIK11.jpg",
-      tags: ["Kue", "Premium"],
-      price: 475000,
-      material: "Telur, gula, mentega premium, durian",
-      size: "Premium",
-      colors: ["Kuning"],
-      stock: 10,
-      rating: 4.9,
-      reviews: 6,
-      detailDescription:
-        "Engkak premium dengan tambahan durian, rasa legit dan aroma khas.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 26,
-      title: "Maksubah Kojo (Makjo)",
-      category: "premium",
-      description: "Maksubah Kojo premium, rasa unik dan legit.",
-      image: "/portfolio/BATIK12.jpg",
-      tags: ["Kue", "Premium"],
-      price: 435000,
-      material: "Telur, gula, mentega premium, daun pandan premium",
-      size: "Premium",
-      colors: ["Hijau"],
-      stock: 10,
-      rating: 4.9,
-      reviews: 7,
-      detailDescription: "Maksubah Kojo premium, rasa unik dan legit.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 27,
-      title: "Maksubah Kojo (Makjo) Prunes",
-      category: "premium",
-      description:
-        "Maksubah Kojo premium dengan topping prunes, rasa unik dan segar.",
-      image: "/portfolio/BATIK13.jpg",
-      tags: ["Kue", "Premium"],
-      price: 485000,
-      material: "Telur, gula, mentega premium, daun pandan premium, prunes",
-      size: "Premium",
-      colors: ["Hijau"],
-      stock: 10,
-      rating: 5.0,
-      reviews: 6,
-      detailDescription:
-        "Maksubah Kojo premium dengan topping prunes, rasa unik dan segar.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 28,
-      title: "Maksubah Engkak Kojo (MakEngKo)",
-      category: "premium",
-      description:
-        "Maksubah, Engkak, dan Kojo premium dalam satu kue, kombinasi rasa unik.",
-      image: "/portfolio/BATIK14.jpg",
-      tags: ["Kue", "Premium"],
-      price: 435000,
-      material: "Telur, gula, mentega premium, daun pandan premium",
-      size: "Premium",
-      colors: ["Hijau", "Kuning"],
-      stock: 10,
-      rating: 5.0,
-      reviews: 8,
-      detailDescription:
-        "Maksubah, Engkak, dan Kojo premium dalam satu kue, kombinasi rasa unik.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    // Lapis Legit Premium
-    {
-      id: 29,
-      title: "Lapis Legit Original",
-      category: "premium",
-      description: "Lapis Legit premium, tekstur lembut dan aroma butter.",
-      image: "/portfolio/LapisLegitNanas.jpg", // Ganti ke foto yang ada
-      tags: ["Kue", "Premium"],
-      price: 435000,
-      material: "Telur, gula, mentega premium",
-      size: "Premium",
-      colors: ["Kuning"],
-      stock: 10,
-      rating: 4.9,
-      reviews: 10,
-      detailDescription:
-        "Lapis Legit premium, tekstur lembut dan aroma butter.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 30,
-      title: "Lapis Legit Nanas",
-      category: "premium",
-      description:
-        "Lapis Legit premium dengan tambahan nanas, rasa segar dan legit.",
-      image: "/portfolio/LapisLegitNanas.jpg", // Ganti ke foto yang ada
-      tags: ["Kue", "Premium"],
-      price: 475000,
-      material: "Telur, gula, mentega premium, nanas",
-      size: "Premium",
-      colors: ["Kuning"],
-      stock: 10,
-      rating: 4.9,
-      reviews: 8,
-      detailDescription:
-        "Lapis Legit premium dengan tambahan nanas, rasa segar dan legit.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 31,
-      title: "Lapis Legit Keju",
-      category: "premium",
-      description: "Lapis Legit premium dengan taburan keju, gurih dan lembut.",
-      image: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
-      tags: ["Kue", "Premium"],
-      price: 475000,
-      material: "Telur, gula, mentega premium, keju",
-      size: "Premium",
-      colors: ["Kuning"],
-      stock: 10,
-      rating: 4.9,
-      reviews: 8,
-      detailDescription:
-        "Lapis Legit premium dengan taburan keju, gurih dan lembut.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 32,
-      title: "Lapis Legit Coklat",
-      category: "premium",
-      description: "Lapis Legit premium dengan rasa coklat, manis dan legit.",
-      image: "/portfolio/LapisLegitKeju.jpg", // Ganti ke foto yang ada
-      tags: ["Kue", "Premium"],
-      price: 475000,
-      material: "Telur, gula, mentega premium, coklat",
-      size: "Premium",
-      colors: ["Coklat"],
-      stock: 10,
-      rating: 4.9,
-      reviews: 8,
-      detailDescription:
-        "Lapis Legit premium dengan rasa coklat, manis dan legit.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
-    {
-      id: 33,
-      title: "Lapis Legit Prunes",
-      category: "premium",
-      description:
-        "Lapis Legit premium dengan topping prunes, rasa segar dan legit.",
-      image: "/portfolio/LapisLegitPrunes.jpg", // Ganti ke foto yang ada
-      tags: ["Kue", "Premium"],
-      price: 485000,
-      material: "Telur, gula, mentega premium, prunes",
-      size: "Premium",
-      colors: ["Coklat"],
-      stock: 10,
-      rating: 5.0,
-      reviews: 8,
-      detailDescription:
-        "Lapis Legit premium dengan topping prunes, rasa segar dan legit.",
-      care: "Simpan di tempat sejuk, tahan 5-7 hari.",
-      origin: "Palembang",
-    },
   ];
 
   // Global function to handle product detail view
@@ -753,6 +403,7 @@ const Product = () => {
   };
 
   // Batasi 7 produk untuk kategori middle dan 7 untuk premium
+  // Perbaiki: tampilkan semua produk sesuai filter, tidak perlu dibatasi 7
   const filteredItems = (
     activeFilter === "all"
       ? portfolioItems
@@ -762,24 +413,10 @@ const Product = () => {
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  // Tidak ada pembatasan jumlah item
+  const limitedItems = filteredItems;
 
-  // Jika kategori all, batasi 7 middle + 7 premium
-  let limitedItems = filteredItems;
-  if (activeFilter === "all") {
-    const middle = filteredItems
-      .filter((item) => item.category === "middle")
-      .slice(0, 7);
-    const premium = filteredItems
-      .filter((item) => item.category === "premium")
-      .slice(0, 7);
-    limitedItems = [...middle, ...premium];
-  } else if (activeFilter === "middle") {
-    limitedItems = filteredItems.slice(0, 7);
-  } else if (activeFilter === "premium") {
-    limitedItems = filteredItems.slice(0, 7);
-  }
-
-    // Tutup modal produk jika event open-cart dipanggil (misal dari notifikasi)
+  // Tutup modal produk jika event open-cart dipanggil (misal dari notifikasi)
   useEffect(() => {
     const handleOpenCart = () => {
       setIsModalOpen(false);
