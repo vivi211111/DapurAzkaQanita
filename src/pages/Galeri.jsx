@@ -111,29 +111,29 @@ const Galeri = () => {
   const galeriTestimoni = [
     {
       type: "image",
-      src: "/testimonials/Sarah Wijaya.jpeg?height=400&width=600",
+      src: "fototestiklien1.jpeg?height=400&width=600",
       title: "Sarah Wijaya",
       desc: "Kue Maksubah enak banget, anak-anak suka!",
     },
     {
       type: "video",
-      src: "https://www.w3schools.com/html/movie.mp4",
-      poster: "/testimonials/Budi Santoso.jpeg?height=400&width=600",
+      src: "videotestiklien1.mp4",
+      poster: "klientesti-thumb1.png?height=400&width=600",
       title: "Budi Santoso",
-      desc: "Review video Maksubah Prunes dari pelanggan.",
+      desc: "Maksubah Kojonya wuenak polll.",
     },
     {
       type: "image",
-      src: "/testimonials/Rina Kusuma.jpeg?height=400&width=600",
+      src: "fototestiklien2.jpeg?height=400&width=600",
       title: "Rina Kusuma",
       desc: "Lapis legitnya wangi dan tidak terlalu manis, recommended!",
     },
     {
       type: "video",
-      src: "https://www.w3schools.com/html/mov_bbb.mp4",
-      poster: "/testimonials/Dr. Ahmad Fauzi.jpeg?height=400&width=600",
+      src: "videotestiklien2.mp4",
+      poster: "klientesti-thumb2.png?height=400&width=600",
       title: "Dr. Ahmad Fauzi",
-      desc: "Testimoni video: Bolu Kukus Pelangi cocok untuk acara kantor.",
+      desc: "Enak, cocok untuk acara kantor",
     },
     // Tambahkan lebih banyak foto/video testimoni kue jika diperlukan
   ];
