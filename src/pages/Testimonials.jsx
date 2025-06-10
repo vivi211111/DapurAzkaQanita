@@ -260,22 +260,24 @@ const Testimonials = () => {
       id: 1,
       name: "Sarah Wijaya",
       title: "Testimoni Klien 1",
-      thumbnail: "/testimonials/Sarah Wijaya.jpeg?height=400&width=600",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+      type: "photo", // Tipe baru: photo
+      image: "/fototestiklien2.jpeg",
     },
     {
       id: 2,
       name: "Budi Santoso",
       title: "Testimoni Klien 2",
-      thumbnail: "/testimonials/Budi Santoso.jpeg?height=400&width=600",
-      video: "https://www.w3schools.com/html/movie.mp4",
+      type: "video",
+      thumbnail: "/TumVidTesti1.png",
+      video: "/VideoTesti1.mp4",
     },
     {
       id: 3,
       name: "Maya Sari",
       title: "Testimoni Klien 3",
-      thumbnail: "/testimonials/Maya Sari.jpeg?height=400&width=600",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+      type: "video",
+      thumbnail: "/TumVidTesti2.png",
+      video: "/VideoTesti2.mp4",
     },
     // Tambahkan video baru di sini
   ];
@@ -761,59 +763,68 @@ const Testimonials = () => {
           {/*MOBILE*/}
           <div className="block md:hidden text-center mb-16">
             <h2 className="font-serif text-xl md:text-4xl font-bold text-batik-brown mb-4">
-              Video Testimoni
+              Galeri Testimoni
             </h2>
             <p className="text-sm text-gray-600 max-w-3xl mx-auto">
-              Dengarkan langsung pengalaman klien kami melalui video testimoni
+              Dengarkan langsung pengalaman klien kami melalui foto dan video testimoni
             </p>
           </div>
           {/*DESKTOP*/}
           <div className="hidden md:block text-center mb-16">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-batik-brown mb-4">
-              Video Testimoni
+              Galeri Testimoni
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Dengarkan langsung pengalaman klien kami melalui video testimoni
+              Dengarkan langsung pengalaman klien kami melalui foto dan video testimoni
             </p>
           </div>
 
           {/* Video Grid */}
           <div className="max-w-screen-xl mx-auto">
             <div className="flex overflow-x-auto gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
-              {videoTestimonials.map((vid) => (
+              {videoTestimonials.map((vid, idx) => (
                 <div
                   key={vid.id}
                   className="relative group cursor-pointer flex-shrink-0 w-[60vw] max-w-xs md:w-auto"
                 >
                   <div className="aspect-video w-full rounded-xl bg-gradient-to-br from-batik-gold/10 to-batik-brown/10 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:brightness-95">
-                    {!showVideo[vid.id] ? (
-                      <>
-                        <img
-                          src={vid.thumbnail}
-                          alt={vid.name}
-                          className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:opacity-100 transition-all duration-300"
-                        />
-                        <button
-                          className="relative z-10 w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-300 shadow-lg"
-                          onClick={() =>
-                            setShowVideo((prev) => ({
-                              ...prev,
-                              [vid.id]: true,
-                            }))
-                          }
-                        >
-                          <div className="w-0 h-0 border-l-[18px] border-l-batik-brown border-y-[12px] border-y-transparent ml-1"></div>
-                        </button>
-                      </>
+                    {/* Item paling kiri hanya foto statis, gunakan image, bukan thumbnail */}
+                    {vid.type === "photo" ? (
+                      <img
+                        src={vid.image}
+                        alt={vid.name}
+                        className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:opacity-100 transition-all duration-300"
+                      />
                     ) : (
-                      <video
-                        controls
-                        autoPlay
-                        poster={vid.thumbnail}
-                        className="absolute inset-0 w-full h-full object-cover"
-                      >
-                        <source src={vid.video} type="video/mp4" />
-                      </video>
+                      !showVideo[vid.id] ? (
+                        <>
+                          <img
+                            src={vid.thumbnail}
+                            alt={vid.name}
+                            className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:opacity-100 transition-all duration-300"
+                          />
+                          <button
+                            className="relative z-10 w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-300 shadow-lg"
+                            onClick={() =>
+                              setShowVideo((prev) => ({
+                                ...prev,
+                                [vid.id]: true,
+                              }))
+                            }
+                          >
+                            <div className="w-0 h-0 border-l-[18px] border-l-batik-brown border-y-[12px] border-y-transparent ml-1"></div>
+                          </button>
+                        </>
+                      ) : (
+                        <video
+                          controls
+                          autoPlay
+                          poster={vid.thumbnail}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        >
+                          <source src={vid.video} type="video/mp4" />
+                        </video>
+                      )
                     )}
                   </div>
                   <div className="absolute bottom-4 left-4 right-4 text-white drop-shadow">

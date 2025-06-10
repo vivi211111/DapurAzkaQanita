@@ -120,7 +120,7 @@ const About = () => {
                   <img
                     alt="Hidangan lezat disajikan"
                     className="w-full h-full object-cover"
-                    src="/about/Dapur2.png"
+                    src="/about/Dapur2.jpg"
                   />
                 </div>
               </div>
