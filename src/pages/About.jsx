@@ -17,7 +17,7 @@ const About = () => {
       role: "Founder & CEO",
       description:
         "Berpengalaman lebih dari 20 tahun di dunia kuliner dan kue tradisional Palembang.",
-      image: "/about/hatta.jpg",
+      image: "/about/Fika.jpg",
     },
     {
       name: "Evania Loveola",
@@ -37,7 +37,7 @@ const About = () => {
       name: "Dhea Mutmainah",
       role: "Marketing Director",
       description: "Strategi pemasaran dan pengembangan bisnis kue Dapur Azka.",
-      image: "/about/Eka.jpg",
+      image: "/about/dhea.jpeg",
     },
   ];
 
