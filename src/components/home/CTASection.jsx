@@ -27,7 +27,7 @@ const CTASection = () => {
         <div className="block md:hidden sm:flex-row gap-4 justify-center items-center mb-12">
           <Link
             to="/contact"
-            className="bg-batik-gold hover:bg-batik-gold/90 text-white text-sm font-semibold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
+            className="bg-batik-gold hover:bg-batik-gold/90 text-white text-sm font-semibold py-2 px-6 rounded-lg transition-all duration-300 transform shadow-lg inline-flex items-center"
           >
             Mulai Konsultasi Gratis
             <ArrowRight className="ml-2" size={20} />
