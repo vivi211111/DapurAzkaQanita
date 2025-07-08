@@ -843,7 +843,7 @@ const Product = () => {
             </div>
             <div className="text-center">
               <div className="text-xl font-serif font-bold text-batik-brown mb-1">
-                100+
+                35+
               </div>
               <div className="text-xs text-gray-600">Tahun Pengalaman</div>
             </div>

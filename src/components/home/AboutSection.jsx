@@ -166,7 +166,7 @@ const AboutSection = () => {
 								transition={{ duration: 0.7, delay: 0.2 }}
 								className="text-lg text-gray-700 dark:text-gray-300 mb-4 max-w-2xl"
 							>
-								Sejak berdiri pada tahun 1890, Dapur Azka Qanita telah menjadi warisan keluarga yang terus dijaga dan dilestarikan selama tiga generasi. Resep otentik yang kami gunakan diwariskan dari ibu ke anak, menjadikan setiap hidangan penuh dengan cita rasa asli dan kehangatan rumah.
+								Sejak berdiri pada tahun 1990, Dapur Azka Qanita telah menjadi warisan keluarga yang terus dijaga dan dilestarikan selama tiga generasi. Resep otentik yang kami gunakan diwariskan dari ibu ke anak, menjadikan setiap hidangan penuh dengan cita rasa asli dan kehangatan rumah.
 							</motion.p>
 							<motion.p
 								initial={{ opacity: 0, y: 30 }}
@@ -198,7 +198,7 @@ const AboutSection = () => {
 									className="bg-batik-gold/10 dark:bg-batik-brown/30 rounded-xl p-5 flex flex-col items-center shadow"
 								>
 									<Award className="text-batik-brown dark:text-batik-gold mb-2" size={20} />
-									<div className="text-2xl font-bold text-batik-brown dark:text-batik-gold">100+</div>
+									<div className="text-2xl font-bold text-batik-brown dark:text-batik-gold">35+</div>
 									<div className="text-sm text-batik-brown dark:text-batik-gold font-medium text-center">Tahun Berpengalaman</div>
 								</motion.div>
 							</div>
