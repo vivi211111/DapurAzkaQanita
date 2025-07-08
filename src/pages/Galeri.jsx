@@ -293,23 +293,23 @@ const Galeri = () => {
 
         {/* CTA Section */}
         {/*MOBILE*/}
-        <section className="block md:hidden py-10 md:py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
+        <section className="block py-10 md:py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-6">
               Sudah Tertarik Untuk Membeli?
             </h2>
-            <p className="text-sm text-batik-cream mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-batik-cream mb-8 max-w-3xl mx-auto">
               Jangan lewatkan penawaran bundling hemat untuk kue khas Palembang.
               Stok terbatas, buruan checkout sekarang!
             </p>
-            <div className="flex sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap justify-center items-center gap-4">
               <Link to="/product">
-                <button className="bg-batik-gold hover:bg-batik-gold/90 text-white text-sm font-semibold py-2 px-8 rounded-lg transition-all duration-300">
+                <button className="bg-batik-gold hover:bg-batik-gold/90 text-white text-sm font-semibold py-2 px-10 rounded-lg transition-all duration-300 md:text-lg">
                   Lihat Semua Product
                 </button>
               </Link>
               <Link to="/contact">
-                <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown text-sm font-semibold py-2 px-8 rounded-lg transition-all duration-300">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-batik-brown text-sm font-semibold py-2 px-10 rounded-lg transition-all duration-300 md:text-lg">
                   Hubungi Admin
                 </button>
               </Link>
@@ -317,7 +317,7 @@ const Galeri = () => {
           </div>
         </section>
         {/*DESKTOP*/}
-        <section className="hidden md:block py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
+        {/* <section className="hidden md:block py-20 bg-gradient-to-r from-batik-brown to-batik-navy">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
               Sudah Tertarik Untuk Membeli?
@@ -339,7 +339,7 @@ const Galeri = () => {
               </Link>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </motion.div>
   );

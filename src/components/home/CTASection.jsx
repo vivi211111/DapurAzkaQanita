@@ -24,10 +24,10 @@ const CTASection = () => {
           Kue tradisional kami dibuat dengan resep turun-temurun selama 3 generasi, menghadirkan rasa otentik dalam setiap gigitan.
         </p>
         {/*MOBILE */}
-        <div className="block md:hidden sm:flex-row gap-4 justify-center items-center mb-12">
+        <div className="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap justify-center items-center gap-4">
           <Link
             to="/contact"
-            className="bg-batik-gold hover:bg-batik-gold/90 text-white text-sm font-semibold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
+            className="bg-batik-gold hover:bg-batik-gold/90 text-white text-sm font-semibold py-2 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center md:text-lg"
           >
             Mulai Konsultasi Gratis
             <ArrowRight className="ml-2" size={20} />
@@ -35,24 +35,7 @@ const CTASection = () => {
 
           <Link
             to="/product"
-            className="border-2 border-white text-white text-sm hover:bg-white hover:text-batik-brown font-semibold py-2 px-10 rounded-lg transition-all duration-300"
-          >
-            Lihat Product
-          </Link>
-        </div>
-        {/*DESKTOP */}
-        <div className="hidden md:block sm:flex-row gap-4 justify-center items-center mb-12">
-          <Link
-            to="/contact"
-            className="bg-batik-gold hover:bg-batik-gold/90 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
-          >
-            Mulai Konsultasi Gratis
-            <ArrowRight className="ml-2" size={20} />
-          </Link>
-
-          <Link
-            to="/product"
-            className="border-2 border-white text-white hover:bg-white hover:text-batik-brown font-semibold py-4 px-8 rounded-lg transition-all duration-300"
+            className="border-2 border-white text-white text-sm hover:bg-white hover:text-batik-brown font-semibold py-2 px-10 rounded-lg transition-all duration-300 md:text-lg"
           >
             Lihat Product
           </Link>

@@ -229,14 +229,14 @@ const About = () => {
           <p className="text-sm md:text-xl text-batik-cream mb-6 md:mb-8 max-w-3xl mx-auto">
             Manjakan diri dan orang tersayang dengan kue tradisional Palembang favorit Anda. Segera dapatkan sebelum stok habis.
           </p>
-          <div className="flex sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap justify-center items-center gap-4">
             <Link to="/product" className="w-full md:w-auto">
-              <button className="w-full md:w-auto bg-batik-gold hover:bg-batik-gold/90 text-sm text-white font-semibold py-2 md:py-4 px-8 md:px-8 rounded-lg transition-all duration-300 md:text-lg">
+              <button className="md:w-auto bg-batik-gold hover:bg-batik-gold/90 text-sm text-white font-semibold py-2 px-8 rounded-lg transition-all duration-300 md:text-lg">
                 Lihat Semua Product
               </button>
             </Link>
             <Link to="/contact" className="w-full md:w-auto">
-              <button className="w-full md:w-auto border-2 border-white text-sm text-white hover:bg-white hover:text-batik-brown font-semibold py-2 md:py-4 px-8 md:px-8 rounded-lg transition-all duration-300 md:text-lg">
+              <button className="md:w-auto border-2 border-white text-sm text-white hover:bg-white hover:text-batik-brown font-semibold py-2 px-10 rounded-lg transition-all duration-300 md:text-lg">
                 Hubungi Admin
               </button>
             </Link>
